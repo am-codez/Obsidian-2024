@@ -210,6 +210,8 @@ Problem set done at end of each module
 
 		(foo (* 3 4) (+ 0 2))
 
+![[Pasted image 20240912125458.png]]
+![[Pasted image 20240912125537.png]]
 **HtDF Recipe**
 - Breaks down larger problems into small ones but makes easy functions harder to design
 - Code coverage:
@@ -298,3 +300,7 @@ Problem set done at end of each module
 		 `(* (image-width i2) (image-height i2))))``
 
 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
+
+**HTDD Recipe**
+- Includes:
+- Enumeration doesn't need examples as they would not be helpful to include 
