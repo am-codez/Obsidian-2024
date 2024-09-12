@@ -1,0 +1,67 @@
+- COGS is an interdisciplinary and collaborative approach to understanding and designing systems that think and act intelligently
+- “Intelligence” varies by perspective – science (gradient), philosophy (all or none)
+- AI is “fake, artificial” intelligence but not all artificial things are fake
+    - Fake artificial - hercamer vs real artificial - lab created diamonds
+    - Not all fake things are artificially created (e.g. fool’s gold)
+    - Natural artificial – spex wasp (follows algorithm without any adaptability to setting)
+- AI’s intelligence can be real artifical intelligence, if achieved
+
+
+- Linguistic definitions, with example of word (“the”):    
+    - Phonetics: how we make/comprehend possible speech sounds or sign parameters
+    - Phonology: which possible speech sounds/sign parameters your language uses, and how they pattern
+        - Pronounciation changes depending on word preceeding it
+    - Morphology: how words/signs are formed
+    - Syntax: how sentences are formed
+        - Can only occur before nouns and can be substituted by a small numner of words (determiners, e.g. “a”, “this”, “my”)
+    - Semantics: how meaning derives from words/signs and sentences
+        - “The” is a definite determiner, the meaning of a noun phrase it is used in (e.g., “the book”) can only be determined by the specific discourse situation it is used in (e.g., “The book I lost yesterday was found by my roommate”)
+        - The meaning of definite noun phrases like “the book” will shift from book to book and from situation to situation
+    - Pragmatics: how meaning derives from context
+        
+- Subfields:
+    - Neurolinguistics and Psycholinguistics: How language is stored and processed by the brain/mind
+        - When people hear a definite noun phrase like “the book”, it sets off a search for a current perceptual input and of memory for an object with the current properties
+        - If no appropriate object is found, the hearer tries to deduce one
+    - Sociolinguistics: Language in society (for instance, regional dialects)
+    - The relationship between Language and Culture
+    - Historical Linguistics: how languages change over time
+    - Computational Linguistics - the study of how computers can process human language
+        - AI researchers exploit properties of the word “the” when they build programs that can understand natural language
+            
+- Language is communication but not vise versa (e.g. traffic light – limited)
+- Communication: A signal is transmitted from a sender to a receiver (or group of receivers) along a channel of communication. The signal will have a particular form and will convey a particular meaning (or message). The connection between form and meaning constitutes a code
+    - sender/source (light)
+    - message (stop/go)
+    - channel (colour)
+    - receiver/distinuation (human gaze)
+    - effect (human stops/goes)
+        
+- Language: missing one feature means it’s communication, not language
+    - A dedicated communicative channel (e.g., vocal-auditory for spoken languages, manual visual for sign languages)
+    - Broadcast transmission & directional reception
+    - Rapid fading (transitoriness)
+    - Interchangeability
+    - Total feedback
+    - Specialization
+    - Semanticity
+        
+- Human language:
+    - Arbitrariness
+        - Iconicity: word or sign looks like what it means (e.g. drink in ASL or gulp in English)
+        - Arbitrariness: word meaning arbitrary but agreed on (e.g. table)
+    - Discreteness
+    - Productivity
+    - Duality of patterning
+    - Cultural transmission
+    - Learnability
+    - Displacement
+        - Referring to events remote in space, time, or reality
+    - Prevarication
+    - Reflexiveness
+- Animal communication:
+    - Innate (e.g. barking)
+        - One exception, song birds: will still try as communication style is innate but will only come up with broken version for its species
+    - Fixed sepertoire of signals
+    - About here and now
+        - One exception is bees: not what if or discussing past events, but can communicate forms of displacement (space)

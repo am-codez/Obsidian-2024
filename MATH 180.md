@@ -1,11 +1,27 @@
 ### Algebra
-- E.g. Solve for r. :)
+- E.g. Solve for r.
 		$p = \frac{2q + r}{qr}$
 		$pqr = 2q + r$
 		$pqr - r = 2q$
 		$r(pq - 1) = 2q$
 		$r = \frac{2q}{pq - 1}$
 		
+- ==E.g.== $(x^{2}- 1)(2x^{2} + 6x - 14) - (x^{2} + 3x + 4)$
+	- Factoring out A from both terms: AB - AC = A(B - C)
+		$(x^{2}- 1)(2x^{2} + 6x - 14) - (x^{2} - 1)(x^{2} + 3x + 4)$
+		$(x^{2}- 1)(2x^{2} + 6x - 14 - x^{2} + 3x + 4)$
+	- Combine like terms
+		$(x^{2}- 1)(x^{2} + 3x - 18)$
+	- Terms: 
+		  +/- 18 and 1, +/- 9 and 2, +/- 3 and 6
+		  $(x^{2}- 1)(x + 6)(x - 3)$
+		- Factored B - C
+		- Factor A
+			$(x - 1)(x + 1)(x + 6)(x - 3)$
+- E.g.  Which of the following describes all values of x satisfying $x^{2} + 4 >= 5$?
+		$x^{2} + 4 => 5$
+		$x^{2} >= 1$
+		$x >= 1, -1$
 - Factoring Quadratic Expressions
 	$ax^{2} + bx + c$
 	- $a^2$ = leading term 
@@ -18,6 +34,14 @@
 		$3x(x^2 + 4x - 21)$
 		- To get -21, we could have to multiply (-3)(7) * 7 = -21. 
 		$(3x - 3)(x + 7)$
+- E.g. 
+  ![[Pasted image 20240912104907.png]]
+	- y = e^x when x = 0: y = 1
+	- a and b: (constants) applies more to y-value at given x 
+		- stretches curve
+	- e: natural e 
+		- changes curve 
+	- k: applies more to x-value at given y
 ### Finding Expression from Graph or Values
 - E.g. Let f(x) = x - 4. Define g(x) = f(x) + d. Find the value of d so that the range of g(x) is the set {y | y ≥ -5}.
     g(x) = (x - 4) + d
@@ -129,7 +153,7 @@
 	- K is a constant
 		- Referred to as the "coefficient"
 		- Scales the vertical behaviour (i.e. stretches the graph along the y-axis)
-- Power functions ($y = n^x$ for powers n = 2, . . . , 5 ) intersect at: 
+- Power functions ($y = n^x$) with positive power integers (n = 2, . . . , 5 ) intersect at: 
 	- x = 0 
 	- x = 1
 	- if $ax^{n}= bx^{m}$ --> $x^{n - m} = \frac{b}{a}$
@@ -147,9 +171,35 @@
 				$x = \sqrt 9$
 				$x = \frac{+}{-}3$
 				- Because + and - x-value when sqrt 
-	- This is true for all positive integer powers
-	- The greater the power n, the flatter the graph near the origin and the steeper the graph beyond x > 1
-		- Close to the origin, the functions with lower powers dominate, while far from the origin, the higher powers dominate
+- The greater the power n, the flatter the graph near the origin and the steeper the graph beyond x > 1
+	- Close to the origin, the functions with lower powers dominate, while far from the origin, the higher powers dominate
+- All power functions are continuous and unbounded
 - Irrational number: a real number that cannot be expressed as a ratio of integers
 	- Classic examples are $\sqrt2$ and $\pi$
-		- 
+- Even and odd power functions
+	- ![[Pasted image 20240912084905.png]]
+		- Even functions: 
+			- $y = x^{n}$ --> $+\infty$
+			- These functions have a local minimum near the origin, which is a point such that the value of f is larger at all sufficiently close points
+				- ![[Pasted image 20240912091917.png]] 
+		- Odd functions:
+			-  $y = x^{n}$ --> $-\infty$
+			- These functions are one-to-one, meaning each value of y is obtained from a unique value of x, and vise versa
+- Determine if power function is even using f(-x) = f(x)
+	- E.g. $f(x) = x^{2} - 3x^4$
+		- Taking the f(-x) of f(x)
+			$f(-x) = (-x)^{2} - 3(-x)^{4}$
+			 $= x^2 - 3x^2$
+		 - Shows that when n is even, $(-1)^{n} = 1$
+ - Sketching graphs - polynomial graphs can be obtained by combining its power function components 
+	 - E.g. consider $y = p(x) = x^{3} + ax$ 
+		 - Near the origin ($x = 0$), the term $ax$ dominates so that the function behaves as $y = ax$
+			 - If $a = 0$, the slope would appear as a straight line near the origin 
+			 - If $a > 1$, slope would appear positive near the origin
+			 - If $a < 1$, slope would appear negative near the origin 
+		 - At larger values of x (far from the origin), $x^3$ dominate so that the function behaves as $y = x^3$
+		 - ![[Pasted image 20240912093934.png]]
+		 - ![[Pasted image 20240912094800.png]]
+		 - ==!!!!!!==
+- Rational functions
+- 
