@@ -86,4 +86,8 @@
 		- Before questions are clear enough to apply scientific methods to them (i.e. occurs prior to science)
 		- Reflects on the progress of science: questions of meaning (conceptual questions) and justification (methodological questions)
 - Free Will
-	- Computers can never be intelligent or have agency because they can't act freely (unpredictably), they make decisions based on instructions
+	- Traditional
+		- Computers can never be intelligent or have agency because they can't act freely (unpredictably), they make decisions based on instructions
+	- Contemporary
+		- Consider the difference between “on purpose” and “by accident”
+		- Consider the difference between something you do and something that happens to you
