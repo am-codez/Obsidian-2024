@@ -46,7 +46,7 @@
     - Specialization
     - Semanticity
         
-- Human language:
+- Human language: fundamental property of human cognition 
     - Arbitrariness
         - Iconicity: word or sign looks like what it means (e.g. drink in ASL or gulp in English)
         - Arbitrariness: word meaning arbitrary but agreed on (e.g. table)
@@ -62,6 +62,13 @@
 - Animal communication:
     - Innate (e.g. barking)
         - One exception, song birds: will still try as communication style is innate but will only come up with broken version for its species
-    - Fixed sepertoire of signals
+    - Fixed repertoire of signals
     - About here and now
         - One exception is bees: not what if or discussing past events, but can communicate forms of displacement (space)
+
+-   Hockett describes design-feature #5 “total feedback”  
+	- “The speaker of a language hears, by total feedback, everything of linguistic relevance in what he himself says”  
+	- Important, since it makes possible the so-called internalization of   communicative behavior that constitutes at least a major portion of  “thinking”
+- Key feature of language is its ability to represent the world, to say how things are, and to say that they are a certain way even when they are not that way (to misrepresent the world)
+- We ask questions, make demands, express emotions, so, language is much more than just a representational system - it's part of a system that generates the ideas that can be communicated in language
+- 
