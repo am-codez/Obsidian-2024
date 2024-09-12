@@ -71,4 +71,19 @@
 	- Important, since it makes possible the so-called internalization of   communicative behavior that constitutes at least a major portion of  “thinking”
 - Key feature of language is its ability to represent the world, to say how things are, and to say that they are a certain way even when they are not that way (to misrepresent the world)
 - We ask questions, make demands, express emotions, so, language is much more than just a representational system - it's part of a system that generates the ideas that can be communicated in language
-- 
+- Two movements in contemporary western philosophy:  
+	- Analytic (English-speaking)  
+	- Phenomenological (German/French)
+- Challenges:
+	- Considerable disagreement even among contemporary analytic philosophers about what philosophy is or should be
+		- Metaphilosophy, a journal  
+		- Michael Dummett (2001) The Nature and Future of Philosophy  
+		- Timothy Williamson (2008) The Philosophy of Philosophy
+	- Many scientific disciplines (chemistry, anthropology, ...), unlike Philosophy, have a settled body of knowledge that must be mastered in order to gain entry to the field, as nearly everything is contested
+	- Philosophy is the tradition of inquiry and major figures and their works, where we find the disciplinary culture, standards of adequacy, methods, and the sense of what is interesting
+- Philosophical naturalism
+	- Stages:
+		- Before questions are clear enough to apply scientific methods to them (i.e. occurs prior to science)
+		- Reflects on the progress of science: questions of meaning (conceptual questions) and justification (methodological questions)
+- Free Will
+	- Computers can never be intelligent or have agency because they can't act freely (unpredictably), they make decisions based on instructions
