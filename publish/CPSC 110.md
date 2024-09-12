@@ -167,8 +167,14 @@ Problem set done at end of each module
 **If Statements**
 - Primitives:
 	- AND - short circuits and stops evaluating if false statement found
-	- OR - only compares first 2 predicates, e.g. `(or (< 2 1)(> 3 2))`
+	- OR - only compares first 2 predicates, e.g. `(if (or (< 2 1)(> 3 2)) #true #false)`
 	- NOT
+- Conditions:
+	- E.g. Next step in evaluation of 
+	  `(cond [(> 8 7) "Charlie"]`
+		  `[(= 6 6) "Dog"])`
+	  - Would be `(cond [true "Charlie"]
+				 `[(= 6 6) "Dog"])`
 - E.g. 
 	`(require 2htdp/image)`
 
@@ -214,6 +220,7 @@ Problem set done at end of each module
 		- Signature: type(s) of data the function consumes and produces 
 			- Number (+ and - integers), Natural (0 and + integers) String, Image, Boolean
 			- E.g. `(@signature Image Image -> Boolean)`
+			- We template on input parameter
 		- Purpose: gives description of what the function produces in terms of what it consumes
 		- Stub: has correct function name and number of parameters, and produce dummy results of correct type
 			- Kind of arbitrary but common variables to add to stub, template, code
@@ -228,7 +235,7 @@ Problem set done at end of each module
 				`(check-expect (double 4.2) 8.4)`
 		- Thorough tests (at least 2) show cases using all types of inputs for bugs, and lets reader know purpose of a function - need to test above, at, and below the boundaries
 		- Decide on what to do in weird cases (e.g. if 2 images are same height, output image1)
-	1. Template and inventory 
+	3. Template and inventory 
 		- Template: body of the template is the outline of the function, will be commented out or deleted later on
 				`; (define (double n)
 					`(... n))`
