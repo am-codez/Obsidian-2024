@@ -1,5 +1,5 @@
 ### Algebra
-- E.g. Solve for r. *:)
+- E.g. Solve for r. :)
 		$p = \frac{2q + r}{qr}$
 		$pqr = 2q + r$
 		$pqr - r = 2q$
