@@ -177,7 +177,9 @@
 		 - ![[Pasted image 20240912094800.png]]
 		 - ==!!!!!!==
 - Rational functions
-	- $y = \frac{Ax^n}{a^{n} + x^n}$, $x >= 0$
+	- Function with a fraction
+	- Example of a rational power function would be:
+	  $y = \frac{Ax^n}{a^{n} + x^n}$, $x >= 0$
 		- Graph will approximate $y = \frac{Ax^n}{a^n}$ closer to origin since $x^n$ is negligible at small x-values
 			- Higher n value means graph will be flatter near origin
 		- Graph will approximate $y = \frac{a^n}{x^n}$ further from origin since $a^n$ is negligible at large x-values
