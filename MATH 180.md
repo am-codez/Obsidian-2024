@@ -55,75 +55,7 @@
 ### Transformations and Translations
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXd6Gs58m4BzuzpDaMK3D6t-4PcJJ3Ua5MD4kotW7KkeGEiJxqECGDicX_n-Dc_pwOF1EpifLJE9znpdZPF30l0xE5g4gSslF6zVJE2Xc057BhYUu-F13NENQoxSOlGuvK_QBEHRFrqUsqX6bFfV1SYP1L_O?key=6nzOubOsu7KFg1-d9eViDA)
 
-#### Graphing Exponential Functions
-- Basic exponential function: y = $r^x$ 
-	- If A value added (the y0 value or initial value e.g. population of 5000), then equation becomes $y = Ar^x$.
-- ![[Pasted image 20240910225256.png]]
-- Stretches:
-	- Y-axis
-		- Horizontal expansion by factor of 2
-			- $y = 6^\frac{x}{2}$
-			- $y = log \frac{1}{2}(x)$ 
-		- Horizontal compression by factor of 2
-			- $y = 6^{2x}$
-			- $y = log 2(x)$
-	- X-axis
-		- Vertical expansion by factor of 2
-			- $y = (2)6^x$
-			- $y = 2log(x)$
-		- Vertical compression by factor of ½ 
-			- $y = (\frac{1}{2})6^x$
-			- $y = \frac{1}{2}log(x)$
-- Translations: 
-	- Y-axis
-		- Translation 2 units right
-			- $y = 6^{x - 2}$
-			- $y = log(x - 2)$
-		- Translation 2 units left 
-			- $y = 6^{x + 2}$
-			- $y = log(x + 2)$
-	- X-axis
-		- Translation 2 units down
-			- $y = 6^x - 2$
-			- $y = log(x) - 2$
-		- Translation 2 units up
-			- $y = 6^x + 2$ 
-			- $y = log(x) + 2$ 
-- Reflections: 
-	- Y-axis
-		- Reflection of $y = 4^x$ is $y = 4^{-x}$ (same as writing $y = \frac{1}{4}^x$).
-	- X-axis
-		- Reflection of $y = 6^x$ is $y = -6^x$.
-	- Y = x line
-		- Reflection of $y = ab^x$ is  $x = ab^y$
-		- Reflection of $log(\frac{x}{a}) = ylog(b)$ is $y =\frac{log(\frac{x}{a})}{log(b)}$
-	- Domain (x E R) would only change if there was a reflection in the line y = x (x > 0, x E R). No other transformation would change the domain
-
-- E.g. 
-  ![[Pasted image 20240912104907.png]]
-	- For $y = e^x$, when x = 0 --> y = 1
-	- a (constant): value stretches/compresses curve vertically
-	- r: rate changes curve 
-	- k: stretches/compresses curve horizontally
-	
-- Exponent laws:
-	- Power of a power property
-		- This property states that when multiplying two powers with the same base, we add the exponents
-		- Can raise any element in an expression to the power of 1 and not change the expression
-		- E.g. $(5^6)(5^2)= 5^8$
-		- E.g. $(49^{x-1})(7^{2x-3})$ 
-	          $= ([7^2]^{x-1})(7^{2x-3})$  
-	          $= (7^{2x-2})(7^{2x-3})$ 
-	          $= 7^{4x-5}$
-	- Quotient of powers property
-		- This property states that when dividing two powers with the same base, we subtract the exponents
-		- E.g. $\frac{5^6}{5^2} = 5^4$
-	- Rational exponent property 
-		- E.g. $5^{\frac{6}{2}} = (^2\sqrt5)^6$
-		- E.g. $P(t) = Po(7)^{\frac{t}{5}}$
-		             $= Po(5\sqrt7)^t$
-		             $= Po(7^{\frac{1}{5}})^t$  
-		             $= Po(1.48)$
+#### Graphing Power Functions
 - Power function has the form: $y = f(x) = K * x^n$
 	- K is a constant
 		- Referred to as the "coefficient"
@@ -185,3 +117,79 @@
 		- Graph will approximate $y = \frac{a^n}{x^n}$ further from origin since $a^n$ is negligible at large x-values
 			- Higher x-value means graph will be sharper and eventually result in an asymptote 
 		- Asymptote at y = A
+	
+**Graphing Exponential Functions**
+- Basic exponential function: y = $ar^x$ 
+	- a (constant): value stretches/compresses curve vertically
+	- r: rate changes curve 
+	- k: stretches/compresses curve horizontally
+- When $a > 1$, as the base increases, the function becomes steeper 
+- ![[Pasted image 20240912173103.png]]
+- Stretches:
+	- Horizontal expansion by factor of 2
+		- $y = 6^\frac{x}{2}$
+	- Horizontal compression by factor of 2
+		- $y = 6^{2x}$
+	- Vertical expansion by factor of 2
+		- $y = (2)6^x$
+	- Vertical compression by factor of ½ 
+		- $y = (\frac{1}{2})6^x$
+- Translations: 
+	- Translation 2 units right/left
+		- $y = 6^{x -/+ 2}$
+	- Translation 2 units down/up
+		- $y = 6^x -/+ 2$
+- Reflections: 
+	- Y-axis
+		- Reflection of $y = 4^x$ is $y = 4^{-x}$ (same as writing $y = \frac{1}{4}^x$).
+	- X-axis
+		- Reflection of $y = 6^x$ is $y = -6^x$.
+	- Y = x line
+		- Reflection of $y = ab^x$ is  $x = ab^y$
+- E.g. Consider $y = e^{x}- x$
+	- At $x = 0$: $e^{x} = e^0 = 1$ 
+	- Larger negative x-value: $-x$ dominates at a relatively steep curve
+	- Large positive x-value: $e^x$ dominates at a relatively steep curve
+	- ![[Pasted image 20240912174102.png]]
+	
+- Exponent laws:
+	- Power of a power property
+		- This property states that when multiplying two powers with the same base, we add the exponents
+		- Can raise any element in an expression to the power of 1 and not change the expression
+		- E.g. $(5^6)(5^2)= 5^8$
+		- E.g. $(49^{x-1})(7^{2x-3})$ 
+	          $= ([7^2]^{x-1})(7^{2x-3})$  
+	          $= (7^{2x-2})(7^{2x-3})$ 
+	          $= 7^{4x-5}$
+	- Quotient of powers property
+		- This property states that when dividing two powers with the same base, we subtract the exponents
+		- E.g. $\frac{5^6}{5^2} = 5^4$
+	- Rational exponent property 
+		- E.g. $5^{\frac{6}{2}} = (^2\sqrt5)^6$
+		- E.g. $P(t) = Po(7)^{\frac{t}{5}}$
+		             $= Po(5\sqrt7)^t$
+		             $= Po(7^{\frac{1}{5}})^t$  
+		             $= Po(1.48)$
+		             
+ **Special Functions**
+ - $e^x$
+	 - ![[Pasted image 20240912175348.png]]
+	 - Only positive y-values 
+	 - Passes through point (0, 1) because $e^{0} = 1$
+	 - Appearance: 
+		 - Large negative x-values: $e^x$ is close to 0
+		 - Large positive x-values: $e^x$ is large and positive 
+ - $log(x)$
+	 - ![[Pasted image 20240912180029.png]]
+	 - Treated as $ln(x)$ in this course
+	 - Inverse of exponential function 
+	 - Passes through point (0, 1) because $log(0) = 1$
+	 - Only positive x-values (Domain: $0, \infty$)
+	 - Appearance: 
+		 - Large x-values: $log(x)$ is large and positive 
+		 - Small x-values: $log(x)$ is large and negative
+		 
+ - $sin(x)$
+	 - Range (-1, 1)
+	 - Passes through point (0, 0)
+	 - 
