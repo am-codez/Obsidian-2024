@@ -201,8 +201,8 @@
 		 - Large x-values: $\sqrt x$ is very large 
  - $|x|$
 	 - ![[Pasted image 20240912184050.png]]
-	 - If x >= 0: +x
-		 - If x <= 0: -x
+	 - If $x \geq$ 0: +x
+		 - If $x \leq 0$: -x
 	 - Only positive y-values
 		 - Range: $[0, \infty]$
 	 - Appearance: 
@@ -253,3 +253,15 @@
 	- Helpful for functions that are not continuous or not defined somewhere
 	- $\lim_{x \to a} f(x) = L$
 		- Limit of f(x) as x approaches a is L
+- Piece-wise function
+	- Function defied by several pieces rather than a single formula 
+		- ![[Pasted image 20240912193606.png]]
+	- We evaluation function at a particular value of x on a case-by-case basis 
+		![[Pasted image 20240912191538.png]]
+		- Filled circle: at point (x, y), the function takes on the value  $f(x) = y$ meaning at point (3, 9) --> $f(3) = 9$
+		- Empty circle (hole): not on the graph of $y = f(x)$ meaning at point (3, 6) --> $f(3) \neq 6$
+		- As we move closer to $x=3$, function moves closer and closer to 6 but doesn't reach it because there's an asymptote (undefined if we try to compute)
+			- ![[Pasted image 20240912193303.png]]
+			- Thus we can say $\lim_{ x \to 3 } f(x) = 6$
+				- However $f(3)=9$
+		
