@@ -118,7 +118,7 @@
 			- Higher x-value means graph will be sharper and eventually result in an asymptote 
 		- Asymptote at y = A
 	
-**Graphing Exponential Functions**
+### Graphing Exponential Functions
 - Basic exponential function: y = $ar^x$ 
 	- a (constant): value stretches/compresses curve vertically
 	- r: rate changes curve 
@@ -171,7 +171,7 @@
 		             $= Po(7^{\frac{1}{5}})^t$  
 		             $= Po(1.48)$
 		             
- **Special Functions**
+ ### Special Functions
  - $e^x$
 	 - ![[Pasted image 20240912175348.png]]
 	 - Only positive y-values 
@@ -184,12 +184,72 @@
 	 - Treated as $ln(x)$ in this course
 	 - Inverse of exponential function 
 	 - Passes through point (0, 1) because $log(0) = 1$
-	 - Only positive x-values (Domain: $0, \infty$)
+	 - Domain: ($0, \infty$)
 	 - Appearance: 
 		 - Large x-values: $log(x)$ is large and positive 
 		 - Small x-values: $log(x)$ is large and negative
+ - $\frac{1}{x}$
+	 - ![[Pasted image 20240912183320.png]]
+	 - Domain and range are all non-zero numbers
+	 -  Appearance: 
+		 - Large x-values: $\frac{1}{x}$ is close to 0
+		 - Close to x = 0: $\frac{1}{x}$ is very large (positive or negative)
+ - $\sqrt x$
+	 - ![[Pasted image 20240912183954.png]]
+	 - Domain and range are $[0, \infty)$
+	 - Appearance: 
+		 - Large x-values: $\sqrt x$ is very large 
+ - $|x|$
+	 - ![[Pasted image 20240912184050.png]]
+	 - If x >= 0: +x
+		 - If x <= 0: -x
+	 - Only positive y-values
+		 - Range: $[0, \infty]$
+	 - Appearance: 
+		 - Large x-values: $\sqrt x$ is very large 
 		 
+### Sin, Cosine, and Tan
+- Formula:
+		$x^{2}+ y^{2} = r^2$
+- **![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXc5EhCLo5IOT2RukhmvNFqQ_cVcLkloRCwQol5M96RK025aE-0Yx2JVVSHJoDczKCfx4kNm31T3gM8e6QrhpC-bQPEFDnyV5ZDLFU-BE58meaiuZjDJ4i98B4z3vrIq7ndrzsXw72iXZtzNWn5CLC8LwzNc?key=6nzOubOsu7KFg1-d9eViDA)**
+	- Given a point on the unit circle (x, y) corresponding to an angle ($\theta$), we can find:
+		- The sin = the y-coordinate
+		- The cos = the x-coordinate 
+- We can plot the degrees of sin($\theta$) and cos($\theta$)
+	- y = sin($\theta$): 
+		- y-values increase from $0$ --> $π^2$ where it reaches y = 1
+		- y-values decrease from $π^2$ --> $3π^2$ where it reaches y = -1
+		- Sin($\theta$) reaches 1 full revolution at 2π
+	- x = cos($\theta$): 
+		- x-values decrease from 0 --> π where it reaches x = -1
+		- x-values increase from π --> 2π where it reaches x = 1
+- We can take these points and also graph them on a line, which reveals the functions of sin(x), cos(x), and tan(x) ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfw2Hq2kkOrfmz-ChJ1X7xJcYSQQ95NNd3SC1Ri_-pluiis_VgVMep93dFgzlKxsCFJFjhnCDmVNDWuB_DpE-k8NoEIqoOKVoftNlALIrdYvhTfHB9N7oZFzf7wEVrugbIKTelRor6mvmEnluQF3fie_jTv?key=6nzOubOsu7KFg1-d9eViDA)
+	- Where x-axis is the angle ($\theta$) and y-axis is the trig ratio output 
+	- The functions allow you to get the ratio defined when looking at the output of y = sin($\theta$), y = cos($\theta$), y = tan($\theta$)
+	- E.g. at point $\frac{π}{2}$ on the graph, if we check the unit circle at $\frac{\pi}{2}$, we see our (x, y) coordinate is (0, 1). Therefore, sine is 1 and cosine is 0 which aligns with our graph
+    
  - $sin(x)$
+	 - ![[Pasted image 20240912183216.png]]
 	 - Range (-1, 1)
 	 - Passes through point (0, 0)
-	 - 
+	 - $y = sin(\theta) = \frac{y(opposite)}{r(hypotenuse)}$
+	 - Inverse $\frac{1}{sin(\theta)}$ is $y = csc(\theta) = \frac{r}{y}$
+- $cos(x)$
+	 - ![[Pasted image 20240912183233.png]]
+	 - Range (-1, 1)
+	 - Passes through point (0, 1)
+	 - $y = cos(\theta) = \frac{x(adjacent)}{r(hypotenuse)}$
+	 - Inverse $\frac{1}{cos(\theta)}$ is $y = sec(\theta) = \frac{r}{x}$
+- $tan(x)$
+	 - ![[Pasted image 20240912183253.png]]
+	 - Not defined for $x = n\pi + \frac{\pi}{2}$
+		 - Where n is any integer
+	 - Passes through point (0, 0)
+	 - $y = tan(\theta) = \frac{y(opposite)}{x(adjacent)}$
+	 - Inverse $\frac{1}{tan(\theta)}$ is $y = cot(\theta) = \frac{x}{y}$
+
+### Limits
+- Helps us describe behaviour or function close to some point of interest
+	- Helpful for functions that are not continuous or not defined somewhere
+	- $\lim_{x \to a} f(x) = L$
+		- Limit of f(x) as x approaches a is L
