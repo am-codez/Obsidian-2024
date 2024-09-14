@@ -308,20 +308,28 @@ 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
 	- Interpretation
 - Data definition:
 	- Simple Atomic Data: String, Number, Natural with no restrictions
+		- `atomic non-distinct` : type predicate 
+			- E.g. `(string=? x)`
+		- `atomic distinct`: equality predicate with guard
+			- E.g. `(string=? x "red")`
 	- Interval: numbers within a certain range 
 		- E.g. 0-100
 	- Enumeration: fixed number of distinct items
 		- E.g. "H", "P", "F", "T"
 		- Doesn't need examples as they would not be helpful to include
 	- Itemization: two or more subclasses, at least one of which is not a distinct data item 
+		- `one-of`: pairs one expected input per subclass
 		- E.g. 0-100, 120-150, and "H", "P", "F", "T"
 	- Compound Data: two or more values naturally belong together 
+		- `compound`
 		- E.g. x,y data
 	- Self-referential or Mutually Referential: information in the program's domain is of arbitrary size (empty for now)
+		- `self-reference`
 		- In order to be well-formed, a self-referential data definition must:
 			- Have at least one case without self reference (the base case(s))
 			- Have at least one case with self reference
 	- References to Other Data Definitions: references to other data definitions you have defined 
+		- `reference`
 - E.g. 
 	`(@htdd Status) ; HTDD tag`
 	
