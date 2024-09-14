@@ -302,5 +302,69 @@ Problem set done at end of each module
 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
 
 **HTDD Recipe**
+- Used to create our 
 - Includes:
-- Enumeration doesn't need examples as they would not be helpful to include 
+	- Type comment
+	- Interpretation
+- Data definition:
+	- Simple Atomic Data: String, Number, Natural with no restrictions
+	- Interval: numbers within a certain range 
+		- E.g. 0-100
+	- Enumeration: fixed number of distinct items
+		- E.g. "H", "P", "F", "T"
+		- Doesn't need examples as they would not be helpful to include
+	- Itemization: two or more subclasses, at least one of which is not a distinct data item 
+		- E.g. 0-100, 120-150, and "H", "P", "F", "T"
+	- Compound Data: two or more values naturally belong together 
+		- E.g. x,y data
+	- Self-referential or Mutually Referential: information in the program's domain is of arbitrary size (empty for now)
+		- In order to be well-formed, a self-referential data definition must:
+			- Have at least one case without self reference (the base case(s))
+			- Have at least one case with self reference
+	- References to Other Data Definitions: references to other data definitions you have defined 
+- E.g. 
+	`(@htdd Status) ; HTDD tag`
+	
+	`; Purpose - interpret the legal status of a person`
+	
+	`(@dd-template-rules one-of                   ; Status 2 cases`
+	                    `atomic-distinct  ; "minor"`
+	                    `atomic-distinct) ; "adult"`
+	
+	`(define (fn-for-status s) ; Template created for data definition` 
+	  `(cond [(string=? s "minor") (...)]`
+	        `[(string=? s "adult") (...)]))`
+	
+	
+	
+	`(@htdf can-vote?) ; HTDF tag`
+	
+	`(@signature Status -> Boolean)                ; Signature (created our own data definition)`
+	
+	`; Purpose - produce true if a person with given status is eligible to vote`
+	
+	`(check-expect (can-vote? "minor") false)`
+	`(check-expect (can-vote? "adult") true)`
+	
+	`;(define (can-vote? s) true) ; Stub`
+	
+	`(@template-origin Status) ; Template tag`
+	
+	`(@template ; Template where "s" is string`
+	 `(define (can-vote? s)`   
+	   `(cond [(string=? s "minor") (...)]`
+	         `[(string=? s "adult") (...)])))`
+	
+	`(define (can-vote? s)`   
+	  `(cond [(string=? s "minor") false]`
+	        `[(string=? s "adult") true]))`
+
+
+
+;; if the template is a cond, from a one-of type you MUST NOT:
+;;  - delete the cond
+;;  - reorder the QA pairs (e.g. swap "minor" and "adult" order)
+;;  - edit the questions (check-expect)
+;;  - delete any QA pair
+;;  - add any QA pair
+;; basically just edit the (...) in the template and nothing else
