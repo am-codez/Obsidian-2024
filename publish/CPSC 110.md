@@ -307,8 +307,8 @@ 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
 	- Type comment
 	- Interpretation
 - Data definition:
-	- Simple Atomic Data: String, Number, Natural with no restrictions
-		- `atomic non-distinct` : type predicate 
+	- Simple Atomic Data: String, Number, Natural
+		- `atomic non-distinct` : type predicate
 			- E.g. `(string=? x)`
 		- `atomic distinct`: equality predicate with guard
 			- E.g. `(string=? x "red")`
