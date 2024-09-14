@@ -175,6 +175,8 @@ Problem set done at end of each module
 		  `[(= 6 6) "Dog"])`
 	  - Would be `(cond [true "Charlie"]
 				 `[(= 6 6) "Dog"])`
+	- Best practice to present last case with "else" statement
+
 - E.g. 
 	`(require 2htdp/image)`
 
@@ -308,9 +310,9 @@ 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
 	- Interpretation
 - Data definition:
 	- Simple Atomic Data: String, Number, Natural
-		- `atomic non-distinct` : type predicate
+		- `atomic-non-distinct` : type predicate
 			- E.g. `(string=? x)`
-		- `atomic distinct`: equality predicate with guard
+		- `atomic-distinct`: equality predicate with guard
 			- E.g. `(string=? x "red")`
 	- Interval: numbers within a certain range 
 		- E.g. 0-100
