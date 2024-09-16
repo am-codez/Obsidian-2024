@@ -225,6 +225,7 @@ Problem set done at end of each module
 			- Number (+ and - integers), Natural (0 and + integers) String, Image, Boolean
 			- E.g. `(@signature Image Image -> Boolean)`
 			- We template on input parameter
+			- When we take images and produce an output, they are combined into just 1 image 
 		- Purpose: gives description of what the function produces in terms of what it consumes
 		- Stub: has correct function name and number of parameters, and produce dummy results of correct type
 			- Kind of arbitrary but common variables to add to stub, template, code
@@ -430,14 +431,3 @@ Problem set done at end of each module
         [(and (string? gs)(string=? gs "F"))false]        ;Handles "F" 
         [else false]))                                    ;Handles "T"
 ```
-- 
-
-
-
-;; if the template is a cond, from a one-of type you MUST NOT:
-;;  - delete the cond
-;;  - reorder the QA pairs (e.g. swap "minor" and "adult" order)
-;;  - edit the questions (check-expect)
-;;  - delete any QA pair
-;;  - add any QA pair
-;; basically just edit the (...) in the template and nothing else
