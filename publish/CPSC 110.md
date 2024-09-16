@@ -107,45 +107,39 @@ Problem set done at end of each module
 
 ### **Functions**
 - Function: one you've built yourself
-- To form a function: ![[Pasted image 20240908111144.png]]
-- E.g. `(define (trafficlight c)`
-		  `(circle 40 "solid" c))`
-			  ; Defining the function, where "trafficlight" is the function
-			  ; Body of the function: "(circle 40 "solid" c)
-				  ; "circle" is a primitive function
-				  ; "40", "solid", "c" are operands/values
-				  ; "c" is a parameter waiting to be replaced by an argument
-			  ; Variable value (parameter): c (colour)
-- To call a function: ![[Pasted image 20240908111300.png]]
-- E.g. trafficlight
-	`(define (trafficlight c)`
-	  `(circle 40 "solid" c))`
-	  ; Defining the function
+- To form a function: 
+	- `(define (function-name? v)`
+		  `(expression-condition) o)`
+	  - function-name? = name of function
+	  - v = variable placeholder (e.g. "i" for image", "s" for string, etc)
+	  - expression-condition = primatives (if, and, or, >, <, =, cond, circle, etc) 
+	  - o = output based on condition
 	
-	`(above (trafficlight "red")`
-		   `(trafficlight "yellow")`
-		   `(trafficlight "green"))`
-		   ; Calling the function 
-		   ; Using a "function call expression"
-		   
-- E.g. trafficlight 2
-	`(define (trafficlight c)`
-		`(circle 40 "solid" c))`
-		; Defining the function
-		  
-	`(trafficlight (string-append "re" "d"))`
-		; First tries to evaluate the function call (trafficlight()) but needs to evaluate primitive call before this
-		; Evaluates the primitive call by educing the operand "(string-append "re" "d")"" to a value/argument "red"
+- To call a function (function call expression):
+	- `(function-name? v)`
+		- v = passed argument 
+			- E.g. circle 40 "solid" "red"
+				- "circle" is the primative 
+				- "40", "solid", "red" are operands/values
+		- Can be nested within another expression
+		
+- E.g. trafficlight
+	`(define (trafficlight c) ;;defined function where "c" is variable`
+	  `(circle 40 "solid" c))`
+	
+	`(trafficlight (string-append "re" "d")) ;;called function`
+	- Order of function operation:
+		 1. Evaluates primitive call by reducing operand `(string-append "re" "d")`
 			`(trafficlight "red")`
-		; Now the function call sees the argument, it replaces parameter "c" with this argument "red" in the body of the function 
+		2. Passes "c" argument (`red`) into body of the function for evaluation
 			`(circle 40 "solid" "red")
-		; Function call is now gone as we're no longer calling "trafficlight" and we're just evaluating a primitive call where "circle" is the primitive and "40", "solid", and "red" are operands but because they are already values, just need to apply primitive to those values 
+		3. Function call `trafficlight` is now gone and we evaluate primitive call `circle` with values `40`, `solid`, `red`
 				![[Pasted image 20240908115724.png]]
 
 ### **Booleans**		
 - Predicates are primitives or functions that produce a boolean value 
 - True and false
-- Includes:
+- Primatives:
 	- =
 	- > and <
 	- = > and < =
@@ -165,43 +159,8 @@ Problem set done at end of each module
 	 ; Returns value of true
 	 
 ### **If Statements**
-- Primitives:
-	- AND - short circuits and stops evaluating if false statement found
-	- OR - only compares first 2 predicates, e.g. `(if (or (< 2 1)(> 3 2)) #true #false)`
-	- NOT
-- Conditions:
-	- E.g. Next step in evaluation of 
-	  `(cond [(> 8 7) "Charlie"]`
-		  `[(= 6 6) "Dog"])`
-	  - Would be `(cond [true "Charlie"]
-				 `[(= 6 6) "Dog"])`
-	- Best practice to present last case with "else" statement
-
-- E.g. 
-	`(require 2htdp/image)`
-
-	`(define img1 (rectangle 10 20 "solid" "red"))`
-	`(define img2 (rectangle 40 20 "solid" "red"))`
-
-	`(if (< (image-width img1)`
-		 `(image-height img1))`
-	    `"tall" "wide")`
-	; First tries to reduce all of its operands to values 
-	; "(image-width img1)" is an expression which needs to be reduced to its value (the actual image)
-		`(image-width <picture>)`
-	; Then it uses the primitive "image-width" to reduce the operand to a value "20"
-		`(if (< 20`
-		 `(image-height img1))`
-	     `"tall" "wide")`
-	; "(image-height img1)" is an expression which needs to be reduced to its value (the actual image)
-		`(image-height <picture>)`
-	; Then it uses the primitive "image-height" to reduce the operand to a value "10"
-		`(if (< 20 10)`
-	     `"tall" "wide")`
-	; Evaluates predicate and returns value of false as img1's height is more than its width
-			`(if false "tall" "wide")`
-	; Therefore prints "wide"
-- E.g. Nesting conditional primitives into if statements
+- Evaluates and returns true or false (including false is not necessary though as its assumed)
+- Able to nest conditional primitives into if statements
 		`(define LOWER 10)`
 		`(define UPPER 20)`
 
@@ -211,6 +170,52 @@ Problem set done at end of each module
 	      (+ x (* y 3))))
 
 		(foo (* 3 4) (+ 0 2))
+- Primitives:
+	- `and` 
+		- Short circuits and stops evaluating if false statement found 
+		- E.g. 
+		  `(if (and (image? i)(< (image-width i) (image-height i))) #true)`
+	- `or`
+		- Only compares first 2 predicates
+		- Accepts either to return "true"
+		- E.g. 
+		  `(if (or (< 2 1)(> 3 2)) #true #false)`
+	- `not`
+		- Only compares first 2 predicates
+		- Accepts only 1 to return "true"
+		- E.g. 
+		  `(if (not (< 2 1)(> 3 2)) #true #false)`
+	- `con`
+		- Last case should be an "else" statement
+		- E.g. 
+		  `(cond [(> 8 7) "Charlie"]`
+			   `[(= 6 6) "Dog"])`
+		   - Next step in evaluation would be 
+			 `(cond [true "Charlie"]
+					`[(= 6 6) "Dog"])`
+
+- E.g. 
+	`(require 2htdp/image) ;;required image tag`
+
+	`(define i1 (rectangle 10 20 "solid" "red")) ;;defining i1`
+	`(define i2 (rectangle 40 20 "solid" "red")) ;;defining i2`
+
+	`(if (< (image-width img1) ;;if statement with nested primative call`
+		 `(image-height img1))`
+	     `"tall" "wide")`
+	     
+	- Order of evaluation: 
+		1. Reduce operands `(image-width i1)` to its value (the actual image)
+			`(image-width <picture>)`
+		2. Reduces operands in primitive call `image-width` to a value `20`
+			`(if (< 20 (image-height i1))`
+		        `"tall" "wide")`
+		3. Reduces operands in primitive call `image-height` to a value `10`
+			`(if (< 20 10)`
+		        `"tall" "wide")`
+		4. Evaluates predicate and returns `false` as i1's height is more than its width
+			`(if false "tall" "wide")`
+		5. Returns `wide`
 
 ![[Pasted image 20240912125458.png]]
 ![[Pasted image 20240912125537.png]]
