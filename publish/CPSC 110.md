@@ -6,12 +6,12 @@ Problem set done at end of each module
 - BSL needs BEDMAS and/or order of operations specified
 	- E.g.  4 * 3 ^ 2 - 5 should be written as: (- (* 4 (sqr 3)) 5)
 
-**Racket** 
+### **Racket** 
 - Divided into 2 regions ![[Pasted image 20240905205151.png]]
 - Commenting out done via ;; or #;
 - Stepper: shows evaluations steo-by-step
 
-**Expressions and values**
+### **Expressions and values**
 - To form an expression: < primitive >< expression >
 - E.g. ![[Pasted image 20240906144638.png]]
 	- "+2" is a primitive operator because it starts with a parentheses followed by an operator
@@ -34,13 +34,13 @@ Problem set done at end of each module
 	- (/ (+ 4 6.2 -12) 3)
 	- -0.6
 
-**Evaluating simple arrhythmic expressions**
+### **Evaluating simple arrhythmic expressions**
 - Includes +, -, /, sqr (square of a number), sqrt (square root of a number)
 - Doesn't follow BEDMAS rules automatically 
 	E.g. `(+ 1(* 3 2))`
 		; Write this way so that it evaluates inner parentheses operations first and creates value to use as argument for outer expression
 
-**Strings**
+### **Strings**
 - String is an alphanumeric word or phrase, within quotations
 	- E.g. "apple"
 	- E.g. "1 2 3"
@@ -62,7 +62,7 @@ Problem set done at end of each module
 	- E.g. `(substring "Caribou" 0 3)`
 		- Output will be "Car"
 
-**Images**
+### **Images**
 - Need to include (require 2htdp/image) at the beginning of the program
 - Includes the following:
 	- Circle `(circle radius "mode" "color")`
@@ -89,7 +89,7 @@ Problem set done at end of each module
 		`(define RCAT (rotate -10 CAT))`
 		`(define LCAT (rotate 10 CAT))`
 
-**Constants**
+### **Constants**
 - We can name constants that can be called into expressions
 	- ![[Pasted image 20240906155916.png]]
 	- E.g. `(define width 400)`
@@ -99,13 +99,13 @@ Problem set done at end of each module
 		 `(* width height)`
 			- Expression calling both constants
 
-**Primitives**
+### **Primitives**
 - Primitive: built-in Racket language function 
 - htdp beginner documentation, for example, in Help Desk Index can help us find primitives
 	- https://docs.racket-lang.org/
 - E.g. `(round (/ 3 4))`
 
-**Functions**
+### **Functions**
 - Function: one you've built yourself
 - To form a function: ![[Pasted image 20240908111144.png]]
 - E.g. `(define (trafficlight c)`
@@ -142,7 +142,7 @@ Problem set done at end of each module
 		; Function call is now gone as we're no longer calling "trafficlight" and we're just evaluating a primitive call where "circle" is the primitive and "40", "solid", and "red" are operands but because they are already values, just need to apply primitive to those values 
 				![[Pasted image 20240908115724.png]]
 
-**Booleans**		
+### **Booleans**		
 - Predicates are primitives or functions that produce a boolean value 
 - True and false
 - Includes:
@@ -164,7 +164,7 @@ Problem set done at end of each module
 		`(< (image-width img1)(image-width img2))`
 	 ; Returns value of true
 	 
-**If Statements**
+### **If Statements**
 - Primitives:
 	- AND - short circuits and stops evaluating if false statement found
 	- OR - only compares first 2 predicates, e.g. `(if (or (< 2 1)(> 3 2)) #true #false)`
@@ -214,7 +214,7 @@ Problem set done at end of each module
 
 ![[Pasted image 20240912125458.png]]
 ![[Pasted image 20240912125537.png]]
-**HtDF Recipe**
+### **HtDF Recipe**
 - Breaks down larger problems into small ones but makes easy functions harder to design
 - Code coverage:
 	- If code is highlighted, indicates we have poor coverag
@@ -301,73 +301,136 @@ Problem set done at end of each module
 		`(> (* (image-width i1) (image-height i1))`
 		 `(* (image-width i2) (image-height i2))))``
 
-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
-
-**HTDD Recipe**
-- Used to create our 
+### **HtDD Recipe**
+- Used to define our own data types
+- Uses tags:
+	- `(@htdd ...)` where ... is Data Type Definition (e.g. GradeStanding)
+	- `(@dd-template-rules ...)` where ... is a Data Definition followed by specific data types for all cases
+		- Data Definitions:
+			- `atomic-non-distinct` :type predicate 
+				- Is String, Number, Boolean, Image?
+				- Use: 
+					- Intervals 
+						- Fixed numbers or naturals within a range, e.g. 0-100
+				- E.g. `(string=? x)(... x)`
+			- `atomic-distinct`: equality predicate with guard 
+				- Is this specific String, Number, Boolean, Image?
+				- Use: 
+					- Enumeration
+						- Fixed number of distinct items, e.g. "H", "P", "F", "T"
+						- Doesn't need examples as they would not be helpful to include
+				- E.g. `(string=? x "red")(...)`
+			- `self-reference`
+				- Use: information in the program's domain is of arbitrary size (empty for now)
+				- Form natural recursion with call to this type's template function
+				- In order to be well-formed, a self-referential data definition must:
+					- Have at least one case without self reference (the base case(s))
+					- Have at least one case with self reference
+				- E.g. `(fn-for-los (rest los))`
+			- `reference`
+				- Use: References to other data definitions you have defined 
+					- Call to other type's template function
+				- E.g. `(fn-for-lod (dir-subdirs d)  
+						`(fn-for-dir (first lod))`
+			- `compound`
+				- Use: $\geq{2}$ values naturally belong together 
+					- Position (x, y data)
+					- E.g. `(ball? x)`
+						  `(... (ball-x x) (ball-y x))`
+						  `(... (fn-for-ball (game-ball g))`
+		- Itemization: 
+			- Used to reference $\geq{2}$ subclasses, at least one of which is not a distinct data item 
+			- `(one-of (cond [(and(Q)A])`: pairs one expected input per subclass
+				- Requires the use of a guard for cond statements
+				- E.g. 0-100, 120-150, and "H", "P", "F", "T"- 
 - Includes:
-	- Type comment
-	- Interpretation
-- Data definition:
-	- Simple Atomic Data: String, Number, Natural
-		- `atomic-non-distinct` : type predicate
-			- E.g. `(string=? x)`
-		- `atomic-distinct`: equality predicate with guard
-			- E.g. `(string=? x "red")`
-	- Interval: numbers within a certain range 
-		- E.g. 0-100
-	- Enumeration: fixed number of distinct items
-		- E.g. "H", "P", "F", "T"
-		- Doesn't need examples as they would not be helpful to include
-	- Itemization: two or more subclasses, at least one of which is not a distinct data item 
-		- `one-of`: pairs one expected input per subclass
-		- E.g. 0-100, 120-150, and "H", "P", "F", "T"
-	- Compound Data: two or more values naturally belong together 
-		- `compound`
-		- E.g. x,y data
-	- Self-referential or Mutually Referential: information in the program's domain is of arbitrary size (empty for now)
-		- `self-reference`
-		- In order to be well-formed, a self-referential data definition must:
-			- Have at least one case without self reference (the base case(s))
-			- Have at least one case with self reference
-	- References to Other Data Definitions: references to other data definitions you have defined 
-		- `reference`
+	2. A possible structure definition (not until compound data) 
+	3. A type comment that defines type name and describes how to form data 
+	4. An interpretation to describe correspondence between information and data
+	5. One or more examples of the data
+	6. A template for a 1 argument function operating on data of this type
+		-  If the template is a cond, from a one-of type you MUST NOT:
+			- Delete the cond
+			- Reorder the QA pairs (e.g. swap "minor" and "adult" order)
+			- Edit the questions (check-expect)
+			- Delete any QA pair
+			- Add any QA pair
+		- Basically just edit the (...) in the template and nothing else
 - E.g. 
-	`(@htdd Status) ; HTDD tag`
-	
-	`; Purpose - interpret the legal status of a person`
-	
-	`(@dd-template-rules one-of                   ; Status 2 cases`
-	                    `atomic-distinct  ; "minor"`
-	                    `atomic-distinct) ; "adult"`
-	
-	`(define (fn-for-status s) ; Template created for data definition` 
-	  `(cond [(string=? s "minor") (...)]`
-	        `[(string=? s "adult") (...)]))`
-	
-	
-	
-	`(@htdf can-vote?) ; HTDF tag`
-	
-	`(@signature Status -> Boolean)                ; Signature (created our own data definition)`
-	
-	`; Purpose - produce true if a person with given status is eligible to vote`
-	
-	`(check-expect (can-vote? "minor") false)`
-	`(check-expect (can-vote? "adult") true)`
-	
-	`;(define (can-vote? s) true) ; Stub`
-	
-	`(@template-origin Status) ; Template tag`
-	
-	`(@template ; Template where "s" is string`
-	 `(define (can-vote? s)`   
-	   `(cond [(string=? s "minor") (...)]`
-	         `[(string=? s "adult") (...)])))`
-	
-	`(define (can-vote? s)`   
-	  `(cond [(string=? s "minor") false]`
-	        `[(string=? s "adult") true]))`
+```
+;DATA TYPE "GRADESTANDING" DEFINITION
+(@htdd GradeStanding)
+;GradeStanding is one of..
+     ;Natural (0-100)
+     ;"H"
+     ;"P"
+     ;"F"
+     ;"T"
+
+;Interpretation: a percentage grade or a standing 
+
+;Constraint: If natural then is in range [0, 100]
+
+;Examples where..
+     ;Purpose is to assist reader of the code
+     ;"GS" named based on data type definition name (GradeStanding)
+(define GS1 50)   ;Example
+(define GS2 "P")  ;Example
+
+(@dd-template-rules one-of ;HTDD template tag, using one-of data type 
+                    atomic-non-distinct ;Handles Natural case
+                    atomic-distinct     ;Handles "H" case
+                    atomic-distinct     ;Handles "P" case
+                    atomic-distinct     ;Handles "F" case
+                    atomic-distinct)    ;Handles "T" case
+
+(define (fn-for-grade-standing gs) ;HTDD template, takes 1 parameter (gs)
+  (cond [(number? gs)(... gs)]                            ;Handles Natural
+        [(and (string? gs)(string=? gs "H"))(...)]        ;Handles "H"
+        [(and (string? gs)(string=? gs "P"))(...)]        ;Handles "P" 
+        [(and (string? gs)(string=? gs "F"))(...)]        ;Handles "F" 
+        [else (...)]))                                    ;Handles "T"
+
+;FUNCTION "EXCELLENT?" DEFINITION
+(@htdf excellent?) ;HDTF tag
+
+(@signature GradeStanding -> Boolean) ;Signature using our created data type
+
+;Purpose: produces true if the grade/standing is >= 90
+
+;Stub where..
+     ;"gs" is input data
+     ;"true" is example of an output
+     ;To be commented out at a later time
+;(define (excellent? gs) true) 
+
+;Check-Expects
+(check-expect (excellent? 89) false)  ;Below boundary for Natural
+(check-expect (excellent? 90) true)   ;At boundary for Natural
+(check-expect (excellent? 91) true)   ;Above boundary for Natural
+(check-expect (excellent? "H") false) ;for "H"
+(check-expect (excellent? "H") false) ;for "P"
+(check-expect (excellent? "H") false) ;for "F"
+(check-expect (excellent? "H") false) ;for "T"
+
+(@template-origin GradeStanding) ;Template origin tag
+
+(@template                  ;HTDF template, takes 1 parameter (gs)
+ (define (excellent? gs) 
+   (cond [(number? gs)(... gs)]                            ;Handles Natural
+         [(and (string? gs)(string=? gs "H"))(...)]        ;Handles "H"
+         [(and (string? gs)(string=? gs "P"))(...)]        ;Handles "P" 
+         [(and (string? gs)(string=? gs "F"))(...)]        ;Handles "F" 
+         [else (...)])))                                   ;Handles "T"
+
+(define (excellent? gs)      ;Function body code, should only edit the (...)
+  (cond [(number? gs)(>= gs 90)]                          ;Handles Natural
+        [(and (string? gs)(string=? gs "H"))false]        ;Handles "H"
+        [(and (string? gs)(string=? gs "P"))false]        ;Handles "P" 
+        [(and (string? gs)(string=? gs "F"))false]        ;Handles "F" 
+        [else false]))                                    ;Handles "T"
+```
+- 
 
 
 
