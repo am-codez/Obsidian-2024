@@ -257,8 +257,10 @@
 				- If 2 images are same height, output first image (design choice)
 	3. Template and inventory 
 		- Template: body of the template is the outline of the function
-				`; (define (double n)(... n))`
-	4. Code the function body 
+			- It is a stub 
+			- E.g. 
+			  `(define (double n)(... n))`
+	1. Code the function body 
 		- Code body: shows why the template makes the function work (stepper)
 				`(define (double n)(* 2 n))`
 		  
