@@ -300,46 +300,11 @@
 
 ### **HtDD Recipe**
 - Used to define our own data types
-- Uses tags:
-	- `(@htdd ...)` where ... is Data Type Definition (e.g. GradeStanding)
-	- `(@dd-template-rules ...)` where ... is a Data Definition followed by specific data types for all cases
-	- Data Definitions:
-		- `atomic-non-distinct` :type predicate 
-			- Is String, Number, Boolean, Image?
-			- Use: 
-				- Intervals 
-					- Fixed numbers or naturals within a range, e.g. 0-100
-			- E.g. `(string=? x)(... x)`
-		- `atomic-distinct`: equality predicate with guard 
-			- Is this specific String, Number, Boolean, Image?
-			- Use: 
-				- Enumeration
-					- Fixed number of distinct items, e.g. "H", "P", "F", "T"
-					- Doesn't need examples as they would not be helpful to include
-			- E.g. `(string=? x "red")(...)`
-		- `self-reference`
-			- Use: information in the program's domain is of arbitrary size (empty for now)
-			- Form natural recursion with call to this type's template function
-			- In order to be well-formed, a self-referential data definition must:
-				- Have at least one case without self reference (the base case(s))
-				- Have at least one case with self reference
-			- E.g. `(fn-for-los (rest los))`
-		- `reference`
-			- Use: References to other data definitions you have defined 
-				- Call to other type's template function
-			- E.g. `(fn-for-lod (dir-subdirs d)  
-					`(fn-for-dir (first lod))`
-		- `compound`
-			- Use: $\geq{2}$ values naturally belong together 
-				- Position (x, y data)
-				- E.g. `(ball? x)`
-					  `(... (ball-x x) (ball-y x))`
-					  `(... (fn-for-ball (game-ball g))`
-	- Itemization: 
-		- Used to reference $\geq{2}$ subclasses, at least one of which is not a distinct data item 
-		- `(one-of (cond [(and(Q)A])`: pairs one expected input per subclass
-			- Requires the use of a guard for cond statements
-			- E.g. 0-100, 120-150, and "H", "P", "F", "T"- 
+- Tells us:
+	- How we are representing information in the problem domain (e.g. a light is red) using data in the program (e.g. 0)
+	- How we interpret data in the program (e.g. 0) using information in the program domain
+				  a light is red <--  --> 0 
+- Gives us exactly which inputs and outputs will be accepted by the function
 - Includes:
 	1. Tags
 		- `(@htdd ...)` where ... is Data Type Definition (e.g. GradeStanding)
@@ -347,7 +312,10 @@
 			- Where `...` is a Data Definition followed by specific data types for all cases
 	2. A possible structure definition (not until compound data) 
 	3. A type comment that defines type name and describes how to form data 
+	      - E.g. `;;CityName is String`
+		      - Which means "CityName is a new form of data is String (type)
 	4. An interpretation to describe correspondence between information and data
+		- E.g. `interp. the name of a city`
 	5. One or more examples of the data
 	6. A template for a 1 argument function operating on data of this type
 		-  If the template is a cond, from a one-of type you MUST NOT:
@@ -357,8 +325,127 @@
 			- Delete any QA pair
 			- Add any QA pair
 		- Basically just edit the (...) in the template and nothing else
+- E.g. Domain information, interp., examples, and steps to get appropriate htdd template
+  ![[Pasted image 20240917122014.png]]
+
+```
+What we need to represent/interpret..
+;;Information      Data
+;;Vancouver        "Vancouver" (string)
+;;Boston           "Boston" (string)
+
+;;Type comment, interpretation, examples
+;;CityName is String
+;;Interp. the name of a city
+(define CN1 "Boston")
+(define CN2) "Vancouver")
+
+(define (fn-for-city-name cn) ;;data template
+	(... cn)
+
+;;Template rules used:
+;; -atomic-non-distinct: String
+
+
+(@htdf best?) ;;htdf tag
+
+(@signature CityName -> Boolean) 
+
+;;Purpose, stub, check-expects
+;;Produce true if the given city is the best in the world is Tokyo
+(define (best? cn) false) ;;stub
+
+(check-expect (best? "Boston") false)
+(check-expect (best? "Tokyo") true)
+
+(@template (define (best? cn) ;;function template
+	(if (... cn) 
+		(... cn)
+		(... cn)))
+
+(define (best? cn))
+	(if (string=? cn "Tokyo") 
+		true
+		false))
+
+```
+- Data Definitions:
+	- `atomic-non-distinct` :type predicate 
+		- String
+			- Doesn't require definitions for each string 
+			- Examples are redundant for enumerations 
+		- Number
+		- Boolean
+		- Image
+		- Intervals 
+			- Fixed numbers or naturals within a range
+			- `[` indicates the number is included, whereas `(` means the number is not included
+				- E.g. `atomic-non-distinct is Natural (1, 20]` includes: 2, 3, 4... 19
+			- `Natural` indicates numbers are positive and full integer, whereas `Number` can be negative with decimal places
+				- E.g. `atomic-non-distinct is Number [1, 20]` includes: 1, 1.1, 1.2... 20
+		- E.g. `(string=? x)(... x)`
+	- `atomic-distinct`: equality predicate with guard 
+		- Is this specific String, Number, Boolean, Image?
+		- Use: 
+			- Enumeration
+				- Fixed number of distinct items, e.g. "H", "P", "F", "T"
+				- Doesn't need examples as they would not be helpful to include
+		- E.g. `(string=? x "red")(...)`
+	- `self-reference`
+		- Use: information in the program's domain is of arbitrary size (empty for now)
+		- Form natural recursion with call to this type's template function
+		- In order to be well-formed, a self-referential data definition must:
+			- Have at least one case without self reference (the base case(s))
+			- Have at least one case with self reference
+		- E.g. `(fn-for-los (rest los))`
+	- `reference`
+		- Use: References to other data definitions you have defined 
+			- Call to other type's template function
+		- E.g. `(fn-for-lod (dir-subdirs d)  
+				`(fn-for-dir (first lod))`
+	- `compound`
+		- Use: $\geq{2}$ values naturally belong together 
+			- Position (x, y data)
+			- E.g. `(ball? x)`
+				  `(... (ball-x x) (ball-y x))`
+				  `(... (fn-for-ball (game-ball g))`
+	- Itemization (aka enumeration): 
+		- Used to reference $\geq{2}$ subclasses, at least one of which is not a distinct data item 
+		- `(one-of (cond [(and(Q)A])`: pairs one expected input per subclass
+			- Requires the use of a guard for cond statements
+			- E.g. 0-100, 120-150, and "H", "P", "F", "T"- 
 		
-- E.g. 
+- E.g. String (atomic-distinct)
+```
+(require spd/tags) 
+(@htdd LetterGrade) ;;htdd tag
+
+;;Type comment, interp., examples:
+;;Domain information - LetterGrade is one of (3 subclasses):
+;;   -A
+;;   -B
+;;   -C
+;;interp. the letter grade in a course
+;;<enumeration examples redundant>
+
+;;Template rules used:
+;;-one of: 3 cases
+;;   -atomic distinct value: "A"
+;;   -atomic distinct value: "B"
+;;   -atomic distinct value: "C"
+
+  (@dd-template-rules one-of ;; dd template
+                      atomic-distinct
+                      atomic-distinct
+                      atomic-distinct)
+  
+  (define (fn-for-letter-grade lg) ;;data template (3 cases w/ accepted values)
+    (cond [(string=? lg "A") (...)] ;will always be string "A" so no lg
+          [(string=? lg "B") (...)] ;will always be string "B" so no lg 
+          [(string=? lg "C") (...)])) ;will always be string "C" so no lg
+```
+
+- E.g. String and Natural (atomic distinct and non-distinct)
 ```
 ;DATA TYPE "GRADESTANDING" DEFINITION
 (@htdd GradeStanding)
@@ -432,3 +519,9 @@
         [(and (string? gs)(string=? gs "F"))false]        ;Handles "F" 
         [else false]))                                    ;Handles "T"
 ```
+
+
+Screen coordinates:
+- ![[Pasted image 20240917125232.png]]
+	- X-value increases rightwards
+	- y-value increases downwards
