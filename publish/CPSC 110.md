@@ -329,10 +329,8 @@
 	- E.g. LetterGrade is one of 3 subclasses: A, B, C
 
 - Data Definitions:
-	- `atomic-non-distinct` :type predicate 
+	- `atomic-non-distinct` : type predicate 
 		- String
-			- Doesn't require definitions for each string 
-			- Examples are redundant for enumerations 
 		- Number
 		- Boolean
 		- Image
@@ -345,10 +343,6 @@
 		- E.g. `(string=? x)(... x)`
 	- `atomic-distinct`: equality predicate with guard 
 		- Is this specific String, Number, Boolean, Image?
-		- Use: 
-			- Enumeration
-				- Fixed number of distinct items, e.g. "H", "P", "F", "T"
-				- Doesn't need examples as they would not be helpful to include
 		- E.g. `(string=? x "red")(...)`
 	- `self-reference`
 		- Use: information in the program's domain is of arbitrary size (empty for now)
@@ -368,11 +362,18 @@
 			- E.g. `(ball? x)`
 				  `(... (ball-x x) (ball-y x))`
 				  `(... (fn-for-ball (game-ball g))`
-	- Itemization (aka enumeration): 
-		- Used to reference $\geq{2}$ subclasses, at least one of which is not a distinct data item 
-		- `(one-of (cond [(and(Q)A])`: pairs one expected input per subclass
-			- Requires the use of a guard for cond statements
-			- E.g. 0-100, 120-150, and "H", "P", "F", "T"- 
+	- Itemization and Enumeration: 
+		- Itemization:
+			- Used to reference $\geq{2}$ subclasses, at least one of which is not a distinct data item 
+		- Enumeration:
+			- Used to reference $\geq{2}$ subclasses (e.g. 0-100, 120-150, and "H", "P")
+			- Does not require examples as its implicit 
+		- `(one-of <subclass> <subclass>)`
+			- Where enumeration has at least 1 non-distinct data item 
+			- Requires:
+				- Examples (e.g. `(define GN1 100)`, etc)
+				- The use of a guard for cond statements (e.g. `(string?)`)
+			
 		
 - E.g. String (atomic-distinct)
 ```
