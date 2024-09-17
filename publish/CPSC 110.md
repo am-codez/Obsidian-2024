@@ -330,10 +330,8 @@
 
 - Data Definitions:
 	- `atomic-non-distinct` : type predicate 
-		- String
-		- Number
-		- Boolean
-		- Image
+		- If not specific match: String, Number, Boolean, and Image
+			- Everyone is allowed through, even if we have stricter criteria 
 		- Intervals 
 			- Fixed numbers or naturals within a range
 			- `[` indicates the number is included, whereas `(` means the number is not included
