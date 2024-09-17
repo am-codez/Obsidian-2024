@@ -186,7 +186,20 @@
 		   - Next step in evaluation would be 
 			 `(cond [true "Charlie"]
 					`[(= 6 6) "Dog"])`
-
+		- E.g. 
+		  `(cond [(> 1 2) "bigger"]`
+		        `[(= 1 2) "equal"]`
+		        `[(< 1 2) "smaller"])`
+			- Order of evaluation:
+				1. Evaluates `[(> 1 2) "bigger"]`
+					- Results in `(cond [false "bigger"]`
+							        `[(= 1 2) "equal"]`
+							        `[(< 1 2) "smaller"])`
+				2. Evaluates `[(= 1 2) "equal"]`
+					- Results in `[false "equal"]
+					         `[(< 1 2) "smaller"])``
+				3. Evaluates `[(< 1 2) "smaller"]`
+					- Results in `[true "smaller"`
 - E.g. 
 	`(require 2htdp/image) ;;required image tag`
 
