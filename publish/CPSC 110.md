@@ -372,7 +372,7 @@
 			- Where enumeration has at least 1 non-distinct data item 
 			- Requires:
 				- Examples (e.g. `(define GN1 100)`, etc)
-				- The use of a guard for cond statements (e.g. `(string?)`)
+				- The use of a guard for cond statements (e.g. `(string?)` or `(number?`) to prevent strings from being exposed to `<=` predicates, for example
 			
 		
 - E.g. String (atomic-distinct)
