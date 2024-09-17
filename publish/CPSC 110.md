@@ -326,49 +326,8 @@
 			- Add any QA pair
 		- Basically just edit the (...) in the template and nothing else
 - E.g. Domain information, interp., examples, and steps to get appropriate htdd template
-  ![[Pasted image 20240917122014.png]]
+	- E.g. LetterGrade is one of 3 subclasses: A, B, C
 
-```
-What we need to represent/interpret..
-;;Information      Data
-;;Vancouver        "Vancouver" (string)
-;;Boston           "Boston" (string)
-
-;;Type comment, interpretation, examples
-;;CityName is String
-;;Interp. the name of a city
-(define CN1 "Boston")
-(define CN2) "Vancouver")
-
-(define (fn-for-city-name cn) ;;data template
-	(... cn)
-
-;;Template rules used:
-;; -atomic-non-distinct: String
-
-
-(@htdf best?) ;;htdf tag
-
-(@signature CityName -> Boolean) 
-
-;;Purpose, stub, check-expects
-;;Produce true if the given city is the best in the world is Tokyo
-(define (best? cn) false) ;;stub
-
-(check-expect (best? "Boston") false)
-(check-expect (best? "Tokyo") true)
-
-(@template (define (best? cn) ;;function template
-	(if (... cn) 
-		(... cn)
-		(... cn)))
-
-(define (best? cn))
-	(if (string=? cn "Tokyo") 
-		true
-		false))
-
-```
 - Data Definitions:
 	- `atomic-non-distinct` :type predicate 
 		- String
@@ -445,6 +404,50 @@ What we need to represent/interpret..
           [(string=? lg "C") (...)])) ;will always be string "C" so no lg
 ```
 
+- E.g. String (atomic non-distinct)
+```
+(require spd/tags)
+;;What we need to represent/interpret..
+;;Information      Data
+;;Vancouver        "Vancouver" (string)
+;;Boston           "Boston" (string)
+
+(@htdd CityName) ;;htdd tag
+
+;;Type comment, interpretation, examples:
+;;CityName is String (atomic-non-distinct)
+;;Interp. the name of a city
+(define CN1 "Boston")
+(define CN2 "Vancouver")
+
+(@dd-template-rules atomic-non-distinct) ;;dd type(s)
+
+(define (fn-for-city-name cn) ;;data template
+	(... cn))
+
+
+(@htdf best?) ;;htdf tag
+
+(@signature CityName -> Boolean) 
+
+;;Purpose, stub, check-expects
+;;Produce true if the given city is the best in the world is Tokyo
+;(define (best? cn) false) ;;stub
+
+(check-expect (best? "Boston") false)
+(check-expect (best? "Tokyo") true)
+
+(@template (define (best? cn) ;;function template
+	(if (... cn) 
+		(... cn)
+		(... cn))))
+
+(define (best? cn)
+	(if (string=? cn "Tokyo") 
+		true
+		false))
+```
+		
 - E.g. String and Natural (atomic distinct and non-distinct)
 ```
 ;DATA TYPE "GRADESTANDING" DEFINITION
