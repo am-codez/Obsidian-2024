@@ -362,15 +362,19 @@
 				  `(... (fn-for-ball (game-ball g))`
 	- Itemization and Enumeration: 
 		- Itemization:
-			- Used to reference $\geq{2}$ subclasses, at least one of which is not a distinct data item 
-		- Enumeration:
-			- Used to reference $\geq{2}$ subclasses (e.g. 0-100, 120-150, and "H", "P")
-			- Does not require examples as its implicit 
-		- `(one-of <subclass> <subclass>)`
-			- Where enumeration has at least 1 non-distinct data item 
+			- Used to reference $\geq{2}$ subclasses (e.g. , at least one of which is NOT a distinct data item 
+			- E.g. 0-100, 120-150, and "H", "P"
+			- If given subtype is the last category listed, we don't need a guard 
+				- Not necessary though
 			- Requires:
 				- Examples (e.g. `(define GN1 100)`, etc)
 				- The use of a guard for cond statements (e.g. `(string?)` or `(number?`) to prevent strings from being exposed to `<=` predicates, for example
+		- Enumeration:
+			- Used to reference $\geq{2}$ subclasses 
+			- E.g. "H", "P", "T", "F"
+			- Does not require examples as its implicit 
+		- `(one-of <subclass> <subclass>)`
+			- Where enumeration has at least 1 non-distinct data item 
 			
 		
 - E.g. String (atomic-distinct)
