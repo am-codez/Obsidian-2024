@@ -522,3 +522,4 @@
 			$=(2)^2$
 			$=4$
 		- Therefore at $x=2$, k needs to equal 4 at $x=2$, so we add a point there
+- 
