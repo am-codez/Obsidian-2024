@@ -375,6 +375,7 @@
 			- Requires:
 				- Examples (e.g. `(define GN1 100)`, etc)
 				- The use of a guard for cond statements (e.g. `(string?)` or `(number?`) to prevent strings from being exposed to `<=` predicates, for example
+				  ![[Pasted image 20240917173225.png]]
 		- Enumeration:
 			- Used to reference $\geq{2}$ subclasses 
 			- E.g. "H", "P", "T", "F"
