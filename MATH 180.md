@@ -526,9 +526,10 @@
 	- E.g. At time t=3s, she reaches point x=1cm. At t=5s, she reaches x=5cm
 		- Slope (speed) using points (3, 1) and (5, 5):
 			- $\frac{5-1}{(5-3)}=2cm/s$
-		- Can then solve for speed at t= so at $(3, 1)$
 		- Using slope intercept formula ($y=mx+b$), we solve for b (displacement) 
-			- Where slope $(m) = 2cm/s$, point at (3, 1)
+			- $(y_{2}-y_{1}=m(x_{2}-x_{1})+b)$
+			- Where slope $(m) = 2cm/s$, at $point (3, 1)$
 				$x_{2}-x_{1} = m(t_{2}-t_{1})$
 				$x_{2}-1 = 2(t_{2}-3)$
 				$x=2t-5$
+			
