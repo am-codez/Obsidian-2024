@@ -250,11 +250,12 @@
 				`(check-expect (double 3) 6)`
 				`(check-expect (double 4.2) 8.4)`
 		- Thorough tests (at least 2) show cases using all types of inputs for bugs
-		- Need to test above, at, and below the boundaries
-			- String
-		- Decide on what to do in weird cases 
-			- E.g. `(= (image-height i1)(image-height i2)) i1)` 
-				- If 2 images are same height, output first image (design choice)
+			- If using built-in data types as input (e.g. string), need to test above, at, and below the boundaries
+				- E.g. `(= (image-height i1)(image-height i2)) i1)` 
+						- If 2 images are same height, output first image (design choice)
+					 `(> (image-height i1)(image-height i2)) i1)` 
+					 `(< (image-height i1)(image-height i2)) i2)` 
+			- If using own-built data types as input (e.g. SeatNum), only need to test mid-point for non-distinct (e.g. 5 i)
 	3. Template and inventory 
 		- Template: body of the template is the outline of the function
 			- It is a stub 
@@ -263,6 +264,9 @@
 	1. Code the function body 
 		- Code body: shows why the template makes the function work (stepper)
 				`(define (double n)(* 2 n))`
+		- Decide on what to do in weird cases 
+			- E.g. `(= (image-height i1)(image-height i2)) i1)` 
+				- If 2 images are same height, output first image (design choice)
 		  
 - E.g. Design a function, called image>?, that takes two images and determines whether the first is larger than the second.`
 ```
