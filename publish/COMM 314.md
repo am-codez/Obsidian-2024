@@ -79,3 +79,10 @@
 	- Vaccine mandates for UBC students to attend class
 		- "My body my choice" seems context specific
 		- UBC's consequences, outcomes, and goals/values should be considered
+- Anchoring trap: biased by first fact you learn about a topic
+	- E.g. one person has idea for topic and is vocal about it, so people latch onto it
+- UI has become much less intuitive but we have (skew-morphic design)
+	- Status quo trap: we tend to work within constrains, first person to suggest going against status quo in sea of people going along with things (e.g. omission sin)
+		- Presenting status quo is an option important, not just change
+	- Sunk cost trap: recognising when idea was a bad one 
+		- People don't like to admit mistake 
