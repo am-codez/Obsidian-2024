@@ -323,6 +323,11 @@
 		- E.g. `interp. the name of a city`
 	5. One or more examples of the data
 		- Need as many examples as there are cases
+			- E.g. `;;CarSpeed is Number [0, 200]`
+				- 3 data examples needed: 
+				  `(define CS1 0)`
+				  `(define CS2 100)`
+				  `(define CS3 200)`
 		- E.g. `(define CN1 "Tokyo")`
 	6. A template for a 1 argument function operating on data of this type
 		- `(@template (define (fn-for-<something> x)())) ` 
