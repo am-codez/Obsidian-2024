@@ -389,7 +389,58 @@
 		- `(one-of <subclass> <subclass>)`
 			- Where enumeration has at least 1 non-distinct data item 
 			
-		
+- E.g. Number, String (non-atomic-distinct, atomic distinct, and atomic-distinct)
+```
+(@htdd Altitude) ; htdd tag
+;; Altitude is one of:
+;;  - "pre-launch"
+;;  - Number
+;;  - "post-flight"
+;; interp. Altitude of rocket. Before launch, in meters above launch
+;;         pad, after flight has ended.
+;; CONSTRAINT: when a number is > 0
+
+;; DD Examples (doesn't constrain shit)
+(define A0 "pre-launch")
+(define A1 37.5)
+(define A2 "post-flight")
+
+(@dd-template-rules one-of ; data types
+                    atomic-distinct ; "pre-launch"
+                    atomic-non-distinct ; any n > 0
+                    atomic-distinct) ; "post-flight"
+
+(define (fn-for-altitude a) ; data template
+  (cond [(and (string? a)(string=? a "pre-launch")) (...)]
+        [(number? a) (... a)]
+        [else (...)]))
+
+
+(@htdf inflight?) ; htdf tag
+(@signature Altitude -> Boolean) ; signature
+(@template-origin Altitude) ; template origin tag
+
+;; Consume Altitude and produce true if rocket in flight
+
+; (define (inflight? a) false) ; stub
+
+(check-expect (inflight? "pre-launch") false)
+(check-expect (inflight? "post-flight") false)
+(check-expect (inflight? 37.5) true)
+
+(@template (define (fn-for-altitude a) ; fx template
+  (cond [(and (string? a)(string=? a "pre-launch")) (...)]
+        [(number? a) (... a)]
+        [else (...)])))
+
+;; We are not restraining our fx in a way that makes our program bulletproof, we put constraints in DD assuming user won't even try
+(define (inflight? a) ; fx
+  (cond [(and (string? a)(string=? a "pre-launch")) false]
+        [(number? a) true]
+        [else false]))
+
+```
+
 - E.g. String (atomic-distinct)
 ```
 (require spd/tags) 

@@ -72,3 +72,10 @@
 - Investor trust:
     - Apple isn’t an advertising firm like Google
     - Investors will invest in companies they trust who will innovate
+
+- Complete analysis  
+	- Choice to maintain morals or employment 
+		- E.g. price fixing because manager asks 
+	- Vaccine mandates for UBC students to attend class
+		- "My body my choice" seems context specific
+		- UBC's consequences, outcomes, and goals/values should be considered
