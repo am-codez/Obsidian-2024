@@ -79,6 +79,7 @@
 	- Vaccine mandates for UBC students to attend class
 		- "My body my choice" seems context specific
 		- UBC's consequences, outcomes, and goals/values should be considered
+	- ![[Pasted image 20240918134929.png]]
 - Anchoring trap: biased by first fact you learn about a topic
 	- E.g. one person has idea for topic and is vocal about it, so people latch onto it
 - Status quo trap: we tend to work within constrains, first person to suggest going against status quo in sea of people going along with things (e.g. omission sin)
