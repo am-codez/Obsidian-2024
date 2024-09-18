@@ -300,6 +300,7 @@
 
 ### **HtDD Recipe**
 - Used to define our own data types
+- Typically, we have multiple functions using the same data definition 
 - Tells us:
 	- How we are representing information in the problem domain (e.g. a light is red) using data in the program (e.g. 0)
 	- How we interpret data in the program (e.g. 0) using information in the program domain
@@ -317,18 +318,19 @@
 	4. An interpretation to describe correspondence between information and data
 		- E.g. `interp. the name of a city`
 	5. One or more examples of the data
+		- Need as many examples as there are cases
+		- E.g. `(define CN1 "Tokyo")`
 	6. A template for a 1 argument function operating on data of this type
-		-  If the template is a cond, from a one-of type you MUST NOT:
+		- `(@template (define (fn-for-<something> x)())) ` 
+		- If the template is a cond, from a one-of type you MUST NOT:
 			- Delete the cond
 			- Reorder the QA pairs (e.g. swap "minor" and "adult" order)
 			- Edit the questions (check-expect)
 			- Delete any QA pair
 			- Add any QA pair
 		- Basically just edit the (...) in the template and nothing else
-- E.g. Domain information, interp., examples, and steps to get appropriate htdd template
-	- E.g. LetterGrade is one of 3 subclasses: A, B, C
 
-- Data Definitions:
+- Data Definitions (the data allowed to pass to our function):
 	- `atomic-non-distinct` : type predicate 
 		- If not specific match: String, Number, Boolean, and Image
 			- Everyone is allowed through, even if we have stricter criteria 
