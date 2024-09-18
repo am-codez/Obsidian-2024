@@ -523,12 +523,12 @@
 			$=4$
 		- Therefore at $x=2$, k needs to equal 4 at $x=2$, so we add a point there
 - Slopes:
-	- E.g. At time t=3s, she reaches point x=3cm. At t=5s, she reaches x=5cm
-		- Speed:
+	- E.g. At time t=3s, she reaches point x=1cm. At t=5s, she reaches x=5cm
+		- Slope (speed) using points (3, 1) and (5, 5):
 			- $\frac{5-1}{(5-3)}=2cm/s$
-		- slope = speed so at $(3, 1)$
-			- Using y=mx+b, we solve for b to get displacement 
-				- Where slope = 2cm/s, point at (3, 1)
-			$x_{2}-x_{1} = m(t_{2}-t_{1})$
-			$x_{2}-1 = 2(t_{2}-3)$
-			$x=2t-5$
+		- Can then solve for speed at t= so at $(3, 1)$
+		- Using slope intercept formula ($y=mx+b$), we solve for b (displacement) 
+			- Where slope $(m) = 2cm/s$, point at (3, 1)
+				$x_{2}-x_{1} = m(t_{2}-t_{1})$
+				$x_{2}-1 = 2(t_{2}-3)$
+				$x=2t-5$
