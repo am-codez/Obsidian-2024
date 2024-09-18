@@ -81,8 +81,16 @@
 		- UBC's consequences, outcomes, and goals/values should be considered
 - Anchoring trap: biased by first fact you learn about a topic
 	- E.g. one person has idea for topic and is vocal about it, so people latch onto it
-- UI has become much less intuitive but we have (skew-morphic design)
-	- Status quo trap: we tend to work within constrains, first person to suggest going against status quo in sea of people going along with things (e.g. omission sin)
-		- Presenting status quo is an option important, not just change
-	- Sunk cost trap: recognising when idea was a bad one 
-		- People don't like to admit mistake 
+- Status quo trap: we tend to work within constrains, first person to suggest going against status quo in sea of people going along with things (e.g. omission sin)
+	- Presenting status quo is an option important, not just change
+	- UI has become much less intuitive but we have (skew-morphic design)
+- Sunk cost trap: recognising when idea was a bad one 
+	- People don't like to admit mistake 
+- Confirming evidence trap: we are engaged by information that supports our existing instincts or POV and avoid information that contradicts
+	- Find devil's advocate (authentic) not playing the role 
+	- Be honest about motivates - are you gathering info to make smart choice or confirm evidence of what you want to do 
+- Framing trap: "would you like to win $100 or lose $100?" vs "would you like to lose $100 or lose $100"
+	- Should pose problem in a neutral, redundant way
+- Overconfidence trap: something goes well once so we get too confident doing it next time so we might not do well if problem w
+- Prudence trap: over-engineer a product until perfect instead of getting not perfect out and improving it later
+- Recallability trap: 
