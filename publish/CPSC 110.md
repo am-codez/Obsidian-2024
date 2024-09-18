@@ -320,8 +320,9 @@
 	      - E.g. `;;CityName is String`
 		      - Which means "CityName is a new form of data is String (type)
 	4. An interpretation to describe correspondence between information and data
+		- Constraints: meant to tell other user to not pass invalid values into code, so we don't need to make code bullet proof
 		- E.g. `interp. the name of a city`
-	5. One or more examples of the data
+	1. One or more examples of the data
 		- Need as many examples as there are cases
 			- E.g. `;;CarSpeed is Number [0, 200]`
 				- 3 data examples needed: 
