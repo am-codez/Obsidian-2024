@@ -181,7 +181,7 @@
 			- Remembering that $\sin(x)=0$ at $n\pi$ 
 	- Check is denominator is continuous
 		- $1\leq \cos(x)\leq{1}$
-		- Adding 2, we get $1\leq_{2}+\cos(x)\leq{1}$
+		- Adding 2, we get $1\leq2+\cos(x)\leq{1}$
 	- Therefore yes, it's continuous
 	
 ### Graphing Exponential Functions
@@ -339,17 +339,26 @@
 - Helps us describe behaviour or function close to some point of interest, if as x approaches a certain value, it never reaches a particular y-value
 - Helpful for functions that are not continuous or not defined somewhere
 - $\lim_{x \to a} f(x) = L$
-	- Limit of f(x) as x approaches a is L if approaching a limit from the left and right, we say the limit exists
+	- Limit of f(x) as x approaches a is L if approaching a limit from the left and right, we say the limit exists and L is not in the domain of the function
+		- Also referred to as a two-sided limit
+		- However, we can have data points at the limit
+			- If not, we would say f(a) does exist
 	- $\lim_{x \to a+}$: approaching x-value from right (above)
 	- $\lim_{x \to a-}$: approaching x-value from left (below)
 - ![[Pasted image 20240913224803.png]]
 - **Continuity**
 	- Continuous function: a graph that has no breaks in the shape of a graph, meaning you could draw a whole function without lifting your pencil
 		- No rational function is a continuous function
+		- Conditions for $f(x)$ to be continuous at a point 
+			- $f(a)$ is defined
+			- $\lim_{ x \to a }f(x)$ exists
+			- $\lim_{ x \to a }f(x)=f(a)$ 
 	- Discontinuity types:
 		- Jump: limit from the left and right exist but aren't equal
 		- Infinite: at least one-sided limit is infinite
-		- Removable: limit exists but isn't equal to the function 
+		- Removable: limit exists but isn't equal to the function
+			- I.e. undefined at that x-value 
+	- E.g. ![[Pasted image 20240919120700.png]]
 	- E.g. ![[Pasted image 20240914021544.png]]
 		- $\lim_{ x \to 4^+ }=-\infty$:
 			- infinite (goes to infinity so can't continue here)
@@ -367,12 +376,17 @@
 		- Right-hand and left-hand limits differ or only one exist
 			- E.g.
 			  ![[Pasted image 20240913210032.png]]
-				- $\lim_{ x \to 1^- }=1$
-				- $\lim_{ x \to 1^+ }=2$
+				- $\lim_{ x \to 1^- }=2$
+					- Approaches $y=2$
+				- $\lim_{ x \to 1^+ }=-2$
+					- Gets close to $y= -2$
+				-  $\lim_{ x \to 1}=$ does not exist
+					- Right and left limits differ
+				
 		- The graph oscillates
 			- E.g. $\sin(x)$
 			
-- **Limits at an x-value (Vertical Asymptotes)**
+- **Limits at an x-value**
 	- **For continuous functions** 
 		- Power functions, polynomials, etc 
 		- You can compute limits by substituting in x-value, i.e. $\lim_{ x \to a }$ $f(a)$
@@ -427,15 +441,36 @@
 
 - **Piece-wise function**
 	- Function defined by several pieces rather than a single formula 
-		- ![[Pasted image 20240912193606.png]]
 	- We evaluation function at a particular value of x on a case-by-case basis 
 		![[Pasted image 20240912191538.png]]
 		- Filled circle: at point (x, y), the function takes on the value $f(x) = y$ meaning at point (3, 9) --> $f(3) = 9$
 		- Empty circle (hole): not on the graph of $y = f(x)$ meaning at point (3, 6) --> $f(3) \neq 6$
-		- As we move closer to $x=3$, function moves closer and closer to 6 but doesn't reach it because there's an asymptote (undefined if we try to compute)
+		- As we move closer to $x=3$ from the right and left, function moves closer and closer to $y=6$ but doesn't reach it because there's an asymptote 
 			- ![[Pasted image 20240912193303.png]]
-			- Thus we can say $\lim_{ x \to 3 } f(x) = 6$
-				- However $f(3)=9$
+		- Thus we can say $\lim_{ x \to 3 } f(x) = 6$
+			- However $f(3)=9$
+			
+	- E.g. ![[Pasted image 20240919093159.png]]
+$$\begin{align}
+f(-2)=11 \\
+f(-1)= 11 \\
+f(0)=10 \\ 
+ \\
+f(8)=2\\
+f(9)=1 \\ 
+f(10)=27.2 \\
+\end{align}$$
+		$\lim_{ x \to -1^- }=11$
+		- $x<-1=11$
+		$\lim_{ x \to -1^+ }=11$
+		- $-1\leq x<9=-x+10 \to -(-1)+10=11$
+		$\lim_{ x \to -1 }=11$
+		$\lim_{ x \to 9^- }=1$
+		- $-x+10 \to -(9)+10=1$
+		$\lim_{ x \to 9^+ }=10$
+		- $10e^{x-9} \to 10e^{9-9} =10$
+		$\lim_{ x \to 9 }=DNE$
+			
 				
 - E.g. Consider $\frac{x-1}{x+3}$
 	- What is $\lim_{ x \to \infty }f(x)$?
@@ -443,10 +478,12 @@
 			$=\\lim_{ x \to \infty }\frac{x}{x}$
 			$=\lim_{ x \to \infty }1$
 	- What is $\lim_{ x \to -\infty }f(x)$?
+		- Left-hand limit
 		- Large negative x-value
 			$=\\lim_{ x \to -\infty }\frac{x}{x}$
 			$=\lim_{ x \to -\infty }1$
 	- What is $\lim_{ x \to -3^+}f(x)$? 
+		- Right-hand limit
 		- Approaching from right so we know x is close to -3 but a bit bigger, so can evaluate at x=-2.9 to determine limit 
 		  ![[Pasted image 20240913132213.png]]
 			$=\frac{-2.9-1}{-2.9+3}$
@@ -467,7 +504,22 @@
 	 - Functions can cross their horizontal asymptote 
 		 - E.g. $y=(e^x)(\sin x)$)![[Pasted image 20240914003131.png]]
 - Horizontal asymptotes
-	- Computed similarly to limits
+	- Similar to looking at $\lim_{ x \to \infty }$
+	- Look at largest numerator and denominator and cancel out common factors
+		- If either is a rational number, take + or -
+			- E.g. $\frac{x-5}{(\sqrt{ 4x^{2+3x+2 })}}$
+				- Unable to factor expression
+				$\frac{x}{\sqrt{ 4x^{2 }}}$
+				$=\frac{x}{\pm(2x)}$
+				$=\pm\frac{{1}}{2}$
+	- E.g. $\frac{x^2-12x-15}{13-13x}$
+		- Dominating factor
+			$\frac{x^2}{-13x}$
+		- Cancelling out common factors
+			$\frac{x}{-13}$
+		- Simplify
+			$\frac{1}{-13}$
+			
 	- E.g. $\frac{3x^4}{1+x^{4}}$
 		- Dominating factors
 			$=\frac{3x^4}{x^4}$
@@ -476,15 +528,15 @@
 		![[Pasted image 20240914001832.png]]
 - Vertical asymptotes
 	- Required conditions:
-		- $\lim_{ x \to a }=\infty$ or $\lim_{ x \to a }=-\infty$
-		- Either:
-			- $\lim_{ x \to a^- }=\infty$ or $\lim_{ x \to a^- }=-\infty$
-			- $\lim_{ x \to a^+ }=\infty$ or $\lim_{ x \to a^+ }=-\infty$
+		- Two sided limit with at least 1 side approaching $+\infty$ or $-\infty$
+			- $lim_{ x \to a }=\infty$ or $\lim_{ x \to a }=-\infty$
 	- Symmetrical
-		- E.g. $y=\frac{1}{x^2}$ which has limit of $+\infty$ as x approaches 0 from both sides![[Pasted image 20240914004423.png]]
+		- E.g. $y=\frac{1}{x^2}$ which has limit of $+\infty$ as x approaches 0 from both sides
+		  ![[Pasted image 20240914004423.png]]
 	- Asymmetrical
 		- E.g. $y=log(x)$
 		
+- E.g. ![[Pasted image 20240919105411.png]]
 - E.g. Consider $y=e^{\frac{1}{x}}$ 
 	- Vertical asymptotes:
 		- We can look first at what happens to $\frac{1}{x}$ as x approaches 0
@@ -500,7 +552,7 @@
 	- Horizontal asymptotes:
 		- We can look first at what happens to $\frac{1}{x}$ as x approaches $\pm \infty$
 			- Approaching from the right
-			  $lim_{ x \to \infty^+} \frac{1}{x}=0^+$ 
+			  $lim_{ x \to \infty^+} \frac{1}{x}=0$ 
 				- When x-value becomes very large and positive, $\frac{1}{x}$ quickly approaches 0
 				- Thus $e^{\frac{1}{x}}$ --> $e^{0} = 1$
 			- Approaching from the left 
@@ -532,4 +584,10 @@
 				$x_{2}-x_{1} = m(t_{2}-t_{1})$
 				$x_{2}-1 = 2(t_{2}-3)$
 				$x=2t-5$
-			
+
+$$*\begin{align}
+(x^2)
+\end{align}$$
+
+
+(x+2)(x+4) / x(x+8)(x+2) -> (x+4)/(x)(x+8)

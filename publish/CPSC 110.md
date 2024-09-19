@@ -595,3 +595,6 @@ Screen coordinates:
 - ![[Pasted image 20240917125232.png]]
 	- X-value increases rightwards
 	- y-value increases downwards
+
+### Compound Data
+- >=2 items of information that naturally belong together 
