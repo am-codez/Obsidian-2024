@@ -26,3 +26,7 @@
 7. ![[Pasted image 20240919115543.png]]
 
 8. ![[Pasted image 20240919121638.png]]
+
+9. ![[Pasted image 20240919145609.png]]
+
+10. ![[Pasted image 20240919145810.png]]
