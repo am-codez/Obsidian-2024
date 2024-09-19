@@ -119,4 +119,4 @@
 		- Whatever does a mind’s job (role or function) is a mind, no matter what it’s made of, or how it does this
 	
 - Academic Psychology 
-	- 
+
