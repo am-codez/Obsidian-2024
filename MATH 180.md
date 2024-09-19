@@ -384,6 +384,11 @@ c(3)+6=c(3)^2-6 \\
 \frac{12}{6} =c \\
 2=c
 \end{align}$$
+- E.g. Give the interval(s) where $h(k)= \sqrt{ 5-k }+\sqrt{ k+4 }$ is continuous
+	$\sqrt{ 5-k }$ where $k\neq{5}$ because can't take sqrt $\leq{0}$
+	$\sqrt{ k+4 }$ where $k\neq{-4}$ because can't take sqrt $\leq{0}$
+	Therefore $(-4, 5)$
+	
 - Discontinuity types:
 	- Jump: limit from the left and right exist but aren't equal
 	- Infinite: at least one-sided limit is infinite
