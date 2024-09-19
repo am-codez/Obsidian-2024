@@ -353,23 +353,54 @@
 			- $f(a)$ is defined
 			- $\lim_{ x \to a }f(x)$ exists
 			- $\lim_{ x \to a }f(x)=f(a)$ 
-	- Discontinuity types:
-		- Jump: limit from the left and right exist but aren't equal
-		- Infinite: at least one-sided limit is infinite
-		- Removable: limit exists but isn't equal to the function
-			- I.e. undefined at that x-value 
-	- E.g. ![[Pasted image 20240919120700.png]]
-	- E.g. ![[Pasted image 20240914021544.png]]
-		- $\lim_{ x \to 4^+ }=-\infty$:
-			- infinite (goes to infinity so can't continue here)
-		- x=2: 
-			- removable (just doesn't equal function at point)
-			- x approaches 3 from both sides but function defined at that point is y=4
-		- x=3 
-			- jump (doesn't exist so can't equal it there)
-			- redefined function at that point by setting $f(3)=3$
-		- x=4 
-			- limit does not exist here, so function is discontinuous here
+		- E.g. Make $g(x)$ continuous by determining value(s) that make $g$ continuous
+		  ![[Pasted image 20240919142913.png]]
+			  $$\begin{align}
+x^{2}+2=4x-1 \\
+Roots  \\
+x^2+2-4x+1=0 \\
+x^2-4x+3=0 \\
+(x+3)(x-1)=0 \\
+roots:x=1,-3 \\
+\end{align}$$
+			- Determining 2 d values that make $f(x)$ continuous
+$$\begin{align}
+d=3 \\
+(3)^2+2=11 \\
+(4)(3)-1=11 \\
+ \\
+ d=1 \\
+(1)^2+2=11 \\
+(1)(3)-1=11 
+\end{align}$$
+- E.g. ![[Pasted image 20240919144359.png]]
+$$\begin{align}
+cb+6 \\
+cb^2-6 \\ \\
+c(3)+6=c(3)^2-6 \\
+3c+6=9c-6 \\
+6+6=9c-3c \\
+12=6c \\
+\frac{12}{6} =c \\
+2=c
+\end{align}$$
+- Discontinuity types:
+	- Jump: limit from the left and right exist but aren't equal
+	- Infinite: at least one-sided limit is infinite
+	- Removable: limit exists but isn't equal to the function
+		- I.e. undefined at that x-value 
+- E.g. ![[Pasted image 20240919120700.png]]
+- E.g. ![[Pasted image 20240914021544.png]]
+	- $\lim_{ x \to 4^+ }=-\infty$:
+		- infinite (goes to infinity so can't continue here)
+	- x=2: 
+		- removable (just doesn't equal function at point)
+		- x approaches 3 from both sides but function defined at that point is y=4
+	- x=3 
+		- jump (doesn't exist so can't equal it there)
+		- redefined function at that point by setting $f(3)=3$
+	- x=4 
+		- limit does not exist here, so function is discontinuous here
 			
 - **Rules**
 	- **When limit does not exist** 
