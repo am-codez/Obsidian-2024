@@ -564,7 +564,7 @@
 		- Because $e^\frac{1}{x}$ approaches $\pm \infty$ as x approach 1, we have a horizontal asymptote at $y=1$
 
     
-### Lines and slopes
+### Lines and slopes (Linear Functions)
 - Point: $(x, y)$
 - Slope-intercept form 
 	- Written as $y=mx+b$
@@ -594,3 +594,18 @@
 			$x_{2}-x_{1} = m(t_{2}-t_{1})$
 			$x_{2}-1 = 2(t_{2}-3)$
 			$x=2t-5$
+
+### Tangent Lines
+- Curve at a point in a line that intersects the curve at that point and whose slope captures the instantaneous rate of change 
+- Pick point on line for continuous function, will look like a line
+- Same slope
+- E.g. $x^2$ and $2x-1$
+- ![[Pasted image 20240920120924.png]]
+- Can have multiple tangent lines 
+- ![[Pasted image 20240920121119.png]]
+	- Draw line touching curve, with same slope at same point, but doesn't intersect curve 
+- Need to find slope of tangent line to calculate tangent line (instantaneous rate of change of f(x)) of f(x)
+- Secant line: straight line connecting 2 points on graph of function
+- If given 2 points (x, y), how would we find slope of secant line passing through 2 points?
+	- $slope= \frac{y_{1}-y_{0}}{x_{1}-x_{0}}$
+- 
