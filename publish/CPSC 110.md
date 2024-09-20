@@ -597,7 +597,8 @@ Screen coordinates:
 	- y-value increases downwards
 
 ### Big Bang Mechanism
-- Supports complex structure
+- Supports complex structure by integrating and coordinating many functionalities together 
+- Polymorphic: works for any type of world state but all x have to be the same type
 - Interactive programs:
 	- Change state saved
 	- Display changes
@@ -609,6 +610,11 @@ Screen coordinates:
 		- Data definition (e.g. Cat) to represent cat's position (x-coor) where Cat is Number
 		- Function (e.g. Cat -> Cat) to increase cat position using SPEED at each clock tick (i.e. if SPEED = -9, cat moves right to left)
 		- Primitive (place-image) places first image (i.e. cat) center at given x-y coor of second image (i.e. background scene image)
+		- Big Bang: wires render-cat and next-cat together, using tick and draw functions
+			- Expressions taken:
+				- 0: evaluates initial world state, cat represented by number
+				- on-tick next-cat (Cat -> Cat): each time clock ticks, call next-cat with current world state to get next world state
+				- to-draw render-cat (Cat -> Image): each time clock ticks, call render-cat with current world state to draw the current world state
 - 
 ### Compound Data
 - >=2 items of information that naturally belong together 
