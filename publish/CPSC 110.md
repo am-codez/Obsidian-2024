@@ -597,6 +597,58 @@ Screen coordinates:
 	- y-value increases downwards
 
 ### Big Bang Mechanism
+- Template
+```
+	(require spd/tags)
+(require 2htdp/image)
+(require 2htdp/universe)
+
+;; My world program  (make this more specific)
+
+(@htdw WS) ;(give WS a better name)
+
+;; =================
+;; Constants:
+
+
+;; =================
+;; Data definitions:
+
+(@htdd WS)
+;; WS is ... 
+
+
+
+;; =================
+;; Functions:
+
+(@htdf main)
+(@signature WS -> WS)
+;; start the world with ...
+;; 
+
+(@template-origin htdw-main)
+
+(define (main ws)
+  (big-bang ws           ; WS
+    (on-tick   tock)     ; WS -> WS
+    (to-draw   render)   ; WS -> Image
+    (on-mouse  ...)      ; WS Integer Integer MouseEvent -> WS
+    (on-key    ...)))    ; WS KeyEvent -> WS
+
+
+(@htdf tock)
+(@signature WS -> WS)
+;; produce the next ...
+;; !!!
+(define (tock ws) ws)
+
+(@htdf render)
+(@signature WS -> Image)
+;; render ... 
+;; !!!
+(define (render ws) empty-image)
+```
 - Supports complex structure by integrating and coordinating many functionalities together 
 - Polymorphic: works for any type of world state but all x have to be the same type
 - Interactive programs:
