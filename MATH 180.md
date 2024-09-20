@@ -68,6 +68,14 @@
 			$(2x+3)(2x-1)$
 	
 ### Finding Expression from Graph or Values
+- Finding the range a function
+	- E.g. $y=\frac{1}{1+e^{ax+b}}$
+		- We can simplify this by looking at what would happen if we use a large and small x-value
+			- Using an arbitrarily large x-value:
+				- $\frac{1}{1+e^{10000}}$ for example, will mean we have a large denominator, so our y-value will be very small, approaching 0 (horizontal asymptote)
+			- Using an arbitrarily small x-value:
+				- $\frac{1}{1+e^{0000.1}}$ for example, will mean we have a small denominator, so our y-value will approach 1 (horizontal asymptote)
+		- If we use a large a value, our curve will just be steeper ![[Pasted image 20240919191408.png]]
 - E.g. Solve for a and c if x-intercepts = -2, 3 and y-intercept = 12
 	- Finding c using known knowledge that there's a point at (0, 12)
 		$12= a(0)^{2}+ 2(0) + c$
@@ -146,13 +154,13 @@
 	
 - Even and odd power functions
 	  ![[Pasted image 20240912084905.png]]
-		- Even functions: 
-			- $y = x^{n}$ --> $+\infty$
-			- These functions have a local minimum near the origin, which is a point such that the value of f is larger at all sufficiently close points
-				- ![[Pasted image 20240912091917.png]] 
-		- Odd functions:
-			-  $y = x^{n}$ --> $-\infty$
-			- These functions are one-to-one, meaning each value of y is obtained from a unique value of x, and vise versa
+	- Even functions: 
+		- $y = x^{n}$ --> $+\infty$
+		- These functions have a local minimum near the origin, which is a point such that the value of f is larger at all sufficiently close points
+			- ![[Pasted image 20240912091917.png]] 
+	- Odd functions:
+		-  $y = x^{n}$ --> $-\infty$
+		- These functions are one-to-one, meaning each value of y is obtained from a unique value of x, and vise versa
 			
  - Sketching graphs - polynomial graphs can be obtained by combining its power function components 
 	 - E.g. consider $y = p(x) = x^{3} + ax$ 
@@ -192,53 +200,14 @@
 - When $a > 1$, as the base increases, the function becomes steeper 
 - Functions with negative exponent integer are expressed as $f(x)= \frac{1}{x^{n}}$
 - ![[Pasted image 20240912173103.png]]
-- Stretches:
-	- Horizontal expansion by factor of 2
-		- $y = 6^\frac{x}{2}$
-	- Horizontal compression by factor of 2
-		- $y = 6^{2x}$
-	- Vertical expansion by factor of 2
-		- $y = (2)6^x$
-	- Vertical compression by factor of ½ 
-		- $y = (\frac{1}{2})6^x$
-- Translations: 
-	- Translation 2 units right/left
-		- $y = 6^{x -/+ 2}$
-	- Translation 2 units down/up
-		- $y = 6^x -/+ 2$
-- Reflections: 
-	- Y-axis
-		- Reflection of $y = 4^x$ is $y = 4^{-x}$ (same as writing $y = \frac{1}{4}^x$).
-	- X-axis
-		- Reflection of $y = 6^x$ is $y = -6^x$.
-	- Y = x line
-		- Reflection of $y = ab^x$ is  $x = ab^y$
 - E.g. Consider $y = e^{x}- x$
 	- At $x = 0$: $e^{x} = e^0 = 1$ 
 	- Larger negative x-value: $-x$ dominates at a relatively steep curve
 	- Large positive x-value: $e^x$ dominates at a relatively steep curve
 	- ![[Pasted image 20240912174102.png]]
 	
-- Exponent laws:
-	- Power of a power property
-		- This property states that when multiplying two powers with the same base, we add the exponents
-		- Can raise any element in an expression to the power of 1 and not change the expression
-		- E.g. $(5^6)(5^2)= 5^8$
-		- E.g. $(49^{x-1})(7^{2x-3})$ 
-	          $= ([7^2]^{x-1})(7^{2x-3})$  
-	          $= (7^{2x-2})(7^{2x-3})$ 
-	          $= 7^{4x-5}$
-	- Quotient of powers property
-		- This property states that when dividing two powers with the same base, we subtract the exponents
-		- E.g. $\frac{5^6}{5^2} = 5^4$
-	- Rational exponent property 
-		- E.g. $5^{\frac{6}{2}} = (^2\sqrt5)^6$
-		- E.g. $P(t) = Po(7)^{\frac{t}{5}}$
-		             $= Po(5\sqrt7)^t$
-		             $= Po(7^{\frac{1}{5}})^t$  
-		             $= Po(1.48)$
 		             
- ### Special Functions
+### Special Functions
  - $e^x$
 	 - ![[Pasted image 20240913123625.png]]
 	 - Only positive y-values 
@@ -324,139 +293,133 @@
 			- Approaching from right of $\frac{\pi}{2}$
 	 
  - Eg. if $tan(\theta)= \frac{4}{3},0\leq\theta\leq\frac{\pi}{2}$, find $\sin(\theta)$ and $\cos(\theta)$?
-		- opp (y-value) = 3 
-		- adj (x-value) = 4
-		- Finding hyp
-			$r^2=a^2+b^2$
-			$r^2=(4)^2+(3)^2$
-			$r^2=16+9$
-			$r=\sqrt{25}$
-			$r=5$
-		- $\cos(\theta)=\frac{4}{5}$
-		- $\sin(\theta)=\frac{3}{5}$
+	- opp (y-value) = 3 
+	- adj (x-value) = 4
+	- Finding hyp
+		$r^2=a^2+b^2$
+		$r^2=(4)^2+(3)^2$
+		$r^2=16+9$
+		$r=\sqrt{25}$
+		$r=5$
+	- $\cos(\theta)=\frac{4}{5}$
+	- $\sin(\theta)=\frac{3}{5}$
 
 ### Limits
-- Helps us describe behaviour or function close to some point of interest, if as x approaches a certain value, it never reaches a particular y-value
-- Helpful for functions that are not continuous or not defined somewhere
 - $\lim_{x \to a} f(x) = L$
-	- Limit of f(x) as x approaches a is L if approaching a limit from the left and right, we say the limit exists and L is not in the domain of the function
-		- Also referred to as a two-sided limit
-		- However, we can have data points at the limit
-			- If not, we would say f(a) does exist
-	- $\lim_{x \to a+}$: approaching x-value from right (above)
-	- $\lim_{x \to a-}$: approaching x-value from left (below)
-- ![[Pasted image 20240913224803.png]]
-- **Continuity**
-	- Continuous function: a graph that has no breaks in the shape of a graph, meaning you could draw a whole function without lifting your pencil
-		- All piece-wise functions are not "continuous over their domain"
-			- You can have functions not defined at a point or discontinued at a point, but it's still technically "continuous over their domain" 
-		- No rational function is a continuous function
-		- Conditions for $f(x)$ to be continuous at a point 
-			- $f(a)$ is defined
-			- $\lim_{ x \to a }f(x)$ exists
-			- $\lim_{ x \to a }f(x)=f(a)$ 
-	- E.g. Make $g(x)$ continuous by determining value(s) that make $g$ continuous
-	  ![[Pasted image 20240919142913.png]]
-		  $$\begin{align}
-x^{2}+2=4x-1 \\
-Roots  \\
-x^2+2-4x+1=0 \\
-x^2-4x+3=0 \\
-(x+3)(x-1)=0 \\
-roots:x=1,-3 \\
-\end{align}$$
-		- Determining $d$ values that make $f(x)$ continuous
-$$\begin{align}
-d=3 \\
-(3)^2+2=11 \\
-(4)(3)-1=11 \\
- \\
- d=1 \\
-(1)^2+2=11 \\
-(1)(3)-1=11 
-\end{align}$$
-- E.g. ![[Pasted image 20240919144359.png]]
-$$\begin{align}
-cb+6 \\
-cb^2-6 \\ \\
-c(3)+6=c(3)^2-6 \\
-3c+6=9c-6 \\
-6+6=9c-3c \\
-12=6c \\
-\frac{12}{6} =c \\
-2=c
-\end{align}$$
-- E.g. Find all k values such that   ![[Pasted image 20240919182453.png]]
-	- If $x\neq{2}$: no continuities as denominator would be 0
-	- At $x=2$: should check for continuity by seeing if $f(x)=k$
-		- If we plug it in as it, we would get 0/0
-		- Factor first
-			$=\frac{x^3-2x^2}{x-2}$
-			$=\frac{x^2(x-2)}{x-2}$
-			$=x^2$
-		- Plugging in $x=2$
-			$=(2)^2$
-			$=4$
-		- Therefore at $x=2$, k needs to equal 4 at $x=2$, so we add a point there
-	- If $x\neq{2}$: no continuities as denominator would be 0
-	- At $x=2$: should check for continuity by seeing if $f(x)=k$
-		- If we plug it in as it, we would get 0/0
-		- Factor first
-			$=\frac{x^3-2x^2}{x-2}$
-			$=\frac{x^2(x-2)}{x-2}$
-			$=x^2$
-		- Plugging in $x=2$
-			$=(2)^2$
-			$=4$
-		- Therefore at $x=2$, k needs to equal 4 at $x=2$, so we add a point there
+	- It is the y-value that is approached as a given x-value from both the right and left side (aka a two-sided limit)
+	- If you have a discontinuity (e.g. hole [undefined], jump, etc) at that given x-value
+		- The function will be considered not continuous there 
+		- You won't have a limit there 
+	- $\lim_{x \to a+}$: approaching given x-value from right 
+		- Can tell us if there is a vertical asymptote or hole (removeable discontinuity) at given x-value
+	- $\lim_{x \to a-}$: approaching given x-value from left 
+		-  Can tell us if there is a vertical asymptote or hole (removeable discontinuity) at given x-value
+	- $\lim_{x \to +\infty}$: approaching arbitrarily large and positive x-value
+		- Can tell us if there is a horizontal asymptote and its location
+	- $\lim_{x \to -\infty}$: approaching arbitrarily large and negative x-value
+		- Can tell us if there is a horizontal asymptote and its location
+	- E.g. Evaluate the limit $\lim_{ x \to -6 } \frac{\frac{\frac{1}{6}+1}{x}}{6+x}$ 
+		- We can simplify this by putting fraction over 1, so that we can multiply both fractions together 
+			$=\frac{\frac{\frac{\frac{1}{6}+1}{x}}{6+x}}{1}$
+			$=(\frac{1}{6}+\frac{1}{x}) (\frac{1}{6+x})$ 
+		- Add fractions on left (get same base then add numerators)
+			$=(\frac{x}{6x}+\frac{6}{6x}) (\frac{1}{6+x})$ 
+			$=(\frac{6+x}{6x}) (\frac{1}{6+x})$ 
+		- Cancel out common terms 
+			$=(\frac{1}{6x})(1)$
+		- Simplify 
+			$=\frac{1}{6x}$
+		- Substitute in given x-value
+			$=\frac{1}{6(-6)}$
+			$=-\frac{1}{36}$ is our limit at x= -6
+			
+### When limit does not exist 
+- Right-hand and left-hand limits differ or only one exist
+	- E.g.
+	  ![[Pasted image 20240913210032.png]]
+		- $\lim_{ x \to 1^- }=2$
+			- Approaches $y=2$
+		- $\lim_{ x \to 1^+ }=-2$
+			- Gets close to $y= -2$
+		-  $\lim_{ x \to 1}=$ does not exist
+			- Right and left limits differ
+			
+	- The graph oscillates
+		- E.g. $\sin(x)$
+		
+### Continuity
+- Continuous function: a graph that has no breaks in the shape of a graph, meaning you could draw a whole function without lifting your pencil
+	- All piece-wise functions are not "continuous over their domain" meaning there's a discontinuity somewhere 
+	- You can have functions not defined at a point or discontinued at a point, but it's still technically "continuous over their domain" 
+- Conditions for $f(x)$ to be continuous at a point 
+	- $f(a)$ is defined
+	- $\lim_{ x \to a }f(x)$ exists
+	- $\lim_{ x \to a }f(x)=f(a)$ 
+	
+- Discontinuity types:
+	- Jump: limit from the left and right exist but aren't equal
+	- Infinite: at least one-sided limit is infinite
+	- Removable (hole): limit exists but isn't equal to the function
+		- I.e. undefined at that x-value 
+		- E.g. $\frac{x+7}{x^{2}-49}$ isn't defined at x= -7 because denominator would be 0
+	- E.g.
+	   ![[Pasted image 20240914021544.png]]
+		- Infinite ($\lim_{ x \to 4^+ }=-\infty$) approaching $x=4$: goes to infinity as its a vertical asymptote
+			- However, we have a value at $x=4$ as $f(4)=0$ here
+		- Removable at $x=2$: approaches $y=3$ from both sides but function is not defined at $x=2$ (hole)
+		- Jump at $x=3$: different limit approaching from right and left 
+
 - E.g. Give the interval(s) where $h(k)= \sqrt{ 5-k }+\sqrt{ k+4 }$ is continuous
 	$\sqrt{ 5-k }$ where $k\neq{5}$ because can't take sqrt $\leq{0}$
 	$\sqrt{ k+4 }$ where $k\neq{-4}$ because can't take sqrt $\leq{0}$
 	Therefore $(-4, 5)$
 	
-- Discontinuity types:
-	- Jump: limit from the left and right exist but aren't equal
-	- Infinite: at least one-sided limit is infinite
-	- Removable: limit exists but isn't equal to the function
-		- I.e. undefined at that x-value 
-- E.g. ![[Pasted image 20240919120700.png]]
-- E.g. ![[Pasted image 20240914021544.png]]
-	- $\lim_{ x \to 4^+ }=-\infty$:
-		- infinite (goes to infinity so can't continue here)
-	- x=2: 
-		- removable (just doesn't equal function at point)
-		- x approaches 3 from both sides but function defined at that point is y=4
-	- x=3 
-		- jump (doesn't exist so can't equal it there)
-		- redefined function at that point by setting $f(3)=3$
-	- x=4 
-		- limit does not exist here, so function is discontinuous here
+- E.g. Evaluate the limits ![[Pasted image 20240920091513.png|200]]
+	- $\lim_{ x \to -1^+ }$
+		- Using $3x^{2}+5m$, plug in x-value to determine right limit 
+			$=3(-1)^{2}+5m$
+			$=3+5m$
+	- $\lim_{ x \to -1^{-}}$
+		- Using $7x^3-2m$
+			$=7(-1)^{3}-2m$
+			$=-7-2m$
+	- Therefore limit doesn't exist and there's a discontinuity at $x=-1$. To make function continuous there, we can solve for m
+		$5m+3=-2m-7$
+		$5m+2m=-7-3$
+		$7m=-10$
+		$m=\frac{-10}{7}$ 
+		
+- E.g. Make $f(x)$ continuous by determining value(s) that make $f$ continuous at $x=-4$
+   ![[Pasted image 20240920092426.png|200]]
+	- Determine limit approaching from left using $b-2x$
+		  $=b-2(-4)$
+		  $=b+8$
+	  - Determine limit approaching from right using $-\frac{96}{x-b}$
+		  $=-\frac{96}{-4-b}$
+		  $=\frac{96}{4+b}$
+	- To find point of intersection between 2 pieces of the function, we can use an equality statement to then create a composite function and determine roots where y=0
+			$b+8= \frac{96}{4+b}$
+		- Simplify
+			$(b+8)(4+b)=96$
+			$4b+b^2+32+8b=96$
+			$4b+b^2+32+8b-96=0$
+			$b^2+12b-64=0$
+		- Factor
+			$(b+16)(b-4)=0$
+		- Therefore since there are 2 roots, b= -16, 4
 			
-- **Rules**
-	- **When limit does not exist** 
-		- Right-hand and left-hand limits differ or only one exist
-			- E.g.
-			  ![[Pasted image 20240913210032.png]]
-				- $\lim_{ x \to 1^- }=2$
-					- Approaches $y=2$
-				- $\lim_{ x \to 1^+ }=-2$
-					- Gets close to $y= -2$
-				-  $\lim_{ x \to 1}=$ does not exist
-					- Right and left limits differ
 				
-		- The graph oscillates
-			- E.g. $\sin(x)$
-			
 - **Limits at an x-value**
-	- **For continuous functions** 
+	- **For simple functions** 
 		- Power functions, polynomials, etc 
 		- You can compute limits by substituting in x-value, i.e. $\lim_{ x \to a }$ $f(a)$
 		- E.g. $\lim_{ x \to 5 }$ $(x^{3}-x)$
 				$= ((5)^{2}- 5)$
 				$= 120$
-	- **For non-continuous functions** 
+	- **For complex functions** 
 		- We must do more to calculate the limit
 		- Composite Functions
+			- If one or both functions don't have a limit (two-sided limit) at given x-value, then the composite function won't have a limit at the given x-value
 			- Addition
 				- $\lim_{ x \to a } (f(x) + g(x)) = F + G$
 				- Limit is sum of the limits
@@ -497,8 +460,6 @@ c(3)+6=c(3)^2-6 \\
 			 - Pull out largest factors, we get numerator: $5x$ and denominator: $\sqrt{ 4x^{2 }}= 2x$
 			 - However, since we're taking $\lim_{ x -\to \infty }$, $2x$ becomes $|x|=-x$, therefore..
 				 $\lim_{ x \to -\infty} \frac{-2x}{5}$
-	- **Familiar functions**
-		- Have limits we can see based on the appearance of a graph
 
 - **Piece-wise function**
 	- Function defined by several pieces rather than a single formula 
@@ -510,28 +471,6 @@ c(3)+6=c(3)^2-6 \\
 			- ![[Pasted image 20240912193303.png]]
 		- Thus we can say $\lim_{ x \to 3 } f(x) = 6$
 			- However $f(3)=9$
-			
-	- E.g. ![[Pasted image 20240919093159.png]]
-$$\begin{align}
-f(-2)=11 \\
-f(-1)= 11 \\
-f(0)=10 \\ 
- \\
-f(8)=2\\
-f(9)=1 \\ 
-f(10)=27.2 \\
-\end{align}$$
-		$\lim_{ x \to -1^- }=11$
-		- $x<-1=11$
-		$\lim_{ x \to -1^+ }=11$
-		- $-1\leq x<9=-x+10 \to -(-1)+10=11$
-		$\lim_{ x \to -1 }=11$
-		$\lim_{ x \to 9^- }=1$
-		- $-x+10 \to -(9)+10=1$
-		$\lim_{ x \to 9^+ }=10$
-		- $10e^{x-9} \to 10e^{9-9} =10$
-		$\lim_{ x \to 9 }=DNE$
-			
 				
 - E.g. Consider $\frac{x-1}{x+3}$
 	- What is $\lim_{ x \to \infty }f(x)$?
@@ -640,7 +579,6 @@ f(10)=27.2 \\
 		- $m$: slope
 		- $x_{1}$ and $x_{0}$: distinct points on the line
 		- $b$: displacement 
-	- 
 - Slopes:
 	- Steepness of curve
 	- m=0: indicates flat line
