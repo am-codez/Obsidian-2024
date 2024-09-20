@@ -32,3 +32,5 @@
 10. ![[Pasted image 20240919145810.png]]
 
 11. ![[Pasted image 20240919152226.png]]
+
+12. ![[Pasted image 20240919174901.png]]

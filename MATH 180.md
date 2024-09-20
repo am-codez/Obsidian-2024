@@ -348,8 +348,9 @@
 - ![[Pasted image 20240913224803.png]]
 - **Continuity**
 	- Continuous function: a graph that has no breaks in the shape of a graph, meaning you could draw a whole function without lifting your pencil
+		- All piece-wise functions are not "continuous over their domain"
+			- You can have functions not defined at a point or discontinued at a point, but it's still technically "continuous over their domain" 
 		- No rational function is a continuous function
-		- Means that the function is continuous over its domain
 		- Conditions for $f(x)$ to be continuous at a point 
 			- $f(a)$ is defined
 			- $\lim_{ x \to a }f(x)$ exists
