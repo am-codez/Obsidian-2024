@@ -355,9 +355,9 @@
 			- $f(a)$ is defined
 			- $\lim_{ x \to a }f(x)$ exists
 			- $\lim_{ x \to a }f(x)=f(a)$ 
-		- E.g. Make $g(x)$ continuous by determining value(s) that make $g$ continuous
-		  ![[Pasted image 20240919142913.png]]
-			  $$\begin{align}
+	- E.g. Make $g(x)$ continuous by determining value(s) that make $g$ continuous
+	  ![[Pasted image 20240919142913.png]]
+		  $$\begin{align}
 x^{2}+2=4x-1 \\
 Roots  \\
 x^2+2-4x+1=0 \\
@@ -365,7 +365,7 @@ x^2-4x+3=0 \\
 (x+3)(x-1)=0 \\
 roots:x=1,-3 \\
 \end{align}$$
-			- Determining $d$ values that make $f(x)$ continuous
+		- Determining $d$ values that make $f(x)$ continuous
 $$\begin{align}
 d=3 \\
 (3)^2+2=11 \\
@@ -386,6 +386,29 @@ c(3)+6=c(3)^2-6 \\
 \frac{12}{6} =c \\
 2=c
 \end{align}$$
+- E.g. Find all k values such that   ![[Pasted image 20240919182453.png]]
+	- If $x\neq{2}$: no continuities as denominator would be 0
+	- At $x=2$: should check for continuity by seeing if $f(x)=k$
+		- If we plug it in as it, we would get 0/0
+		- Factor first
+			$=\frac{x^3-2x^2}{x-2}$
+			$=\frac{x^2(x-2)}{x-2}$
+			$=x^2$
+		- Plugging in $x=2$
+			$=(2)^2$
+			$=4$
+		- Therefore at $x=2$, k needs to equal 4 at $x=2$, so we add a point there
+	- If $x\neq{2}$: no continuities as denominator would be 0
+	- At $x=2$: should check for continuity by seeing if $f(x)=k$
+		- If we plug it in as it, we would get 0/0
+		- Factor first
+			$=\frac{x^3-2x^2}{x-2}$
+			$=\frac{x^2(x-2)}{x-2}$
+			$=x^2$
+		- Plugging in $x=2$
+			$=(2)^2$
+			$=4$
+		- Therefore at $x=2$, k needs to equal 4 at $x=2$, so we add a point there
 - E.g. Give the interval(s) where $h(k)= \sqrt{ 5-k }+\sqrt{ k+4 }$ is continuous
 	$\sqrt{ 5-k }$ where $k\neq{5}$ because can't take sqrt $\leq{0}$
 	$\sqrt{ k+4 }$ where $k\neq{-4}$ because can't take sqrt $\leq{0}$
@@ -523,7 +546,6 @@ f(10)=27.2 \\
 	- What is $\lim_{ x \to -3^+}f(x)$? 
 		- Right-hand limit
 		- Approaching from right so we know x is close to -3 but a bit bigger, so can evaluate at x=-2.9 to determine limit 
-		  ![[Pasted image 20240913132213.png]]
 			$=\frac{-2.9-1}{-2.9+3}$
 			$=\frac{-3.9}{0.1}$
 			$=-3$ 
@@ -540,7 +562,8 @@ f(10)=27.2 \\
 - **Rules**
 	- Can have infinite number of vertical asymptotes (e.g. tan(x)) but only 0-2 horizontal asymptotes
 	 - Functions can cross their horizontal asymptote 
-		 - E.g. $y=(e^x)(\sin x)$)![[Pasted image 20240914003131.png]]
+		 - E.g. $y=(e^x)(\sin x)$
+		   ![[Pasted image 20240914003131.png|200]]
 - Horizontal asymptotes
 	- Similar to looking at $\lim_{ x \to \infty }$
 	- Look at largest numerator and denominator and cancel out common factors
@@ -563,14 +586,14 @@ f(10)=27.2 \\
 			$=\frac{3x^4}{x^4}$
 		- Cancelling out common factors
 			$=3$
-		![[Pasted image 20240914001832.png]]
+		![[Pasted image 20240914001832.png|200]]
 - Vertical asymptotes
 	- Required conditions:
 		- Two sided limit with at least 1 side approaching $+\infty$ or $-\infty$
 			- $lim_{ x \to a }=\infty$ or $\lim_{ x \to a }=-\infty$
 	- Symmetrical
 		- E.g. $y=\frac{1}{x^2}$ which has limit of $+\infty$ as x approaches 0 from both sides
-		  ![[Pasted image 20240914004423.png]]
+		  ![[Pasted image 20240914004423.png|200]]
 	- Asymmetrical
 		- E.g. $y=log(x)$
 		
@@ -600,32 +623,34 @@ f(10)=27.2 \\
 		- Because $e^\frac{1}{x}$ approaches $\pm \infty$ as x approach 1, we have a horizontal asymptote at $y=1$
 
     
-- ![[Pasted image 20240913134625.png]]
-	- If $x\neq{2}$: no continuities as denominator would be 0
-	- At $x=2$: should check for continuity by seeing if $f(x)=k$
-		- If we plug it in as it, we would get 0/0
-		- Factor first
-			$=\frac{x^3-2x^2}{x-2}$
-			$=\frac{x^2(x-2)}{x-2}$
-			$=x^2$
-		- Plugging in $x=2$
-			$=(2)^2$
-			$=4$
-		- Therefore at $x=2$, k needs to equal 4 at $x=2$, so we add a point there
+### Lines and slopes
+- Point: $(x, y)$
+- Slope-intercept form 
+	- Written as $y=mx+b$
+		- y: f(x) output, $y$-value
+		- $m$: slope
+		- $x$: point on a line
+		- $b$: displacement 
+- Point-slope form 
+	- A line passing through a point with a slope
+	- Written as $y_{1}-y_{0}=m(x_{1}-x_{0})+b$
+		- $y_{1}$ and $y_{0}$: $f(x)$ output
+		- $m$: slope
+		- $x_{1}$ and $x_{0}$: distinct points on the line
+		- $b$: displacement 
+	- 
 - Slopes:
-	- E.g. At time t=3s, she reaches point x=1cm. At t=5s, she reaches x=5cm
-		- Slope (speed) using points (3, 1) and (5, 5):
-			- $\frac{5-1}{(5-3)}=2cm/s$
-		- Using slope intercept formula ($y=mx+b$), we solve for b (displacement) 
-			- $(y_{2}-y_{1}=m(x_{2}-x_{1})+b)$
-			- Where slope $(m) = 2cm/s$, at $point (3, 1)$
-				$x_{2}-x_{1} = m(t_{2}-t_{1})$
-				$x_{2}-1 = 2(t_{2}-3)$
-				$x=2t-5$
-
-$$*\begin{align}
-(x^2)
-\end{align}$$
-
-
-(x+2)(x+4) / x(x+8)(x+2) -> (x+4)/(x)(x+8)
+	- Steepness of curve
+	- m=0: indicates flat line
+	- + increases right and - increases left
+	- Calculated with $\frac{\nabla rise}{\nabla run}$
+- E.g. At time t=3s, she reaches point x=1cm
+     At t=5s, she reaches x=5cm
+	- Slope (speed) using points (3, 1) and (5, 5):
+		- $\frac{5-1}{(5-3)}=2cm/s$
+	- Using slope intercept formula ($y=mx+b$), we solve for b (displacement) 
+		- $(y_{2}-y_{1}=m(x_{2}-x_{1})+b)$
+		- Where slope $(m) = 2cm/s$, at $point (3, 1)$
+			$x_{2}-x_{1} = m(t_{2}-t_{1})$
+			$x_{2}-1 = 2(t_{2}-3)$
+			$x=2t-5$
