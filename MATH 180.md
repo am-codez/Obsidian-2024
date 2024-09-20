@@ -565,7 +565,8 @@ f(10)=27.2 \\
 		 - E.g. $y=(e^x)(\sin x)$
 		   ![[Pasted image 20240914003131.png|200]]
 - Horizontal asymptotes
-	- Similar to looking at $\lim_{ x \to \infty }$
+	- Similar to looking at $\lim_{ x \to \infty }$ is finding horizontal asymptotes
+	- Holes (removable discontinuity): can be factored out of function, left with horizontal asymptotes
 	- Look at largest numerator and denominator and cancel out common factors
 		- If either is a rational number, take + or -
 			- E.g. $\frac{x-5}{(\sqrt{ 4x^{2+3x+2 })}}$
@@ -588,6 +589,7 @@ f(10)=27.2 \\
 			$=3$
 		![[Pasted image 20240914001832.png|200]]
 - Vertical asymptotes
+	- Limits at points looks for removeable discontinuities and vertical asymptotes
 	- Required conditions:
 		- Two sided limit with at least 1 side approaching $+\infty$ or $-\infty$
 			- $lim_{ x \to a }=\infty$ or $\lim_{ x \to a }=-\infty$
