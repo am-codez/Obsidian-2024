@@ -349,6 +349,7 @@
 - **Continuity**
 	- Continuous function: a graph that has no breaks in the shape of a graph, meaning you could draw a whole function without lifting your pencil
 		- No rational function is a continuous function
+		- Means that the function is continuous over its domain
 		- Conditions for $f(x)$ to be continuous at a point 
 			- $f(a)$ is defined
 			- $\lim_{ x \to a }f(x)$ exists
@@ -363,7 +364,7 @@ x^2-4x+3=0 \\
 (x+3)(x-1)=0 \\
 roots:x=1,-3 \\
 \end{align}$$
-			- Determining 2 d values that make $f(x)$ continuous
+			- Determining $d$ values that make $f(x)$ continuous
 $$\begin{align}
 d=3 \\
 (3)^2+2=11 \\
