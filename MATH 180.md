@@ -637,3 +637,12 @@
 	- $L(x)=e^{0}+ (1)(x)$
 	- $L(x)=1+x$ so very close to x=0, y-value here should be y-value of tangent line 
 ![[Pasted image 20240920132045.png]]
+Function is differentiable at x=a if f'(a) exists
+- Functions can be defined but not differentiable at a given x-value
+- Won't be differentiable approaching a vertical asymptote 
+- Can't take tangent line (slope) of vertical line 
+	- $f'(x) \to \infty$ so DNE
+- If point is sharp, we can't take slope there (slope of function on one side differs from slope on other side)
+	- $f'(x) DNE$
+- If point is at a discontinuations (e.g. jump where limit doesn't exist), we can't take slope there
+	- ![[Pasted image 20240920135101.png]]
