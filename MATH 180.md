@@ -636,3 +636,4 @@
 	- $L(x)=f(0)+f^{1}(0)(x-0)$
 	- $L(x)=e^{0}+ (1)(x)$
 	- $L(x)=1+x$ so very close to x=0, y-value here should be y-value of tangent line 
+![[Pasted image 20240920132045.png]]
