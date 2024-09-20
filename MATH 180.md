@@ -595,6 +595,15 @@
 			$x_{2}-1 = 2(t_{2}-3)$
 			$x=2t-5$
 
+### Derivatives
+- Derivative of a function $f'(x)$
+	- Equal to the slope of the tangent line if a limit exists at a given x-value 
+	- $f'(x)= \lim_{ x \to 0 }\frac{f(x+h)-f(x)}{h}$
+	- Slope of the tangent drawn to that curve at a given point
+- It also represents the instantaneous rate of change at a point on the function
+- Thus, whenever we see the phrases like "slope/gradient", "rate of change", "velocity (given the displacement)", "maximize/minimize" etc then it means that the concept of derivatives is involved
+- Slope of secant line 
+	- $m= \frac{f(x+h)-f(x)}{h}$
 ### Tangent Lines
 - Curve at a point in a line that intersects the curve at that point and whose slope captures the instantaneous rate of change 
 - Pick point on line for continuous function, will look like a line
@@ -608,4 +617,22 @@
 - Secant line: straight line connecting 2 points on graph of function
 - If given 2 points (x, y), how would we find slope of secant line passing through 2 points?
 	- $slope= \frac{y_{1}-y_{0}}{x_{1}-x_{0}}$
-- 
+- ![[Pasted image 20240920123744.png]]
+	- h= distance between 2 points on secant line 
+	- Basically bring h closer and closer to x=0 so that slope of secant line equals slope of tangent line (only goes through 1 point)
+	- We can do that by evaluating f(x) at x=1 here
+	- Derivative is the slope of the tangent line 
+	- f(1)^1 is derivative of f(x) at x=1
+	- ![[Pasted image 20240920124343.png]]
+	- Can't use y=mx+b because we don't know y-intercept
+		- But point-slope form is more useful in most cases because we don't always know this
+- ![[Pasted image 20240920125126.png]]
+- ![[Pasted image 20240920125417.png]]
+- E.g. find linear approximation 
+	- Slope of tangent line should be same as slope of function at given x-value
+	- equation of tangent line is $f^{1}(0)=1$
+	- L(x) is linear appoximation (good guess but not perfect)
+		- Taking this near x=0
+	- $L(x)=f(0)+f^{1}(0)(x-0)$
+	- $L(x)=e^{0}+ (1)(x)$
+	- $L(x)=1+x$ so very close to x=0, y-value here should be y-value of tangent line 
