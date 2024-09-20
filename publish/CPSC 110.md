@@ -596,5 +596,19 @@ Screen coordinates:
 	- X-value increases rightwards
 	- y-value increases downwards
 
+### Big Bang Mechanism
+- Supports complex structure
+- Interactive programs:
+	- Change state saved
+	- Display changes
+	- Keyboard and/or mouse affects behaviour
+- Tock: measured in ticks per second 
+- Cat Move
+	- ![[Pasted image 20240920100245.png|300]]
+	- Using:
+		- Data definition (e.g. Cat) to represent cat's position (x-coor) where Cat is Number
+		- Function (e.g. Cat -> Cat) to increase cat position using SPEED at each clock tick (i.e. if SPEED = -9, cat moves right to left)
+		- Primitive (place-image) places first image (i.e. cat) center at given x-y coor of second image (i.e. background scene image)
+- 
 ### Compound Data
 - >=2 items of information that naturally belong together 
