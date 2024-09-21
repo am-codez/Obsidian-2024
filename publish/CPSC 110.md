@@ -668,5 +668,6 @@ Screen coordinates:
 				- on-tick next-cat (Cat -> Cat): each time clock ticks, call next-cat with current world state to get next world state
 				- to-draw render-cat (Cat -> Image): each time clock ticks, call render-cat with current world state to draw the current world state
 	- ![[Pasted image 20240920145114.png]]
+		- Added 
 ### Compound Data
 - >=2 items of information that naturally belong together 
