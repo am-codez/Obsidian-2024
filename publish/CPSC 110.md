@@ -257,8 +257,9 @@
 					 `(< (image-height i1)(image-height i2)) i2)` 
 			- If using own-built data types as input (e.g. SeatNum), only need to test mid-point for non-distinct (e.g. 5 i)
 	3. Template and inventory 
+		- `(@template-origin ...)` tag
+			- Where ... is name of DD where template came from
 		- Template: body of the template is the outline of the function
-			- It is a stub 
 			- E.g. 
 			  `(define (double n)(... n))`
 	1. Code the function body 
