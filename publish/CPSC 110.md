@@ -599,7 +599,7 @@ Screen coordinates:
 ### Big Bang Mechanism
 - Template
 ```
-	(require spd/tags)
+(require spd/tags)
 (require 2htdp/image)
 (require 2htdp/universe)
 
