@@ -669,5 +669,6 @@ Screen coordinates:
 				- to-draw render-cat (Cat -> Image): each time clock ticks, call render-cat with current world state to draw the current world state
 	- ![[Pasted image 20240920145114.png]]
 		- Added 
+- ![[Pasted image 20240921121319.png]]
 ### Compound Data
 - >=2 items of information that naturally belong together 
