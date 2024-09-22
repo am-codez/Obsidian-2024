@@ -590,14 +590,36 @@
         [(and (string? gs)(string=? gs "F"))false]        ;Handles "F" 
         [else false]))                                    ;Handles "T"
 ```
-
-
-Screen coordinates:
-- ![[Pasted image 20240917125232.png]]
-	- X-value increases rightwards
-	- y-value increases downwards
-
 ### Big Bang Mechanism
+- Primitive that complex structure by integrating and coordinating many functionalities together 
+- E.g. 
+	`(@htdf main)`
+	`(@signature WS -> WS)`
+	`(@template-origin htdw-main)`
+
+	`(define (main ws)`
+	  `(big-bang ws        ; WS`
+		`(on-tick   tock)   ; WS -> WS`
+		`(to-draw   render) ; WS -> Image`
+		`(on-mouse  ...)    ; WS Integer MouseEvent -> WS`
+		`(on-key    ...)))  ; WS KeyEvent -> WS`
+- Polymorphic: works for any type of world state but all x have to be the same type
+- Interactive programs:
+	- `on-tick`
+		- Progresses and saves world state
+		- Measured in ticks per second 
+		- Arguments: world state
+	- `to-draw`
+		- Display changes
+		- Arguments: world state
+	- `on-key` and `on-mouse`
+		- Keyboard or mouse affects behaviour
+		- Arguments: 
+			- Keyboard: world state, key event
+			- Mouse: world state, mouse x-coor and y-coor, mouse event
+		- ![[Pasted image 20240921121319.png]]
+	- `stop-when`
+		- Stop automatically
 - Template
 ```
 (require spd/tags)
@@ -650,26 +672,45 @@ Screen coordinates:
 ;; !!!
 (define (render ws) empty-image)
 ```
-- Supports complex structure by integrating and coordinating many functionalities together 
-- Polymorphic: works for any type of world state but all x have to be the same type
-- Interactive programs:
-	- Change state saved
-	- Display changes
-	- Keyboard and/or mouse affects behaviour
-- Tock: measured in ticks per second 
-- Cat Move
-	- ![[Pasted image 20240920100245.png|300]]
-	- Using:
-		- Data definition (e.g. Cat) to represent cat's position (x-coor) where Cat is Number
-		- Function (e.g. Cat -> Cat) to increase cat position using SPEED at each clock tick (i.e. if SPEED = -9, cat moves right to left)
-		- Primitive (place-image) places first image (i.e. cat) center at given x-y coor of second image (i.e. background scene image)
-		- Big Bang: wires render-cat and next-cat together, using tick and draw functions
-			- Expressions taken:
-				- 0: evaluates initial world state, cat represented by number
-				- on-tick next-cat (Cat -> Cat): each time clock ticks, call next-cat with current world state to get next world state
-				- to-draw render-cat (Cat -> Image): each time clock ticks, call render-cat with current world state to draw the current world state
-	- ![[Pasted image 20240920145114.png]]
-		- Added 
-- ![[Pasted image 20240921121319.png]]
+- Framework
+	- Includes:
+		- Drawing of behaviour
+		- Constants (unchanging)
+		- Variables (changing)
+		- Primitives to use
+	- E.g. ![[Pasted image 20240920145114.png]]
+		- ![[Pasted image 20240920100245.png|300]]
+
 ### Compound Data
-- >=2 items of information that naturally belong together 
+-  =2 items of information that naturally belong together
+- Define-struc expression
+	- `(define-<struc> (x y))`
+		- `<struc>`: define-struc name 
+		- `x`: x-field
+		- `y`: y-field
+		- Declares definition
+- Constructor:
+	- `(define <constr> (make-<struc> x-y)` 
+		- `<constr>`: constructor name
+		- `<struc>`: define-struc name
+		- `x`: x-field
+		- `y`: y-field
+		- Declares definition
+- Selectors: `(<struc>-x <constr>)` and `(<struc>-y <constr>)`
+	-  `<struc>`: define-struc name
+	- `<constr>`: constructor name
+	- Calls x-field or y-field 
+- Predicate: `(<struc>? ...)`
+	- `<struc>`: define-struc name
+	- ...: argument (e.g. "hello")
+	- Compares define-structure definition to argument given  
+- E.g. `(define-struc pos (x y))`
+	- `(define P1 (make-pos 3 6))`: defines constructor
+	-  `(define P2 (make-pos 2 8))`: defines contructor
+	- `(pos-x P1)`: will call 3
+	- `(pos-y P1)`: will call 6
+	- `(pos? P1)`: will return true
+	- `(pos? "hello")`: will return false
+- ![[Pasted image 20240917125232.png|150]]
+	- x-value increases rightwards
+	- y-value increases downwards
