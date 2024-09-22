@@ -708,7 +708,6 @@
 - E.g. 
 ```
 (require spd/tags)
-
 (@htdd Player) ;htdd tag
  
 (define-struct player (fn ln)) ;make-struc
