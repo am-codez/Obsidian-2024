@@ -682,21 +682,19 @@
 		- ![[Pasted image 20240920100245.png|300]]
 
 ### Compound Data
--  =2 items of information that naturally belong together
-	- E.g. first and last name, x-coor and y-coor
-- Define-struc expression
-	- `(define-<struct> (x y))`
-		- `<struct>`: define-struct name 
-		- `x`: x-field
-		- `y`: y-field
-		- Declares definition
-- Constructor:
-	- `(define <constr> (make-<struct> x-y)` 
-		- `<constr>`: constructor name
-		- `<struct>`: define-struct name
-		- `x`: x-field
-		- `y`: y-field
-		- Declares definition
+-  $\geq2$ items of information that naturally belong together
+	- E.g. first and last name, x-coor and y-coor, 
+- Define-struc expression: `(define-<struct> (x y))`
+	- `<struct>`: define-struct name 
+	- `x`: x-field
+	- `y`: y-field
+	- Declares definition
+- Constructor: `(define <constr> (make-<struct> x y))` 
+	- `<constr>`: constructor name
+	- `<struct>`: define-struct name
+	- `x`: x-field
+	- `y`: y-field
+	- Declares definition
 - Selectors: `(<struct>-x <constr>)` and `(<struct>-y <constr>)`
 	-  `<struct>`: define-struct name
 	- `<constr>`: constructor name
