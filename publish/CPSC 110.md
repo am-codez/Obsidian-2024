@@ -627,6 +627,169 @@
 		- Primitives to use
 	- E.g. ![[Pasted image 20240920145114.png]]
 		- ![[Pasted image 20240920100245.png|300]]
+```
+(require spd/tags)
+(require 2htdp/image)
+(require 2htdp/universe)
+
+
+;; =================
+;; Constants:
+
+(define WIDTH 400) ;scene width
+(define HEIGHT 200) ;scene height
+(define MTS (empty-scene WIDTH HEIGHT)) ;empty
+
+(define RCOW .)
+(define LCOW .)
+(define CTR-Y (/ HEIGHT 2)) ;center position 
+
+
+;; =================
+;; Data definitions:
+
+(@htdd Cow)
+
+;; Cow is (make-cow Natural[0, WIDTH] Integer)
+;; Interp. (make-cow x dx) is a cow with x-coordinate (x) and x-velocity (dx)
+;;      x is center of the cow
+;;      to stay visible in screen, x is between 0 and WIDTH 
+;;      dx is in pixels per tick
+
+(define-struct cow (x dx)) ;define-struct
+
+;; Examples:
+(define C1 (make-cow 10 3))  ;at 10, moving left -> right
+(define C2 (make-cow 20 -4)) ;at 20, moving left <- right
+
+(@dd-template-rules compound) ;data type
+(@template (define (fn-for-cow c)
+             (... (cow-x c) ;Natural [0, WIDTH]
+                  (cow-dx c)))) ;Integer
+
+
+
+;; =================
+;; Functions:
+
+(@htdf main)
+(@signature Cow -> Cow)
+;; Makes cow walk, right and left across the screen 
+;; Start the world with (main 0)
+
+(define (main c) ;main fx
+  (big-bang c                ;World state
+    (on-tick   next-cow)     ;Cow -> Cow 
+    (to-draw   render-cow)   ;Cow -> Image
+    (on-key    handle-key))) ;Cow KeyEvent -> Cow
+
+
+(@htdf next-cow)
+(@signature Cow -> Cow)
+;; Increase Cow by dx, bounce off edge
+;; Example: cow is at 20 pixels, moving at 3 velocity
+;; At next tick, cow should be at (+ 20 3), moving at 3 velocity
+
+;(define (next-cow c) c) ;stub
+
+;; Cases: cow continues, cow reaches edge, cow bounces off edge
+(check-expect (next-cow (make-cow 100 3)) ;center right -> left
+              (make-cow (+ 100 3) 3))
+#;(check-expect (next-cow (make-cow 100 -3)) ;center left -> right
+              (make-cow (- 100 3) -3))
+(check-expect (next-cow (make-cow (- WIDTH 3) 3)) ;right edge
+              (make-cow WIDTH 3))
+#;(check-expect (next-cow (make-cow 3 -3)) ;left edge
+              (make-cow 0 -3))
+(check-expect (next-cow (make-cow (- WIDTH 2) 3)) ;passes right edge
+              (make-cow WIDTH -3))  
+#;(check-expect (next-cow (make-cow 2 -3)) ;passes left edge
+              (make-cow 0 3))
+
+(@template-origin Cow) ;to tag
+(@template (define (next-cow c) ;fx template
+             (... (cow-x c) ;Natural [0, WIDTH]
+                  (cow-dx c)))) ;Integer
+
+(define (next-cow c) ;sign change on velocity
+             (cond [(> (+ (cow-x c)(cow-dx c)) ;cow tries to leave right
+                       WIDTH) 
+                    (make-cow WIDTH (- (cow-dx c)))] 
+                   [(< (+ (cow-x c)(cow-dx c)) ;cow tries to leave left
+                       0) 
+                    (make-cow 0 (- (cow-dx c)))]
+                   [else                       ;cow continues
+                    (make-cow (+ (cow-x c)(cow-dx c)) (cow-dx c))]))
+
+
+
+(@htdf render-cow)
+(@signature Cow -> Image)
+;; Place appropriate cow image on MTS at (cow-x c) and CTR-Y
+;;    Asking too much from this function, therefore we need to make another
+;;    This function will decide which image needs to be chosen
+
+;(define (render-cow c) MTS) ;stub
+
+(check-expect (render-cow (make-cow 99 3)) ;middle scene (right -> left)
+                          (place-image RCOW 99 CTR-Y MTS))  
+(check-expect (render-cow (make-cow 33 -3)) ;middle scene (right -> left)
+                          (place-image LCOW 33 CTR-Y MTS)) 
+
+(@template-origin Cow) ;to tag
+(@template (define (render-cow c) ;fx template
+             (... (cow-x c) ;Natural [0, WIDTH]
+                  (cow-dx c)))) ;Integer
+
+(define (render-cow c) ;fx using choose-image fx
+   (place-image (choose-image c) (cow-x c) CTR-Y MTS)) 
+
+
+
+(@htdf choose-image)
+(@signature Cow -> Image)
+;; Produce RCOW or LCOW depending on direction cow is going
+;; Helper function for render-cow
+;; Constraint: LCOW if dx = 0
+
+;(define (choose-image c) RCOW) ;stub, RCOW chosen arbitrarily 
+
+(check-expect (choose-image (make-cow 10 3)) RCOW) ;right -> left
+(check-expect (choose-image (make-cow 11 -3)) LCOW) ;left -> right
+(check-expect (choose-image (make-cow 11 0)) LCOW) ;dx = 0
+
+(@template-origin Cow) ;to tag
+(@template (define (choose-image c) ;fx template
+             (... (cow-x c) ;Natural [0, WIDTH]
+                  (cow-dx c)))) ;Integer
+
+(define (choose-image c) ;fx
+  (if (> (cow-dx c) 0) ;right-travel as +dx right and -dx left
+     RCOW
+     LCOW))
+
+
+(@htdf handle-key)
+(@signature KeyEvent -> Cow)
+;; Change direction of cow travel when space bar pressed
+
+;(define (handle-key c ke) c) ;stub
+
+(check-expect (handle-key (make-cow 99 3) " ") (make-cow 99 -3)) ;right -> left
+(check-expect (handle-key (make-cow 33 -3) " ") (make-cow 33 3)) ;left -> right
+(check-expect (handle-key (make-cow 99 3) "a") (make-cow 99 3)) ;wrong-key
+(check-expect (handle-key (make-cow WIDTH 3) " ")(make-cow WIDTH -3)) ;boundary
+
+(@template-origin Cow) ;to tag
+(@template (define (handle-key c ke) ;fx template
+             (... (cow-x c) ;Natural [0, WIDTH]
+                  (cow-dx c)))) ;Integer
+
+(define (handle-key c ke) ;fx
+             (if (key=? ke " ")
+                 (make-cow (cow-x c) (- (cow-dx c)))
+                 (make-cow (cow-x c) (cow-dx c))))
+```
 
 ### Compound Data
 -  $\geq2$ items of information that naturally belong together
@@ -687,3 +850,4 @@
 - ![[Pasted image 20240917125232.png|150]]
 	- x-value increases rightwards
 	- y-value increases downwards
+
