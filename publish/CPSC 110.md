@@ -325,6 +325,7 @@
 		- E.g. `interp. the name of a city`
 	1. One or more examples of the data
 		- Need as many examples as there are cases
+		- Purpose is to assist reader of the code
 			- E.g. `;;CarSpeed is Number [0, 200]`
 				- 3 data examples needed: 
 				  `(define CS1 0)`
@@ -471,91 +472,36 @@
           [(string=? lg "B") (...)] ;will always be string "B" so no lg 
           [(string=? lg "C") (...)])) ;will always be string "C" so no lg
 ```
-
-- E.g. String (atomic non-distinct)
-```
-(require spd/tags)
-;;What we need to represent/interpret..
-;;Information      Data
-;;Vancouver        "Vancouver" (string)
-;;Boston           "Boston" (string)
-
-(@htdd CityName) ;;htdd tag
-
-;;Type comment, interpretation, examples:
-;;CityName is String (atomic-non-distinct)
-;;Interp. the name of a city
-(define CN1 "Boston")
-(define CN2 "Vancouver")
-
-(@dd-template-rules atomic-non-distinct) ;;dd type(s)
-
-(define (fn-for-city-name cn) ;;data template
-	(... cn))
-
-
-(@htdf best?) ;;htdf tag
-
-(@signature CityName -> Boolean) 
-
-;;Purpose, stub, check-expects
-;;Produce true if the given city is the best in the world is Tokyo
-;(define (best? cn) false) ;;stub
-
-(check-expect (best? "Boston") false)
-(check-expect (best? "Tokyo") true)
-
-(@template (define (best? cn) ;;function template
-	(if (... cn) 
-		(... cn)
-		(... cn))))
-
-(define (best? cn)
-	(if (string=? cn "Tokyo") 
-		true
-		false))
-```
 		
 - E.g. String and Natural (atomic distinct and non-distinct)
 ```
 ;DATA TYPE "GRADESTANDING" DEFINITION
 (@htdd GradeStanding)
-;GradeStanding is one of..
-     ;Natural (0-100)
-     ;"H"
-     ;"P"
-     ;"F"
-     ;"T"
 
-;Interpretation: a percentage grade or a standing 
+;Interp. GradeStanding is a percentage grade or a standing 
+;Constraint: If Natural then is in range [0, 100]
+;Examples, where GS named based on dd name:
+(define GS1 50) 
+(define GS2 "P")  
 
-;Constraint: If natural then is in range [0, 100]
+(@dd-template-rules one-of
+                    atomic-non-distinct ;Handle Natural case
+                    atomic-distinct     ;Handle "H" case
+                    atomic-distinct     ;Handle "P" case
+                    atomic-distinct     ;Handle "F" case
+                    atomic-distinct)    ;Handle "T" case
 
-;Examples where..
-     ;Purpose is to assist reader of the code
-     ;"GS" named based on data type definition name (GradeStanding)
-(define GS1 50)   ;Example
-(define GS2 "P")  ;Example
+(define (fn-for-grade-standing gs) ;dd template, takes 1 parameter (gs)
+  (cond [(number? gs)(... gs)]                 ;Handle Natural
+        [(and (string? gs)(string=? gs "H"))(...)] ;Handle "H"
+        [(and (string? gs)(string=? gs "P"))(...)] ;Handle "P" 
+        [(and (string? gs)(string=? gs "F"))(...)] ;Handle "F" 
+        [else (...)]))                             ;Handle "T"
 
-(@dd-template-rules one-of ;HTDD template tag, using one-of data type 
-                    atomic-non-distinct ;Handles Natural case
-                    atomic-distinct     ;Handles "H" case
-                    atomic-distinct     ;Handles "P" case
-                    atomic-distinct     ;Handles "F" case
-                    atomic-distinct)    ;Handles "T" case
-
-(define (fn-for-grade-standing gs) ;HTDD template, takes 1 parameter (gs)
-  (cond [(number? gs)(... gs)]                            ;Handles Natural
-        [(and (string? gs)(string=? gs "H"))(...)]        ;Handles "H"
-        [(and (string? gs)(string=? gs "P"))(...)]        ;Handles "P" 
-        [(and (string? gs)(string=? gs "F"))(...)]        ;Handles "F" 
-        [else (...)]))                                    ;Handles "T"
 
 ;FUNCTION "EXCELLENT?" DEFINITION
 (@htdf excellent?) ;HDTF tag
-
-(@signature GradeStanding -> Boolean) ;Signature using our created data type
-
+(@signature GradeStanding -> Boolean) ;Signature
 ;Purpose: produces true if the grade/standing is >= 90
 
 ;Stub where..
@@ -565,9 +511,9 @@
 ;(define (excellent? gs) true) 
 
 ;Check-Expects
-(check-expect (excellent? 89) false)  ;Below boundary for Natural
-(check-expect (excellent? 90) true)   ;At boundary for Natural
-(check-expect (excellent? 91) true)   ;Above boundary for Natural
+(check-expect (excellent? 89) false)  ;<boundary
+(check-expect (excellent? 90) true)   ;=boundary for Natural
+(check-expect (excellent? 91) true)   ;>boundary for Natural
 (check-expect (excellent? "H") false) ;for "H"
 (check-expect (excellent? "H") false) ;for "P"
 (check-expect (excellent? "H") false) ;for "F"
@@ -575,21 +521,22 @@
 
 (@template-origin GradeStanding) ;Template origin tag
 
-(@template                  ;HTDF template, takes 1 parameter (gs)
+(@template          ;HTDF template, takes 1 parameter (gs)
  (define (excellent? gs) 
-   (cond [(number? gs)(... gs)]                            ;Handles Natural
-         [(and (string? gs)(string=? gs "H"))(...)]        ;Handles "H"
-         [(and (string? gs)(string=? gs "P"))(...)]        ;Handles "P" 
-         [(and (string? gs)(string=? gs "F"))(...)]        ;Handles "F" 
-         [else (...)])))                                   ;Handles "T"
+   (cond [(number? gs)(... gs)]                 
+         [(and (string? gs)(string=? gs "H"))(...)]
+         [(and (string? gs)(string=? gs "P"))(...)] 
+         [(and (string? gs)(string=? gs "F"))(...)]
+         [else (...)])))                                  
 
-(define (excellent? gs)      ;Function body code, should only edit the (...)
-  (cond [(number? gs)(>= gs 90)]                          ;Handles Natural
-        [(and (string? gs)(string=? gs "H"))false]        ;Handles "H"
-        [(and (string? gs)(string=? gs "P"))false]        ;Handles "P" 
-        [(and (string? gs)(string=? gs "F"))false]        ;Handles "F" 
-        [else false]))                                    ;Handles "T"
+(define (excellent? gs)      ;Fx, should only edit the (...)
+  (cond [(number? gs)(>= gs 90)]                ;Handle Natural
+        [(and (string? gs)(string=? gs "H"))false] ;Handle "H"
+        [(and (string? gs)(string=? gs "P"))false] ;Handle "P" 
+        [(and (string? gs)(string=? gs "F"))false] ;Handle "F" 
+        [else false]))                             ;Handle "T"
 ```
+
 ### Big Bang Mechanism
 - Primitive that complex structure by integrating and coordinating many functionalities together 
 - E.g. 
