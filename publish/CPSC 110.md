@@ -705,13 +705,41 @@
 	- `<struct>`: define-struct name
 	- ...: argument (e.g. "hello")
 	- Compares define-structure definition to argument given  
-- E.g. `(define-struct pos (x y))`
-	- `(define P1 (make-pos 3 6))`: defines constructor
-	-  `(define P2 (make-pos 2 8))`: defines constructor
-	- `(pos-x P1)`: will call 3
-	- `(pos-y P1)`: will call 6
-	- `(pos? P1)`: will return true
-	- `(pos? "hello")`: will return false
+- E.g. 
+```
+(require spd/tags)
+
+(@htdd Player) ;htdd tag
+ 
+(define-struct player (fn ln)) ;make-struc
+
+;; Player is (make-player String String)
+;; Interp. (make-player fn ln) is a hockey player
+;;     fn is first name
+;;     ln is last name
+
+(@dd-template-rules compound) ;data types
+
+(define (fn-for-player p) ;dd template
+  (... (player-fn p) ;string
+       (player-ln p))) ;string
+
+
+;;Operators:
+
+;Constructors
+(define P1 (make-player "Bobby" "Orr")) 
+(define P2 (make-player "Wayne" "Gretzky"))
+
+;Predicate
+(player? P1) ;returns true
+(player? "Dough") ;returns false
+
+;Selector
+(player-fn P1) ;returns Bobby
+(player-ln P2) ;returns Gretzky
+```
+
 - ![[Pasted image 20240917125232.png|150]]
 	- x-value increases rightwards
 	- y-value increases downwards
