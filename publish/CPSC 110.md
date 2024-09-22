@@ -683,6 +683,7 @@
 
 ### Compound Data
 -  =2 items of information that naturally belong together
+	- E.g. first and last name, x-coor and y-coor
 - Define-struc expression
 	- `(define-<struc> (x y))`
 		- `<struc>`: define-struc name 
