@@ -685,29 +685,29 @@
 -  =2 items of information that naturally belong together
 	- E.g. first and last name, x-coor and y-coor
 - Define-struc expression
-	- `(define-<struc> (x y))`
-		- `<struc>`: define-struc name 
+	- `(define-<struct> (x y))`
+		- `<struct>`: define-struct name 
 		- `x`: x-field
 		- `y`: y-field
 		- Declares definition
 - Constructor:
-	- `(define <constr> (make-<struc> x-y)` 
+	- `(define <constr> (make-<struct> x-y)` 
 		- `<constr>`: constructor name
-		- `<struc>`: define-struc name
+		- `<struct>`: define-struct name
 		- `x`: x-field
 		- `y`: y-field
 		- Declares definition
-- Selectors: `(<struc>-x <constr>)` and `(<struc>-y <constr>)`
-	-  `<struc>`: define-struc name
+- Selectors: `(<struct>-x <constr>)` and `(<struct>-y <constr>)`
+	-  `<struct>`: define-struct name
 	- `<constr>`: constructor name
 	- Calls x-field or y-field 
-- Predicate: `(<struc>? ...)`
-	- `<struc>`: define-struc name
+- Predicate: `(<struct>? ...)`
+	- `<struct>`: define-struct name
 	- ...: argument (e.g. "hello")
 	- Compares define-structure definition to argument given  
-- E.g. `(define-struc pos (x y))`
+- E.g. `(define-struct pos (x y))`
 	- `(define P1 (make-pos 3 6))`: defines constructor
-	-  `(define P2 (make-pos 2 8))`: defines contructor
+	-  `(define P2 (make-pos 2 8))`: defines constructor
 	- `(pos-x P1)`: will call 3
 	- `(pos-y P1)`: will call 6
 	- `(pos? P1)`: will return true
