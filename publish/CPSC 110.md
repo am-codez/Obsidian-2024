@@ -378,6 +378,17 @@
 		- Itemization:
 			- Used to reference $\geq{2}$ subclasses (e.g. , at least one of which is NOT a distinct data item 
 			- Use cond statement for each data type
+				- E.g. 
+					`(@template-origin Balloon) ;template`
+					`(@template (define (tick b)` 
+					  `(cond [(number? b) (... b)]`
+					        `[else (...)])))`
+					
+					`(define (tick b)`
+					  `(cond [(number? b)`
+					         `(if (>= MAX-SIZE (+ b SPEED))`
+					             `(+ b SPEED) #false)]`
+					        `[else #false]))`
 			- E.g. 0-100, 120-150, and "H", "P"
 			- If given subtype is the last category listed, we don't need a guard 
 				- Not necessary though
