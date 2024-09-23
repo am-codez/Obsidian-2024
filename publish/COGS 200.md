@@ -82,6 +82,7 @@
 	- Many scientific disciplines (chemistry, anthropology, ...), unlike Philosophy, have a settled body of knowledge that must be mastered in order to gain entry to the field, as nearly everything is contested
 	- Philosophy is the tradition of inquiry and major figures and their works, where we find the disciplinary culture, standards of adequacy, methods, and the sense of what is interesting
 - Philosophical naturalism
+	- Philosophy as a second-order discipline, the study of the various first-order activities of scientists, artists, theologians, jurists 
 	- Stages:
 		- Before questions are clear enough to apply scientific methods to them (i.e. occurs prior to science)
 		- Reflects on the progress of science: questions of meaning (conceptual questions) and justification (methodological questions)
