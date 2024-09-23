@@ -854,3 +854,11 @@
 
 ![[Pasted image 20240922164332.png]]
 
+x=10
+dx= -5
+dx= 5
+
+travel right (5):
+10 - 5
+
+(travel left (-5)
