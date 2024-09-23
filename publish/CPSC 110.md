@@ -853,19 +853,29 @@
 
 
 
-
-
 ### List 
 - Arbitrary sized data for case where we don't know the pool size (e.g. number of students in a class)
-- Empty list
-	- `empty`
-	- Adding items to a list 
-		- `(cons <value or expression> empty)`
-			- Adds element to the front of the list
-			- Values include: strings, images, numbers, etc
-		- E.g. `(cons "Flames" empty)`
-			- List with 1 element 
-			- Prints `(cons "Flames" empty)`
-		- E.g. `(cons (string-append "C" "anucks") empty)`
-	- (cons "Flames empty) ;list of 1 element 
-	- Puts "Flames" in front list 
+- Empty list expressed as `empty`
+	- Not necessary to include on separate line if list has existing item
+- Constructor:
+	- `(define <list name> (cons <element> empty))`
+		- `<element>`: string, number, expression (e.g. string-append), etc
+		- Used to define list
+		- E.g. `(define L1 (cons "apple" (cons 2 empty))`
+			- List with 1 element
+	- `(cons <value or expression> <list name>)`
+		- Adds element to the front of the list
+		- E.g. `(define L1 (cons "apple" empty))`
+			- Running `(cons "orange" L1)` 
+				- Returns `(cons "orange" (cons "apple" empty))`
+-  Selectors: `(first <list name>)` and `(rest <list name>)`
+	- First: returns first element in the list as a string
+	- Rest: returns all other elements in the list after first, as a list 
+	- E.g. to get second element
+		`(first (rest <list name>))`
+		`(rest (rest <list name>))`
+	- E.g. `(cons "Flames" empty)`
+		- List with 1 element 
+		- Prints `(cons "Flames" empty)`
+- Predicate: `(empty? <list name>)`
+	- Returns true or false
