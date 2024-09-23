@@ -145,7 +145,23 @@
 - When it comes to complex questions with lots of uncertainty, inductive reasoning is advantageous.
 
 - Start with a complex problem
-	- Create a mindmap of ideas
+	- Create a mind-map of ideas
 	- Look for patterns 
 	- Break things into MEC (mutually exclusive collectively exhaustive)
-	- 
+		- Binary categories causes loss of insight 
+	- SCQA
+		- Situation - where are we? 
+		- Complication - situation has changed (i.e. customers care about the environment.. do we?)
+		- Question - how do we proceed? (i.e. strategies)
+		- Answer - state recommendations
+			- Only to be done last 
+		- Read writing out-loud to:
+			- Gauge grammar 
+			- Interest
+				- Gary Provost poem, as an example
+			- Clarity of statements 
+			- Everyone will be much less understanding, and this can help us to get perspective of an outside critic
+			- Structure to see if sentence idea changes
+			- Can use AI to augment self but we shouldn't use it to think for us (e.g. repeated use of words and suggest replacements)
+				- 
+	
