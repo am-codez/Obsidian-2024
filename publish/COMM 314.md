@@ -164,5 +164,4 @@
 			- Structure to see if sentence idea changes
 			- Can use AI to augment self but we shouldn't use it to think for us (e.g. repeated use of words and suggest replacements)
 
-$$d=\frac{(p)4\pi r^{2}}{(\frac{4}{3})\pi r^{3}}$$$$
-	
+$$d=\frac{(p)4\pi r^{2}}{(\frac{4}{3})\pi r^{3}}$$$$\frac{3p}{r}$$
