@@ -95,3 +95,4 @@
 - Overconfidence trap: something goes well once so we get too confident doing it next time so we might not do well if problem w
 - Prudence trap: over-engineer a product until perfect instead of getting not perfect out and improving it later
 - Recallability trap: 
+- Inductive reasoning 
