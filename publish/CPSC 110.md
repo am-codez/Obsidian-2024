@@ -852,13 +852,20 @@
 	- y-value increases downwards
 
 
-![[Pasted image 20240922164332.png]]
 
-x=10
-dx= -5
-dx= 5
 
-travel right (5):
-10 - 5
 
-(travel left (-5)
+### List 
+- Arbitrary sized data for case where we don't know the pool size (e.g. number of students in a class)
+- Empty list
+	- `empty`
+	- Adding items to a list 
+		- `(cons <value or expression> empty)`
+			- Adds element to the front of the list
+			- Values include: strings, images, numbers, etc
+		- E.g. `(cons "Flames" empty)`
+			- List with 1 element 
+			- Prints `(cons "Flames" empty)`
+		- E.g. `(cons (string-append "C" "anucks") empty)`
+	- (cons "Flames empty) ;list of 1 element 
+	- Puts "Flames" in front list 
