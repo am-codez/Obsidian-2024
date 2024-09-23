@@ -80,19 +80,72 @@
 		- "My body my choice" seems context specific
 		- UBC's consequences, outcomes, and goals/values should be considered
 	- ![[Pasted image 20240918134929.png]]
-- Anchoring trap: biased by first fact you learn about a topic
-	- E.g. one person has idea for topic and is vocal about it, so people latch onto it
-- Status quo trap: we tend to work within constrains, first person to suggest going against status quo in sea of people going along with things (e.g. omission sin)
-	- Presenting status quo is an option important, not just change
-	- UI has become much less intuitive but we have (skew-morphic design)
-- Sunk cost trap: recognising when idea was a bad one 
-	- People don't like to admit mistake 
-- Confirming evidence trap: we are engaged by information that supports our existing instincts or POV and avoid information that contradicts
-	- Find devil's advocate (authentic) not playing the role 
-	- Be honest about motivates - are you gathering info to make smart choice or confirm evidence of what you want to do 
-- Framing trap: "would you like to win $100 or lose $100?" vs "would you like to lose $100 or lose $100"
-	- Should pose problem in a neutral, redundant way
-- Overconfidence trap: something goes well once so we get too confident doing it next time so we might not do well if problem w
-- Prudence trap: over-engineer a product until perfect instead of getting not perfect out and improving it later
-- Recallability trap: 
-- Inductive reasoning 
+
+- Anchoring Trap 
+	- When considering a decision, the mind gives disproportionate weight to the first information it receives. 
+	- Initial impressions, estimates, or data anchor subsequent thoughts and judgements. 
+	- Anchors can be: 
+		- Simple – a comment offered by a colleague or a statistic you saw on LinkedIn 
+		- Insidious – stereotyping based on race, accent, dress, etc. 
+	- In business the most common type is best events or trends. 
+	- For example, projecting sales based simply on previous performance. 
+	- Strategies for mitigating the trap might include… 
+		- View the problem from different perspectives: use different starting points rather than the first line of thought that occurs to you. 
+		- Think about the problem alone before consulting others (they will bias you). 
+		- Be careful to avoid anchoring others. 
+		- Be particularly careful in any kind of negotiation. 
+- Status Quo Trap
+	- Breaking from the status quo requires action, and when we take action, we take responsibility, thus opening ourselves to criticism and regret. 
+	- Sins of commission (doing something) tend to be punished much more severely than sins of omission (doing nothing). Thus the status quo holds a particularly strong attraction. 
+	- Strategies for mitigating the trap might include… 
+		- Always remind yourself of objectives and examine how they would be served by the status quo. Never think of the status quo as your only alternative. 
+		- Avoid exaggerating the costs of switching.
+		- Ask yourself if you would chose the status quo if it weren’t the status quo. 
+- Sunk Cost Trap
+	- We make choices in a way that justifies past decisions. 
+	- We throw good money after bad, doubling down on strategies or decisions or costs that are now irrecoverable. 
+	- Why is it so hard to break this behavior? 
+	- Because we are afraid to admit mistakes. 
+		- For example - if you fire a poor performer that you hired, you are admitting that you made a bad hire. 
+		- In banking: lenders often continue to lend to existing clients who are struggling in the hopes that they will recover.
+	- Strategies for mitigating the trap might include… 
+		- Acknowledge that some good ideas will end in failure: cut your loses rather than let them mount. Seek out and listen to the views of those who were uninvolved in the decision. 
+		- Reassign responsibilities when necessary. 
+		- Cultivate a culture that does not fear failure. 
+- Confirming Evidence Trap
+	- We seek out information that supports our existing instincts or points or view while avoiding information that contradicts. 
+	- Two psychological forces at work: 
+		- We subconsciously decide what we want to do before we figure out why we want to do it
+		- We are more engaged by things we like than by things we dislike
+	- Strategies for mitigating the trap might include… 
+		- Always check to see if you are examine all the evidence with equal rigor. 
+		- Find a devil’s advocate (yourself or someone you respect). 
+	- Be honest with yourself about your motives. Are you gathering information to help you make a smart choice, or evidence confirming what you’d like to do? In seeking advice from others, don’t ask leading questions. 
+- Framing Trap
+	- The way a decision is framed can profoundly influence the choices you make. 
+	- A frame can introduce the status quo or an anchor. 
+	- Two types of frames: 
+		- Frames as gains versus losses 
+		- Frames with different reference points
+	- Strategies for mitigating the trap might include… 
+		- Don’t automatically accept the initial frame, whether it was formulated by you or by someone else. 
+		- Pose problems in a neutral, redundant way that combines gains and losses or embraces different reference points. 
+	- Would you accept a fifty-fifty chance of either losing $300, resulting in a bank balance of $1,700, or winning $500, resulting in a bank balance of $2,500?
+- Overconfidence Trap
+	- “Even though most of us are not very good at making estimates or forecasts, we actually tend to be over confident about our accuracy. That can lead to errors in judgment and, in turn, bad decisions.” 
+	- “If managers underestimate the high end or over estimate the low end of a crucial variable, they may miss attractive opportunities or expose themselves to far greater risk than they realize.”
+- Prudence Trap
+	- “When faced with high-stakes decisions, we tend to adjust our estimates or forecasts “just to be on the safe side.” 
+	- An extreme example is the methodology of “worst-case analysis,” which was once popular in the design of weapons systems and is still used in certain engineering and regulatory settings. Worst-case analysis added enormous costs with no practical benefit (in fact, it often backfired by touching off an arms race), proving that too much prudence can sometimes be as dangerous as too little.
+- Recallability Trap
+	- “We frequently base our predictions about future events on our memory of past events, we can be overly influenced by dramatic events—those that leave a strong impression on our memory.” “We all, for example, exaggerate the probability of rare but catastrophic occurrences such as plane crashes because they get disproportionate attention in the media.” “You will assign a higher probability to traffic accidents if you have passed one on the way to work.”
+	- “When it comes to business decisions, there’s rarely such a thing as a no-brainer. Our brains are always at work, sometimes, unfortunately, in ways that hinder rather than help us. The traps we’ve reviewed can all work in isolation. But, even more dangerous, they can work in concert, amplifying one another.”
+	
+- Scientists are accustomed to deductive reasoning. It produces extremely reliable results.  But it requires careful experimental design and lots of data.  
+- When it comes to complex questions with lots of uncertainty, inductive reasoning is advantageous.
+
+- Start with a complex problem
+	- Create a mindmap of ideas
+	- Look for patterns 
+	- Break things into MEC (mutually exclusive collectively exhaustive)
+	- 
