@@ -4,16 +4,16 @@
     - Fake artificial - hercamer vs real artificial - lab created diamonds
     - Not all fake things are artificially created (e.g. fool’s gold)
     - Natural artificial – spex wasp (follows algorithm without any adaptability to setting)
-- AI’s intelligence can be real artifical intelligence, if achieved
+- AI’s intelligence can be real artificial intelligence, if achieved
 
 
 - Linguistic definitions, with example of word (“the”):    
     - Phonetics: how we make/comprehend possible speech sounds or sign parameters
     - Phonology: which possible speech sounds/sign parameters your language uses, and how they pattern
-        - Pronounciation changes depending on word preceeding it
+        - Pronunciation changes depending on word preceding it
     - Morphology: how words/signs are formed
     - Syntax: how sentences are formed
-        - Can only occur before nouns and can be substituted by a small numner of words (determiners, e.g. “a”, “this”, “my”)
+        - Can only occur before nouns and can be substituted by a small number of words (determiners, e.g. “a”, “this”, “my”)
     - Semantics: how meaning derives from words/signs and sentences
         - “The” is a definite determiner, the meaning of a noun phrase it is used in (e.g., “the book”) can only be determined by the specific discourse situation it is used in (e.g., “The book I lost yesterday was found by my roommate”)
         - The meaning of definite noun phrases like “the book” will shift from book to book and from situation to situation
