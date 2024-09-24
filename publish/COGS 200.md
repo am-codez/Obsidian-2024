@@ -93,6 +93,11 @@
 
 ### Free Will and Intelligence
 - COGS is an interdisciplinary and collaborative approach to understanding and designing systems that think and act intelligently
+- Philosophy is not concerned with direct observations or facts (first order), but with understanding how we think about those facts (second-order)
+- This leads to the perception of philosophy as elusive and lacking concrete progress, as it seeks clarity rather than practical applications
+- Philosophy serves as a foundation for various scientific disciplines, arising from the fundamental human impulse of wonder
+- Philosophers rely on a shared historical context to engage with and critique each other's ideas, forming a distinct intellectual lineage
+
 - Two movements in contemporary western philosophy:  
 	- Analytic (English-speaking)  
 	- Phenomenological (German/French)
