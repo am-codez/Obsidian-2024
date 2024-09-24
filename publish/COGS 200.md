@@ -25,11 +25,20 @@
 	- AI researchers exploit properties of the word “the” when they build programs that can understand natural language
 		- E.g. The parser is a natural language processing program that figures out grammatical properties of incoming sentences
 
-(1) how language is relevant to the general study of cognition, and (2) what language is and what criteria (aka language design features) researchers use to identify a communication system to be a language. For example, I can either ask you to explain a certain design feature and/or give an example of it, or I can give you some fact from human or animal communication and ask which language design feature this fact exemplifies.
 ### Language and Communication
 - Communication: A signal, with a particular form and meaning/message, is transmitted from a sender to receiver(s) along a channel of communication
 	- The connection between form and meaning constitutes a code
-- Language is communication but not vise versa (e.g. traffic light – limited)
+- Language is communication but not vise versa
+	- We ask questions, make demands, express emotions, so, language is much more than just a representational system 
+	- It's part of a system that generates the ideas that can be communicated in language
+
+- Salzmann's Model for Communication
+	- Includes:
+		- Sender/source 
+		- Message 
+		- Channel 
+		- Receiver/destination 
+		- Effect
 	- E.g. Traffic light
 	    - sender/source (light)
 	    - message (stop/go)
@@ -37,40 +46,44 @@
 	    - receiver/distinuation (human gaze)
 	    - effect (human stops/goes)
         
-- Language; missing one feature means it’s communication:
-    - A dedicated communicative channel (e.g., vocal-auditory for spoken languages, manual visual for sign languages)
-    - Broadcast transmission & directional reception
-    - Rapid fading (transistorises)
-    - Interchangeability
-    - Total feedback
-    - Specialization
-    - Semanticity
-        
-- Human language: fundamental property of human cognition 
-	- Iconicity: Word or sign looks like what it means 
-		- E.g. drink in ASL or gulp in English
-	- Arbitrariness: Word meaning arbitrary but agreed on 
-		- E.g. table
-    - Discreteness
-    - Productivity
-    - Duality of patterning
-    - Cultural transmission
-    - Learnability
-    - Displacement: Referring to events remote in space, time, or reality
-    - Prevarication
-    - Reflexiveness
+- Hockett's Design Features for Language
+	- Missing one feature means it’s communication
+	- Human Language includes:
+	    1. A dedicated communicative channel (e.g., vocal-auditory for spoken languages, manual visual for sign languages)
+	    2. Broadcast transmission & directional reception
+	    3. Rapid fading (transistorises)
+	    4. Interchangeability
+	    5. Total feedback
+		    - When someone speaks a language, they are fully aware of the sounds and meanings of what they are saying, and they can hear and process every aspect of their speech, allowing them to adjust based on their own auditory experience
+		    - Important because this helps us internalise communication patterns crucial for organising thinking and communicating effectively 
+	    6. Specialization
+	    7. Semanticity
+	- Non-specific communication features include:
+		1. Arbitrariness
+			- Word meaning arbitrary but agreed on, e.g. table
+			- Contrast with iconicity where a word or sign looks like what it means, E.g. drink in ASL, gulp in English
+	    2. Discreteness
+	    3. Productivity/Creativity
+		    - Using finite set of discrete units, language users create and understand an infinite number of new utterances (e.g. words and sentences)
+		    - E.g. yeet, tip-flation
+	    4. Duality of patterning
+		    - Language is composed of basic meaningless units (vowel sounds) to form larger nits (words) that have arbitrary meaning 
+	    5. Cultural transmission
+	    6. Learnability
+	    7. Displacement
+		    - Referring to events remote in space, time, or reality
+		    - E.g. It's raining in New York right now 
+		    - E.g. Tom will eat eggs tomorow 
+	    8. Prevarication
+	    9. Reflexiveness
+
 - Animal communication:
-    - Innate (e.g. barking)
+    - Mostly innate (e.g. barking)
         - One exception, song birds: will still try as communication style is innate but will only come up with broken version for its species
+    - Limit extent 
     - Fixed repertoire of signals
     - About here and now
         - One exception is bees: not what if or discussing past events, but can communicate forms of displacement (space)
-
--   Hockett describes design-feature #5 “total feedback”  
-	- “The speaker of a language hears, by total feedback, everything of linguistic relevance in what he himself says”  
-	- Important, since it makes possible the so-called internalization of   communicative behavior that constitutes at least a major portion of  “thinking”
-- Key feature of language is its ability to represent the world, to say how things are, and to say that they are a certain way even when they are not that way (to misrepresent the world)
-- We ask questions, make demands, express emotions, so, language is much more than just a representational system - it's part of a system that generates the ideas that can be communicated in language
 
 ### Free Will and Intelligence
 - COGS is an interdisciplinary and collaborative approach to understanding and designing systems that think and act intelligently
@@ -108,11 +121,6 @@
 	- It can think (process information) and act on what it thinks 
 	- Someone (or something) exhibits behaviour that is understandable in terms of what it is thinking.  
 - We take an engineering or design perspective on cognitive systems, since our interests include artificial systems
-- AI is “fake, artificial” intelligence but not all artificial things are fake
-    - Fake artificial - hercamer vs real artificial - lab created diamonds
-    - Not all fake things are artificially created (e.g. fool’s gold)
-    - Natural artificial – spex wasp (follows algorithm without any adaptability to setting)
-- AI’s intelligence can be real artificial intelligence, if achieved
 
 ### Intelligence and the Turning Test (1950)
 - “Intelligence” varies by perspective – science (gradient), philosophy (all or none)
@@ -173,3 +181,46 @@
 	
 - Academic Psychology 
 
+### AI and Cognitive Systems 
+- AI approach to Cognitive Systems provides tools to build intelligent agents rather than only studying the external behaviour of natural agents or dissecting their inner workings
+- Intelligent in narrow domains 
+- Intelligence:
+	- Able to solve problems 
+	- Make good decisions 
+	- Perceive 
+	- Reason: infer new knowledge from existing knowledge
+	- Learn 
+	- Adapt to new environments
+	- Act to achieve goals
+	- Reactive and responsive 
+	- Communication 
+	- Theory of mind? 
+	- Self-awareness?
+	- Consciousness? 
+
+- AI proposed definitions:
+	- Systems that think like humans 
+		- Model the cognitive functions and behaviours of humans 
+		- Objections: measuring thought would mean spending time studying how minds operate (e.g IQ tests) rather than thinking about what intelligence could mean in various domains
+	- Systems that act like humans 
+		- Turing test - "Imitation Game"
+		- Definition of intelligent (verbal) behaviour
+		- Objections: mumans often act intelligently 
+	- Systems that think rationally
+		- Rationality is an abstract ideal of intelligence, as it's the ability to infer new knowledge from existing knowledge rather than “whatever humans think/do”
+		- Syllogisms: argument structures that always yield correct conclusions given correct premises
+			- Led to logic and probabilistic reasoning which are used heavily in AI
+		- Objections: reasoning is useless without action 
+	- Systems that act rationally 
+		- Rationality is more cleanly defined than human behaviour, so it's a better design objective
+		- It's easier to define rational action than rational thought
+
+- AI is “fake, artificial” intelligence but not all artificial things are fake
+    - Fake artificial - hercamer diamonds 
+    - Real artificial - lab created diamonds
+	    - Not all fake things are artificially created (e.g. fool’s gold)
+    - Natural artificial – spex wasp 
+	    - Follows algorithm without any adaptability to setting
+- AI’s intelligence can be real artificial intelligence, if achieved
+	- Artificial 1: real artificial 
+	- Artificial 2: fake artificial: not possible because if an agent acts intelligently, it is intelligent 
