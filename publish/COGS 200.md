@@ -1,9 +1,10 @@
 ### Five cognitive science disciplines and "the"
-- Linguistics 
+1. Linguistics 
 	- Phonetics: how we make/comprehend possible speech sounds or sign parameters
-		- Articulation of the word "the" sounds different before different words
+		- Physical articulation of the word "the" 
 	- Phonology: which possible speech sounds/sign parameters your language uses, and how they pattern
 		- Pronunciation changes depending on word preceding it
+		- Mental articulation of the word "the" 
 	- Morphology: how words/signs are formed
 	- Syntax: how sentences are formed
 		- Can only occur before nouns and can be substituted by a small number of words (determiners, e.g. “a”, “this”, “my”)
@@ -11,16 +12,16 @@
 		- “The” is a definite determiner, the meaning of a noun phrase it is used in (e.g., “the book”) can only be determined by the specific discourse situation it is used in
 			- E.g. “The book I lost yesterday was found by my roommate”
 	- Pragmatics: how meaning derives from context
-- Psychology
+2. Psychology
     - Neurolinguistics and Psycholinguistics: How language is stored and processed by the brain/mind
         - When people hear a definite noun phrase like “the book”, it sets off a search for a current perceptual input and of memory for an object with the current properties
     - Sociolinguistics: Language in society (for instance, regional dialects)
     - The relationship between Language and Culture
     - Historical Linguistics: how languages change over time
-- Neuroscience
+3. Neuroscience
 	- Certain brain regions are dedicated to semantic and syntactic processing of “the” and other function words (words involved in determining grammatical structure)
 	- E.g. Broca’s area is involved in assigning structure to sentences, so damage to this area results in disrupted sentence structure (Broca's aphasia)
-- Computer Science
+4. Computer Science
 	- Computational Linguistics - the study of how computers can process human language
 	- AI researchers exploit properties of the word “the” when they build programs that can understand natural language
 		- E.g. The parser is a natural language processing program that figures out grammatical properties of incoming sentences
@@ -43,7 +44,7 @@
 	    - sender/source (light)
 	    - message (stop/go)
 	    - channel (colour)
-	    - receiver/distinuation (human gaze)
+	    - receiver (human gaze)
 	    - effect (human stops/goes)
         
 - Hockett's Design Features for Language
@@ -69,9 +70,9 @@
 		    - Using finite set of discrete units, language users create and understand an infinite number of new utterances (e.g. words and sentences)
 		    - E.g. yeet, tip-flation
 	    11. Duality of patterning
-		    - Language is composed of basic meaningless units (vowel sounds) to form larger nits (words) that have arbitrary meaning 
+		    - Language is composed of basic meaningless units (vowel sounds) to form larger units (words) that have arbitrary meaning 
 	    12. Cultural transmission
-			- Learned after birth in a social setting 
+			- Learned after birth, in a social setting 
 	    13. Learnability
 			- Speaker can learn the language, or even multiple languages
 	    14. Displacement
@@ -91,37 +92,32 @@
     - About here and now
         - One exception is bees: not what if or discussing past events, but can communicate forms of displacement (space)
 
-### Free Will and Intelligence
+### Philosophy as a Discipline
 - COGS is an interdisciplinary and collaborative approach to understanding and designing systems that think and act intelligently
-- Philosophy is not concerned with direct observations or facts (first order), but with understanding how we think about those facts (second-order)
-- This leads to the perception of philosophy as elusive and lacking concrete progress, as it seeks clarity rather than practical applications
-- Philosophy serves as a foundation for various scientific disciplines, arising from the fundamental human impulse of wonder
-- Philosophers rely on a shared historical context to engage with and critique each other's ideas, forming a distinct intellectual lineage
 
 - Two movements in contemporary western philosophy:  
 	- Analytic (English-speaking)  
 	- Phenomenological (German/French)
 - Challenges:
 	- Considerable disagreement even among contemporary analytic philosophers about what philosophy is or should be
-		- Metaphilosophy, a journal  
-		- Michael Dummett (2001) The Nature and Future of Philosophy  
-		- Timothy Williamson (2008) The Philosophy of Philosophy
-	- Many scientific disciplines (chemistry, anthropology, ...), unlike Philosophy, have a settled body of knowledge that must be mastered in order to gain entry to the field, as nearly everything is contested
-	- Philosophy is the tradition of inquiry and major figures and their works, where we find the disciplinary culture, standards of adequacy, methods, and the sense of what is interesting
+	- Philosophy is not concerned with direct observations or facts (first order), but with understanding how we think about those facts (second-order)
+	- This leads to the perception of philosophy as elusive and lacking concrete progress, as it seeks clarity rather than practical applications
+	- Philosophy serves as a foundation for various scientific disciplines, arising from the fundamental human impulse of wonder
+	- Philosophers rely on a shared historical context to engage with and critique each other's ideas, forming a distinct intellectual lineage
 	
 - Philosophical naturalism
 	- Philosophy as a second-order discipline, the study of the various first-order activities of scientists, artists, theologians, jurists 
 	- Stages:
-		- Before questions are clear enough to apply scientific methods to them (i.e. occurs prior to science)
+		- Before questions are clear enough to apply scientific methods to them 
 		- Reflects on the progress of science: questions of meaning (conceptual questions) and justification (methodological questions)
 		
-- Free Will
-	- Traditional
-		- Computers can never be intelligent or have agency because they can't act freely (unpredictably), they make decisions based on instructions
-			- Even adding a "random" primitive does not mean that the computer is acting freely 
-	- Contemporary
-		- Consider the difference between “on purpose” and “by accident”
-		- Consider the difference between something you do and something that happens to you
+### Free Will
+- Traditional
+	- Computers can never be intelligent or have agency because they can't act freely (unpredictably), they make decisions based on instructions
+		- Even adding a "random" primitive does not mean that the computer is acting freely 
+- Contemporary
+	- Consider the difference between “on purpose” and “by accident”
+	- Consider the difference between something you do and something that happens to you
 
 ### Cognitive Systems
 - COGS covers:
@@ -136,7 +132,7 @@
 ### Intelligence and the Turning Test (1950)
 - “Intelligence” varies by perspective – science (gradient), philosophy (all or none)
 - Two controversies:
-		- Empirical: will there ever be an actual computer that can win the imitation game?  
+		- Empirical: will there ever be an actual computer that can win the imitation game?
 		- Conceptual: if a computer does win the game, does that mean it can think?
 	
 - Responses:
