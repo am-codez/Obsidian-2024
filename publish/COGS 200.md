@@ -275,4 +275,16 @@
 	- AI disrupts how we live, learn, work and play
 	- Humans are no longer unique in the cognitive universe
 
-- 
+
+- Two early approaches to Psychology
+	- Structuralism (Wilhelm Wundt, Edward Tichener, Edwin Boring)  
+		- An approach to psychology that attempted to isolate the basic unit (structure) of the mind  
+		- Method: systematic introspection  
+		- i.e., analysing your own subjective experience  
+	- Functionalism (William James)  
+		- An approach to psychology that emphasized the adaptive significances of mental processes
+		- Mental states and intelligence increase the rate of survival  
+		- Heavily influenced by Darwinian evolution
+	- The world contains a lot of information  
+
+- Humans are limited in how much information they can handle so, humans actively select information
