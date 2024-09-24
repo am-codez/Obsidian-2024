@@ -275,7 +275,7 @@
 	- AI disrupts how we live, learn, work and play
 	- Humans are no longer unique in the cognitive universe
 
-### Psychology
+### Psychological Study
 - Two early approaches to Psychology
 	- Structuralism (Wilhelm Wundt, Edward Tichener, Edwin Boring)  
 		- An approach to psychology that attempted to isolate the basic unit (structure) of the mind  
@@ -290,9 +290,26 @@
 	- Assume the mind is scientifically intelligible 
 	- Follow scientific method 
 	- Don't introspect on their own mind 
+
+
+### Methods for study the mind
+Look at the minds of others - beliefs, judgements, sensory experiences, illusions, behaviour, etc
+- E.g. Sight
+	- Issue: Illumination falling on an object (brightness) and reflectance (light reflected back) vs stuff it's made of 
+	- Solution as a feature: Lightness constancy (the ability to factor out changes in illumination, and thus sense the "real" lightness of material)
+		- Drawbacks: can affect ability to perceive real colour and size depending on context
+	- Thus, we don't see the world "as it is" (i.e. based on only pattern of light on our retinas), our brains construct a single experience of the world based on raw visual input (light) and our beliefs/expectations/context
+- E.g. Communication 
+	- Your brain has the ability to decode the sounds into thoughts, and through these sounds I can make different sounds to give you other thoughts  
 	- Methods:
-		- Look at the minds of others - beliefs, judgements, sensory experiences, illusions, behaviour, etc
-		- Look at atypical minds 
+		- Tens of thousands of memorised words  
+		- Grammatical rules that combine words into an infinite number of possible sentences, to allow communication novel ideas
+		- Sentence structure determines meaning 
+
+Look at atypical minds - TBI, atypical development, mental health
+- E.g. Split-brain patients, Broca's aphasia
+
+Look at minds of other species - rodents, birds, etc
 
 ### Information Processing 
 - Humans are limited in how much information they can handle so, humans actively select information
