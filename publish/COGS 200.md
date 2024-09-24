@@ -178,25 +178,10 @@
 	- Intelligence is defined by cognitive functions a system performs, rather than its material composition 
 	- Computers exhibit cognitive functions and mental processes similar to brains (e.g. memory, learning, etc)
 	- Middle ground between Dualism and Behaviourism, distinguishing thought from behaviour while linking them through observable action 
-	
-- Academic Psychology 
 
 ### AI and Cognitive Systems 
 - AI approach to Cognitive Systems provides tools to build intelligent agents rather than only studying the external behaviour of natural agents or dissecting their inner workings
 - Intelligent in narrow domains 
-- Intelligence:
-	- Able to solve problems 
-	- Make good decisions 
-	- Perceive 
-	- Reason: infer new knowledge from existing knowledge
-	- Learn 
-	- Adapt to new environments
-	- Act to achieve goals
-	- Reactive and responsive 
-	- Communication 
-	- Theory of mind? 
-	- Self-awareness?
-	- Consciousness? 
 
 - AI proposed definitions:
 	- Systems that think like humans 
@@ -224,3 +209,70 @@
 - AI’s intelligence can be real artificial intelligence, if achieved
 	- Artificial 1: real artificial 
 	- Artificial 2: fake artificial: not possible because if an agent acts intelligently, it is intelligent 
+
+### AI Goals 
+- Scientific goal: to understand the principles that make intelligent behaviour possible in natural or artificial systems
+	- Analyze natural and artificial agents
+	- Formulate and test hypotheses about what it takes to construct intelligent agents
+	- Design, build, and experiment with computational systems that perform tasks that require intelligence
+- Engineering goal: design useful, intelligent artifacts
+
+- AI aims to build intelligent agents that act rationally in their environments
+	- Proactive - they act appropriately given goals and circumstances
+	- Reactive - they are flexible to changing environments and goals
+	- They learn from experience
+		- Agent learning how the world works based on experience, beginning with no prior knowledge
+		- Differs from the agent receiving a model of the world as training
+	- They make appropriate choices given perceptual and computational limitations
+	- Dropping the constrains of human cognition as a requirement for intelligence 
+- Poker is a zero-sum, multi-person game with chance and imperfect information – closer to reality
+
+### AI Types
+- Human-Centered AI creates AI systems that augment rather than displace humans
+- Human-Compatible AI develops controllable AI aligned with human preferences
+
+- Generative AI
+	- GPT-4
+		- A Large Language Model (LLM), given text as context, predicts most likely next word then repeats that process to generate arbitrarily long texts (essays, programs, contracts, scripts, emails
+		- GPT-4 is a deep architecture 1.8 trillion parameters, across 120 layers trained on gigantic text and code datasets
+		- ChatGPT trained to use GPT-4 by humans on sample dialog, to make it sound like a human and use human feedback to correspond to human preference
+	- Other for Fitness, Healthcare, Education, etc
+	- Risks:
+		- Trained on the Internet (fake info, hate speech)
+		- Bias in data reproduced in output
+		- Hallucinating answers
+		- Predicting words with no concept of truth 
+		- Massive energy and resource consumption 
+		- Eroded trust 
+		- Deep fakes and email scams 
+		- Copyright infringement  
+-  Classification AI
+
+- No current Artificial General Intelligence
+	- Whereby agent could learn to accomplish any task a human can
+
+### Reception of AI
+- Impact on employment
+	- Rapid shift in jobs and skills
+	- Some skills done by AI now (with more to come), thus we must upgrade skills and learn to exploit AI to keep up 
+	- Many jobs disappearing (e.g. bank tellers, travel agents, etc)
+	- Fewer needed to create wealth, thus worsening wealth inequality - UBI?
+	
+- MetaAI tribes
+	- Realists: 
+		- Immediate harms and short term risks (discrimination, bias, misinformation, disinformation, deep fakes, manipulation, bullying and sexual harassment, copyright theft, worker exploitation, environmental harms) 
+		- Need AI ethics, auditing, certification, licensing and regulation
+	- Accelerationists: 
+		- Damn the torpedoes! Full speed ahead! Only corporate self-regulation, Silicon Valley libertarians
+	- Doomers
+		- Long term risks (AGI, misalignment, out of control, existential, extinction, regulation and licensing, Effective Altruism)
+
+- Are humans obsolete?
+	- AI successes: science, deep learning, self-driving vehicles, drones, web agents, generative AI, chatbots, etc 
+	- AI may be key for sustainability
+	- Immediate concerns: fairness, trust, safety, regulation, mental health, etc
+	- Massive employment shifts, precarious jobs, inequality, education, .etc
+	- AI disrupts how we live, learn, work and play
+	- Humans are no longer unique in the cognitive universe
+
+- 
