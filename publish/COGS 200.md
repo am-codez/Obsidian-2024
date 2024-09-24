@@ -115,6 +115,11 @@
 - The Mind
 	- Dualism  
 		- Minds (the mental) and bodies (the physical) are distinct from one another, although they are in causal contact
+		- Endorsed by many religions 
+		- Highlights the fact that:
+			- Each of us has special access to the contents of her own mind
+			- Mental experiences (thoughts, feelings) exist independent of physical actions or sensory perceptions 
+			- Internal aspects of consciousness only required for a full "mental life"
 	- Behaviourism  
 		- Talk that purports to be about minds is really talk about behaviour patterns  
 	- Identity Theory  
