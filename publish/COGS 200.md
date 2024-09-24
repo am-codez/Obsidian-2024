@@ -96,20 +96,22 @@
 - Turning Test (1950)
 	- Two controversies:
 		- Empirical: will there ever be an actual computer that can win the imitation game?  
-		- Conceptual: if a computer does win the game, does that mean (or provide good evidence that) it can think
+		- Conceptual: if a computer does win the game, does that mean it can think?
 	- Responses:
 		- Turing: says yes to both 
-			- Believes that within 50 years, computers will be able to convincingly imitate humans in a game to the point where an interrogator would only have a 70% chance of correctly identifying the machine after five minutes
+			- Believes that within 50 years, computers will be able to convincingly imitate humans in a game to the point where an interrogator would only have a 70% chance of correctly identifying the machine after 5 minutes
 			- Considers the question "Can machines think?" to be meaningless, but predicts that by the end of the century, the concept of machines thinking will be widely accepted due to changes in language and educated opinion
 		- Descartes: says no to 1 but yes to 2
-			- Two key tests to distinguish a machine from a human, even if the machine resembles humans and mimics their actions: the first test is the machine's inability to arrange words or signs in a manner that effectively expresses thoughts, like a human can; the machine might produce sounds, but it won't be able to respond appropriately to conversation
+			- Two key tests to distinguish a machine from a human: 
+				- The machine's inability to arrange words or signs in a manner that effectively expresses human-like thoughts
+				- The machine might produce sounds, but it won't be able to respond appropriately to conversation
 		- Searle (Chinese Room): says no to 2
-			- Seems as though he (as the computer) understands a Chinese language, but he's using a rule book and doesn't realize what he's reading, saying, or even speaking to anyone else
-		- There are a variety of positions one can take on the Chinese Room thought experiment:  
-			- It fails to demonstrate that AI is impossible (Levesque 2009 “Is It Enough to Get the Behaviour Right?)  
-			- It demonstrates that all forms of AI are impossible (Searle 1986 Minds, Brains, and Science)  
-			- It demonstrates that AI is impossible, if one takes the classic “symbols and search” approach: GOFAI
-				- Therefore, AI should take another (NFAI) approach: either the machine learning, artificial neural network approach or the embodied, enactive cognition approach (Clarke 2014 Mindware)
+			- Seems as though he (as the computer) understands a Chinese language, but he's only obeying a rule book and doesn't realise what he's reading, saying, or even speaking
+	- There are a variety of positions one can take on the Chinese Room thought experiment:  
+		- It fails to demonstrate that AI is impossible (Levesque)  
+		- It demonstrates that all forms of AI are impossible (Searle)  
+		- It demonstrates that AI is impossible, if one takes the classic “symbols and search” approach: GOFAI
+			- Therefore, AI should take another (NFAI) approach: either the machine learning, artificial neural network approach or the embodied, enactive cognition approach (Clarke 2014 Mindware)
 - The Mind
 	- Dualism  
 		- Minds (the mental) and bodies (the physical) are distinct from one another, although they are in causal contact
