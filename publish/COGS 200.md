@@ -89,6 +89,7 @@
 - Free Will
 	- Traditional
 		- Computers can never be intelligent or have agency because they can't act freely (unpredictably), they make decisions based on instructions
+			- Even adding a "random" primitive does not mean that the computeris acting freely 
 	- Contemporary
 		- Consider the difference between “on purpose” and “by accident”
 		- Consider the difference between something you do and something that happens to you
