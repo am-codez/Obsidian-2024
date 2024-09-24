@@ -275,7 +275,7 @@
 	- AI disrupts how we live, learn, work and play
 	- Humans are no longer unique in the cognitive universe
 
-
+### Psychology
 - Two early approaches to Psychology
 	- Structuralism (Wilhelm Wundt, Edward Tichener, Edwin Boring)  
 		- An approach to psychology that attempted to isolate the basic unit (structure) of the mind  
@@ -285,6 +285,22 @@
 		- An approach to psychology that emphasized the adaptive significances of mental processes
 		- Mental states and intelligence increase the rate of survival  
 		- Heavily influenced by Darwinian evolution
-	- The world contains a lot of information  
+		
+- Psychologists collectively study other people's minds
+	- Assume the mind is scientifically intelligible 
+	- Follow scientific method 
+	- Don't introspect on their own mind 
+	- Methods:
+		- Look at the minds of others - beliefs, judgements, sensory experiences, illusions, behaviour, etc
+		- Look at atypical minds 
 
+### Information Processing 
 - Humans are limited in how much information they can handle so, humans actively select information
+
+- Information Processing Models
+	- ![[Pasted image 20240924104542.png]]
+		- Limited capacity in how much we can process 
+		- We select for deeper processing (meaning) based on some primitive feature (e.g. location, pitch, colour)
+		- E.g. Dichotic listening/shadowing task: information on the unattended channel seems to not be processed but intrusions can occur suggesting they do 
+	- There are many models on how the flow of information through the cognitive system affects the relationships between different cognitive  processes  
+		- Attention research is concerned with the relationship between the capacity limitations and the selective processes used to deal with those limitations 
