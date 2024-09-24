@@ -874,7 +874,7 @@
 		- `<element>`: string, number, expression (e.g. string-append), etc
 		- Used to define list
 		- E.g. `(define L1 (cons "apple" (cons 2 empty))`
-			- List with 1 element
+			- List with 2 elements "apple" and "2"
 	- `(cons <value or expression> <list name>)`
 		- Adds element to the front of the list
 		- E.g. `(define L1 (cons "apple" empty))`
@@ -885,7 +885,7 @@
 	- Rest: returns all other elements in the list after first, as a list 
 	- E.g. to get second element
 		`(first (rest <list name>))`
-		`(rest (rest <list name>))`
+		`(rest (rest <list name>))
 	- E.g. `(cons "Flames" empty)`
 		- List with 1 element 
 		- Prints `(cons "Flames" empty)`
