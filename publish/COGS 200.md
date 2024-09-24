@@ -188,6 +188,12 @@
 ### AI and Cognitive Systems 
 - AI approach to Cognitive Systems provides tools to build intelligent agents rather than only studying the external behaviour of natural agents or dissecting their inner workings
 - Intelligent in narrow domains 
+- Considered a cognitive (intelligent) system if it possess the following:
+	- Perception
+	- Memory
+	- Learning
+	- Reasoning
+	- Goal-directed behaviour
 
 - AI proposed definitions:
 	- Systems that think like humans 
