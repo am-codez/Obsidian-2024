@@ -25,6 +25,7 @@
 	- AI researchers exploit properties of the word “the” when they build programs that can understand natural language
 		- E.g. The parser is a natural language processing program that figures out grammatical properties of incoming sentences
 
+(1) how language is relevant to the general study of cognition, and (2) what language is and what criteria (aka language design features) researchers use to identify a communication system to be a language. For example, I can either ask you to explain a certain design feature and/or give an example of it, or I can give you some fact from human or animal communication and ask which language design feature this fact exemplifies.
 ### Language and Communication
 - Communication: A signal, with a particular form and meaning/message, is transmitted from a sender to receiver(s) along a channel of communication
 	- The connection between form and meaning constitutes a code
@@ -93,19 +94,28 @@
 - Free Will
 	- Traditional
 		- Computers can never be intelligent or have agency because they can't act freely (unpredictably), they make decisions based on instructions
-			- Even adding a "random" primitive does not mean that the computeris acting freely 
+			- Even adding a "random" primitive does not mean that the computer is acting freely 
 	- Contemporary
 		- Consider the difference between “on purpose” and “by accident”
 		- Consider the difference between something you do and something that happens to you
 
-### Intelligence and the Turning Test (1950)
-- “Intelligence” varies by perspective – science (gradient), philosophy (all or none)
+### Cognitive Systems
+- COGS covers:
+	- Natural cognitive systems like humans, other animals, other living organisms, social groups  
+	- Artificial cognitive systems like computers, robots, programs, models  
+- A system is something like a creature or a mechanism or an organised   network or structure that is distinct from its environment and made up of interrelated and interacting parts
+- A system is cognitive if:
+	- It can think (process information) and act on what it thinks 
+	- Someone (or something) exhibits behaviour that is understandable in terms of what it is thinking.  
+- We take an engineering or design perspective on cognitive systems, since our interests include artificial systems
 - AI is “fake, artificial” intelligence but not all artificial things are fake
     - Fake artificial - hercamer vs real artificial - lab created diamonds
     - Not all fake things are artificially created (e.g. fool’s gold)
     - Natural artificial – spex wasp (follows algorithm without any adaptability to setting)
 - AI’s intelligence can be real artificial intelligence, if achieved
 
+### Intelligence and the Turning Test (1950)
+- “Intelligence” varies by perspective – science (gradient), philosophy (all or none)
 - Two controversies:
 		- Empirical: will there ever be an actual computer that can win the imitation game?  
 		- Conceptual: if a computer does win the game, does that mean it can think?
