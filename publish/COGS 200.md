@@ -57,25 +57,31 @@
 		    - When someone speaks a language, they are fully aware of the sounds and meanings of what they are saying, and they can hear and process every aspect of their speech, allowing them to adjust based on their own auditory experience
 		    - Important because this helps us internalise communication patterns crucial for organising thinking and communicating effectively 
 	    6. Specialization
+		    - Unrelated to  biological function (e.g. panting)
 	    7. Semanticity
-	- Non-specific communication features include:
-		1. Arbitrariness
+		    - Specific sound signals are directly tied to certain meanings
+		8. Arbitrariness
 			- Word meaning arbitrary but agreed on, e.g. table
 			- Contrast with iconicity where a word or sign looks like what it means, E.g. drink in ASL, gulp in English
-	    2. Discreteness
-	    3. Productivity/Creativity
+	    9. Discreteness
+			- Language can be broken down into distinct, smaller units, such as sounds (phonemes), words (morphemes), or phrases
+	    10. Productivity/Creativity
 		    - Using finite set of discrete units, language users create and understand an infinite number of new utterances (e.g. words and sentences)
 		    - E.g. yeet, tip-flation
-	    4. Duality of patterning
+	    11. Duality of patterning
 		    - Language is composed of basic meaningless units (vowel sounds) to form larger nits (words) that have arbitrary meaning 
-	    5. Cultural transmission
-	    6. Learnability
-	    7. Displacement
+	    12. Cultural transmission
+			- Learned after birth in a social setting 
+	    13. Learnability
+			- Speaker can learn the language, or even multiple languages
+	    14. Displacement
 		    - Referring to events remote in space, time, or reality
 		    - E.g. It's raining in New York right now 
 		    - E.g. Tom will eat eggs tomorow 
-	    8. Prevarication
-	    9. Reflexiveness
+	    15. Prevarication
+			- Ability to lie or deceive
+	    16. Reflexiveness
+			- Ability to discuss the idea and structure of language with others
 
 - Animal communication:
     - Mostly innate (e.g. barking)
