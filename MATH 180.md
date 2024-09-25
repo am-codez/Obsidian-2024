@@ -680,4 +680,7 @@ Differential equation: given derivative equation f'(x) and asked to solve for f(
 - ${\lim_{h\to 0 }}= e^x+h = 5e^x(\frac{e^h-1}{h})$
 - Simplify to 
 - $5e^x\lim_{h\to 0 }= \frac{e^{h}-1}{h}$
-- 
+
+
+
+$\frac{c}{x^{n}=0}$
