@@ -654,3 +654,18 @@ Function is differentiable at x=a if f'(a) exists
 	- ![[Pasted image 20240920135101.png]]
 	- E.g. $2^{x}$ is larger than $1.5^{x}$ in positive x-axis and smaller in the negative x-axis 
 
+- Exponent rules:
+	- $(a^{b})(a^{c)}= a^{b+c}$
+	- $\frac{a^{b}}{(a^{c)}}= a^{b-c}$
+- No rule for $a^{b}+a^c$
+- $b^{x\lim_{h\to 0 }}= b^x+h = (b^x)(b^h)$
+- $b^{x\lim_{h\to 0 }}= b^x+h = b^x(\frac{b^h-1}{h})$
+- Simplify to 
+- $b^x\lim_{h\to 0 }= \frac{b^{h}-1}{h}$
+- Let 
+- Differential equation:
+	- E.g. $y-e^x=0$
+			$y=e^x$
+	E.g. $(\frac{y}{e^{x}})=1$
+	$y=e^x$
+	
