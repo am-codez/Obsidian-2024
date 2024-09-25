@@ -646,3 +646,4 @@ Function is differentiable at x=a if f'(a) exists
 	- $f'(x) DNE$
 - If point is at a discontinuations (e.g. jump where limit doesn't exist), we can't take slope there
 	- ![[Pasted image 20240920135101.png]]
+
