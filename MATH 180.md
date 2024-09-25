@@ -597,6 +597,7 @@
 
 ### Derivatives
 - Taking slope between 2 points (instantaneous)
+- 
 - The instantaneous slope/rate of change of f(x) which we find using the secant line with 2 points, to get us the tangent line, which is equal to the slope of f(x) 
 	- As we decrease distance between 2 points (x-axis), slope generated is closer and closer to tangent 
 	- Eventually get close enough that slope of secant line is slope of tangent line 
