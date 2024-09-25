@@ -182,6 +182,11 @@
 	- Unearned advantaged (e.g. name always pronounced correctly)
 		- Improved outcomes but don't guarantee them if you don't work hard (e.g. )
 		- Can't explain outcomes through identity without acknowledging effort, and vise versa
+	- Comfortable measuring gender and race, but not policitical ideology, class, etc
+		- Perhaps this has to do with factors that are rigid 
+- Obama intern class was an overcorrection 
+- When we compare intern class from other presidencies, they are mostly white 
+	- If interns were racist, 
 
 $$d=\frac{(p)4\pi r^{2}}{(\frac{4}{3})\pi r^{3}}$$$$d=\frac{3p}{r}$$
 
