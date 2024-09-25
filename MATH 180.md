@@ -668,4 +668,15 @@ Function is differentiable at x=a if f'(a) exists
 			$y=e^x$
 	E.g. $(\frac{y}{e^{x}})=1$
 	$y=e^x$
-	
+
+Differential equation: given derivative equation f'(x) and asked to solve for f(x)
+- Derivative function should be the same as f(x)
+- E.g. $y'(x)=y(x)$ --> $(e^{x})'=e^x$
+	- Rate of change people getting sick (f'(x)) depends on how many people are sick (f(x))
+- Give another 
+- E.g. 
+	- ${\lim_{h\to 0 }}= e^x+h = (e^x)(e^h)$
+- ${\lim_{h\to 0 }}= e^x+h = 5e^x(\frac{e^h-1}{h})$
+- Simplify to 
+- $5e^x\lim_{h\to 0 }= \frac{e^{h}-1}{h}$
+- 
