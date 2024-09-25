@@ -596,9 +596,15 @@
 			$x=2t-5$
 
 ### Derivatives
+- Taking slope between 2 points (instantaneous)
+	- Take slope at 2 points 
+		- As we decrease distance between 2 points (x-axis), slope generated is closer and closer to tangent 
+		- Eventually get close enough that slope of secant line is slope of tangent line 
+- Not a good idea to factor 
+    
 - Derivative of a function $f'(x)$
 	- Equal to the slope of the tangent line if a limit exists at a given x-value 
-	- $f'(x)= \lim_{ x \to 0 }\frac{f(x+h)-f(x)}{h}$
+	- $f'(x)= \lim_{ h \to 0 }\frac{f(x+h)-f(x)}{h}$
 	- Slope of the tangent drawn to that curve at a given point
 - It also represents the instantaneous rate of change at a point on the function
 - Thus, whenever we see the phrases like "slope/gradient", "rate of change", "velocity (given the displacement)", "maximize/minimize" etc then it means that the concept of derivatives is involved
