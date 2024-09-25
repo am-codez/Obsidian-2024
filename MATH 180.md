@@ -597,17 +597,17 @@
 
 ### Derivatives
 - Taking slope between 2 points (instantaneous)
-	- Take slope at 2 points 
-		- As we decrease distance between 2 points (x-axis), slope generated is closer and closer to tangent 
-		- Eventually get close enough that slope of secant line is slope of tangent line 
+- The instantaneous slope/rate of change of f(x) which we find using the secant line with 2 points, to get us the tangent line, which is equal to the slope of f(x) 
+	- As we decrease distance between 2 points (x-axis), slope generated is closer and closer to tangent 
+	- Eventually get close enough that slope of secant line is slope of tangent line 
 - Not a good idea to factor 
-    
-- Derivative of a function $f'(x)$
+- Derivative of a function denoted by $f'(x)$
 	- Equal to the slope of the tangent line if a limit exists at a given x-value 
 	- $f'(x)= \lim_{ h \to 0 }\frac{f(x+h)-f(x)}{h}$
 	- Slope of the tangent drawn to that curve at a given point
-- It also represents the instantaneous rate of change at a point on the function
-- Thus, whenever we see the phrases like "slope/gradient", "rate of change", "velocity (given the displacement)", "maximize/minimize" etc then it means that the concept of derivatives is involved
+- Tangent: 
+	- Curve at a point in a line that intersects the curve at that point and whose slope captures the instantaneous rate of change 
+	- Pick point on line for continuous function, will look like a line
 - Slope of secant line 
 	- $m= \frac{f(x+h)-f(x)}{h}$
 ### Tangent Lines
@@ -652,4 +652,5 @@ Function is differentiable at x=a if f'(a) exists
 	- $f'(x) DNE$
 - If point is at a discontinuations (e.g. jump where limit doesn't exist), we can't take slope there
 	- ![[Pasted image 20240920135101.png]]
+	- E.g. $2^{x}$ is larger than $1.5^{x}$ in positive x-axis and smaller in the negative x-axis 
 
