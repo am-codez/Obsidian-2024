@@ -165,7 +165,7 @@
 			- Can use AI to augment self but we shouldn't use it to think for us (e.g. repeated use of words and suggest replacements)
 - Culpability 
 	- Endorse harm by ignoring harm 
-	- E.g. Exxon mobile - knew recyling plastic was a sham, but endorsed it any way because it allowed them to make more fuel and make more money 
+	- E.g. Exxon mobile - knew recycling plastic was a sham, but endorsed it any way because it allowed them to make more fuel and make more money 
 - Capability 
 	- If capable to remedy harm, can be held liable if you don't act (e.g. child drowning and you do nothing to save them)
 	- Grounded in responsibility to reduce harm 
@@ -174,6 +174,14 @@
 	- E.g. Bloomberg won't list company unless have x number of female execs
 	- E.g. Offering scholarships to women in specialised programs 
 	- Men's careers don't suffer with childbirth, instead, it can accelerate it as it may change perspective and approaches 
+	- E.g. Sweden offering 24 months of parental leave if split amongst both parents to reduce risk of hiring, i.e. women taking parental leave when men don't
+	- Wage gap doesn't show up until parenthood, so if someone remains childless, wage gap doesn't exist 
+- Positionality 
+	- Acknowledging biases (e.g. ethnicity, sex, sexuality)
+	- A lot terminology feels quite loaded, may shut people down, reduce connection and shared understanding of unearned advantage
+	- Unearned advantaged (e.g. name always pronounced correctly)
+		- Improved outcomes but don't guarantee them if you don't work hard (e.g. )
+		- Can't explain outcomes through identity without acknowledging effort, and vise versa
 
 $$d=\frac{(p)4\pi r^{2}}{(\frac{4}{3})\pi r^{3}}$$$$d=\frac{3p}{r}$$
 
