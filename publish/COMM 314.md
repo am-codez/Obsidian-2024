@@ -163,6 +163,17 @@
 			- Everyone will be much less understanding, and this can help us to get perspective of an outside critic
 			- Structure to see if sentence idea changes
 			- Can use AI to augment self but we shouldn't use it to think for us (e.g. repeated use of words and suggest replacements)
+- Culpability 
+	- Endorse harm by ignoring harm 
+	- E.g. Exxon mobile - knew recyling plastic was a sham, but endorsed it any way because it allowed them to make more fuel and make more money 
+- Capability 
+	- If capable to remedy harm, can be held liable if you don't act (e.g. child drowning and you do nothing to save them)
+	- Grounded in responsibility to reduce harm 
+	- E.g. CVS vows to quit selling tobacco products, made hard choice to do so even though they will lose sales 
+- Targeting diversity 
+	- E.g. Bloomberg won't list company unless have x number of female execs
+	- E.g. Offering scholarships to women in specialised programs 
+	- Men's careers don't suffer with childbirth, instead, it can accelerate it as it may change perspective and approaches 
 
 $$d=\frac{(p)4\pi r^{2}}{(\frac{4}{3})\pi r^{3}}$$$$d=\frac{3p}{r}$$
 
