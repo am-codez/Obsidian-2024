@@ -645,36 +645,43 @@ f'(x)=4h+8x+3 \\
 - E.g. Find the derivative at $f(x)=\frac{4}{x}$ using complex fraction rules
 $$\begin{align}
 \text{Finding slope of the tangent line} \\
-\lim_{ h \to 0 }= \frac{\frac{4}{x+h}-\frac{4}{x}}{h} \\
+\lim_{ h \to 0 }&= \frac{\frac{4}{x+h}-\frac{4}{x}}{h} \\
 \text{Get a common base} \\
-\lim_{ h \to 0 }= \frac{\frac{4(x)}{x(x+h)}-\frac{4(x+h)}{x(x+h)}}{h} \\
+\lim_{ h \to 0 }&= \frac{\frac{4(x)}{x(x+h)}-\frac{4(x+h)}{x(x+h)}}{h} \\
 \text{Combine fractions} \\
-\lim_{ h \to 0 }= \frac{\frac{4x-4(x+h)}{x(x+h)}}{h}  \\
+\lim_{ h \to 0 }&= \frac{\frac{4x-4(x+h)}{x(x+h)}}{h}  \\
 \text{Expand} \\
-\lim_{ h \to 0 }= \frac{\frac{4x-4x-4h}{x(x+h)}}{h} \\
+\lim_{ h \to 0 }&= \frac{\frac{4x-4x-4h}{x(x+h)}}{h} \\
 \text{Simplify} \\
-\lim_{ h \to 0 }= \frac{\frac{-4h}{x(x+h)}}{h}  \\
+\lim_{ h \to 0 }&= \frac{\frac{-4h}{x(x+h)}}{h}  \\
 \text{Apply fraction rule} \frac{\frac{a}{b}}{c}=\frac{a}{b*c} \\
-\lim_{ h \to 0 }= \frac{-4h}{(x(x+h))(h)} \\
+\lim_{ h \to 0 }&= \frac{-4h}{(x(x+h))(h)} \\
 \text{Simplify} \\
-\lim_{ h \to 0 }= \frac{-4}{x(x+h)}  \\
-\text{Take lim h approaching 0 to get tangent line} slope\\
-\lim_{ h \to 0 }= \frac{-4}{x(x+0)} \\
-\lim_{ h \to 0 }= \frac{-4}{x(x)} \\
-\lim_{ h \to 0 }= \frac{-4}{x^2} \\
-\text{Slope of tangent line (derivative) is} f'(x)=\frac{-4}{x^{2}}  \\
+\lim_{ h \to 0 }&= \frac{-4}{x(x+h)}  \\
+\text{Take lim h approaching 0 to get tangent line slope}\\
+\lim_{ h \to 0 }&= \frac{-4}{x(x+0)} \\
+\lim_{ h \to 0 }&= \frac{-4}{x(x)} \\
+\lim_{ h \to 0 }&= \frac{-4}{x^2} \\
+\text{Slope of tangent line (derivative) is } f'(x)=\frac{-4}{x^{2}}  \\
  \\
-\text{Finding output of tangent line at } x=6 \\
-f'(6)= \frac{-4}{36} \to \frac{-2}{18} \to \frac{-1}{9}  \\
-\text{Now have a point at } (6, \frac{-1}{9}) \\
- \\
-\text{Equation of tangent line at x=6} \\
-\text{Using point-slope formula} y-y_{1}=m(x-x_{1}) \\
-y-\frac{-1}{9}=\frac{-4}{x^{2}}(x-6) \\
-\text{Simplify} \\
-y- 
+\text{Find slope (m) of tangent line at }x=6 \\
+f'(x)&=\frac{-4}{x^{2}} \\
+f'(6)&= \frac{-4}{36} \to \frac{-2}{18} \to \frac{-1}{9}  \\
+\text{Find point of f(x) at x=6} \\
+f(x)&=\frac{4}{x} \\
+f(6)&=\frac{4}{6} \to \frac{2}{3} \\
+\text{Find the equation of tangent line at }x=6 \text{ using point-slope formula} \\
+y-y_{1}&=m(x-x_{1}) \\
+y-\frac{2}{3}&=\frac{-1}{9}(x-6) \\
+\text{Multiply through} \\
+y-\frac{2}{3}&=\frac{-1}{9}x+ \frac{6}{9} \\
+\text{Move y1 over} \\
+y&=\frac{-1}{9}x+ \frac{6}{9} + \frac{-2}{3} \\
+\text{Add fractions} \\
+y&=\frac{-1}{9}x+ \frac{2}{3} + \frac{2}{3}  \\
+y&=\frac{-1}{9}x + \frac{4}{3} 
 \end{align}$$
-!!!
+
 - Function is differentiable at $x=a$ if $f'(a)$ exists
 	- Functions can be defined but not differentiable at a given x-value
 - When $f'(x)$ cannot be found (differentiable):

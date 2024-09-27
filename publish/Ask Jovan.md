@@ -19,15 +19,22 @@ $$\begin{align}
 \lim_{ h \to 0 }= \frac{-4}{x^2} \\
 \text{Slope of tangent line (derivative) is} f'(x)=\frac{-4}{x^{2}}  \\
  \\
-\text{Finding output of tangent line at } x=6 \\
+\text{Find slope (m) of tangent line at }x=6 \\
+f'(x)=\frac{-4}{x^{2}} \\
 f'(6)= \frac{-4}{36} \to \frac{-2}{18} \to \frac{-1}{9}  \\
-\text{Now have a point at } (6, \frac{-1}{9}) \\
- \\
-\text{Equation of tangent line at x=6} \\
-\text{Using point-slope formula} y-y_{1}=m(x-x_{1}) \\
-y-\frac{-1}{9}=\frac{-4}{x^{2}}(x-6) \\
-\text{Simplify} \\
-y- 
+\text{Find point of f(x) at x=6} \\
+f(x)=\frac{4}{x} \\
+f(6)=\frac{4}{6} \to \frac{2}{3} \\
+\text{Find the equation of tangent line at }x=6 \text{ using point-slope formula} \\
+y-y_{1}=m(x-x_{1}) \\
+y-\frac{2}{3}=\frac{-1}{9}(x-6) \\
+\text{Multiply through} \\
+y-\frac{2}{3}=\frac{-1}{9}x+ \frac{6}{9} \\
+\text{Move y1 over} \\
+y=\frac{-1}{9}x+ \frac{6}{9} + \frac{-2}{3} \\
+\text{Add fractions} \\
+y=\frac{-1}{9}x+ \frac{2}{3} + \frac{2}{3}  \\
+y=\frac{-1}{9}x + \frac{4}{3} 
 \end{align}$$
 
 
