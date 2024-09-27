@@ -766,10 +766,21 @@ f'(x)&=(a)(f(x))^{b-1}(f'(x)) \\
 		 $= ([7^2]^{x-1})(7^{2x-3})$  
 		 $= (7^{2x-2})(7^{2x-3})$  
 		 $= 7^{4x-5}$
+	- Using limit definition then we can prove rule can be true
+	- E.g. What is $\frac{d}{dx}[x^{2}+\frac{1}{x^{2}}]$ $$\begin{align}
+			& \text{Splitting f(x) into 2 derivative expressions} \\
+			&= \frac{d}{dx}[x^{2}]+\frac{d}{dx}[\frac{1}{x^{2}}] \\
+			& \text{Using power rule} (d)(n)(x)^{n-1} \\
+			&= [(1)(2)(x)^{2-1}] + [(1)(-2)(x)^{-2-1}] \\
+			&= 2x + \frac{2}{x^{-3}}
+			\end{align}$$
 - Quotient of powers property
-	- $\frac{a^{b}}{(a^{c)}}= a^{b-c}$
+	- $\frac{a^{b}}{a^{c}}= a^{b-c}$
 	- This property states that when dividing two powers with the same base, we subtract the exponents.
-	- E.g. $5^6 / 5^2 = 54$
+	- E.g. $\frac{5^{6}}{5^{2}} = 54$
+- Product rule
+	- $\frac{d}{dx}[(f(x))(g(x))] = (f'(x))(g(x)) -(f(x))(g'(x))$
+	- 
 - Rational exponent property 
 	- E.g. $5^{\frac{6}{2}} = (^2\sqrt{ 5 })^6$
 - Negative exponent property
@@ -800,3 +811,5 @@ Differential equation:
 
 ![[Pasted image 20240927121530.png]]
 ![[Pasted image 20240927122414.png]]- Can be replace to derivative of f and g
+
+
