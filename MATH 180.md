@@ -745,8 +745,7 @@ y&=\frac{-1}{9}x + \frac{4}{3}
 	   ![[Pasted image 20240927133311.png|300]]
 - Quotient rule:
 	- If $\frac{d}{dx}[\frac{f(x)}{g(x)}]$ --> $\frac{(f'(x))(g(x))-(f(x))(g'(x))}{(g(x))^{2}}$
-	- E.g. 
-	   ![[Pasted image 20240925183006.png|400]]
+	- E.g. ![[Pasted image 20240925183006.png|400]]
 - Chain rule:
 	- To reduce taking derivative of parentheses contents
 	- If $f(x)=(a)(f(x))^b$ --> $f'(x)=(a)(b)(f(x))^{b-1}(f'(x))$
