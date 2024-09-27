@@ -612,6 +612,7 @@
 		- Slope is $m=-\frac{17}{9}$
 
 ### Derivatives
+- denoted as $f'(x)$ or $\frac{d}{dx}[f(x)]$
 - If y-intercept of f(x) is unknown, we can draw a line which intersects 2 points on the curve, this gives us our secant line 
 - Derivative is a visual line of instantaneous slope at given x-value of f(x)
 - Curve at a point in a line that intersects the curve at that point and whose slope captures the instantaneous rate of change
@@ -715,8 +716,7 @@ y&=\frac{-1}{9}x + \frac{4}{3}
 ### Easier ways to find slope
 - Power rule:
 	- If $f(x)= ax^b$ then $f'(x)=abx^{b-1}$
-	- E.g. $f(x)= 4x^{2}+ 3x + 11$ 
-	$$\begin{align} 
+	- E.g. $f(x)= 4x^{2}+ 3x + 11$ $$\begin{align} 
 \text{First term} \\
 &=(4)(x)^2 \\
 &=(4)(2)(x)^{2-1} &\\
@@ -731,10 +731,20 @@ y&=\frac{-1}{9}x + \frac{4}{3}
 &=0 \\ \\
 \text{Therefore} f'(x)=8x+3
 \end{align}$$
+	- Using limit definition then we can prove rule can be true
+		- E.g. What is $\frac{d}{dx}[x^{2}+\frac{1}{x^{2}}]$ $$\begin{align}
+			& \text{Splitting f(x) into 2 derivative expressions} \\
+			&= \frac{d}{dx}[x^{2}]+\frac{d}{dx}[\frac{1}{x^{2}}] \\
+			& \text{Using power rule} (d)(n)(x)^{n-1} \\
+			&= [(1)(2)(x)^{2-1}] + [(1)(-2)(x)^{-2-1}] \\
+			&= 2x + \frac{2}{x^{-3}}
+			\end{align}$$
 - Product rule:
-	- If $(f(x))(g(x))$ --> $(f)(g')+(f')(g)$
+	- $\frac{d}{dx}[(f(x))(g(x))] = (f'(x))(g(x)) +(f(x))(g'(x))$
+	- Proof:
+	   ![[Pasted image 20240927133311.png|300]]
 - Quotient rule:
-	- If $\frac{f(x)}{g(x)}$ --> $\frac{(g(x))(f'(x))-(f(x))(g(x))}{g(x)^{2}}$
+	- If $\frac{d}{dx}[\frac{f(x)}{g(x)}]$ --> $\frac{(f'(x))(g(x))-(f(x))(g'(x))}{(g(x))^{2}}$
 	- E.g. 
 	   ![[Pasted image 20240925183006.png|400]]
 - Chain rule:
@@ -766,21 +776,10 @@ f'(x)&=(a)(f(x))^{b-1}(f'(x)) \\
 		 $= ([7^2]^{x-1})(7^{2x-3})$  
 		 $= (7^{2x-2})(7^{2x-3})$  
 		 $= 7^{4x-5}$
-	- Using limit definition then we can prove rule can be true
-	- E.g. What is $\frac{d}{dx}[x^{2}+\frac{1}{x^{2}}]$ $$\begin{align}
-			& \text{Splitting f(x) into 2 derivative expressions} \\
-			&= \frac{d}{dx}[x^{2}]+\frac{d}{dx}[\frac{1}{x^{2}}] \\
-			& \text{Using power rule} (d)(n)(x)^{n-1} \\
-			&= [(1)(2)(x)^{2-1}] + [(1)(-2)(x)^{-2-1}] \\
-			&= 2x + \frac{2}{x^{-3}}
-			\end{align}$$
 - Quotient of powers property
 	- $\frac{a^{b}}{a^{c}}= a^{b-c}$
 	- This property states that when dividing two powers with the same base, we subtract the exponents.
 	- E.g. $\frac{5^{6}}{5^{2}} = 54$
-- Product rule
-	- $\frac{d}{dx}[(f(x))(g(x))] = (f'(x))(g(x)) -(f(x))(g'(x))$
-	- 
 - Rational exponent property 
 	- E.g. $5^{\frac{6}{2}} = (^2\sqrt{ 5 })^6$
 - Negative exponent property
@@ -811,5 +810,7 @@ Differential equation:
 
 ![[Pasted image 20240927121530.png]]
 ![[Pasted image 20240927122414.png]]- Can be replace to derivative of f and g
+
+
 
 
