@@ -566,6 +566,12 @@
     
 ### Lines and slopes (Linear Functions)
 - Point: $(x, y)$
+- Slopes:
+	- Steepness of curve
+	- m=0: indicates flat line
+	- + increases right and - increases left
+	- Calculated with $\frac{\nabla rise}{\nabla run}$
+
 - Slope-intercept form 
 	- Written as $y=mx+b$
 		- y: f(x) output, $y$-value
@@ -579,11 +585,9 @@
 		- $m$: slope
 		- $x_{1}$ and $x_{0}$: distinct points on the line
 		- $b$: displacement 
-- Slopes:
-	- Steepness of curve
-	- m=0: indicates flat line
-	- + increases right and - increases left
-	- Calculated with $\frac{\nabla rise}{\nabla run}$
+	- E.g. Write the point-slope form of a linear function with slope of 3, which passes through (1, -3)
+		- $y-(-3) = 3(x-1)$
+
 - E.g. At time t=3s, she reaches point x=1cm
      At t=5s, she reaches x=5cm
 	- Slope (speed) using points (3, 1) and (5, 5):
@@ -594,93 +598,195 @@
 			$x_{2}-x_{1} = m(t_{2}-t_{1})$
 			$x_{2}-1 = 2(t_{2}-3)$
 			$x=2t-5$
+- Finding slope through re-arranging formula
+	- E.g. $2y-x=9x+1$
+		$y=\frac{1}{2}(10x)+\frac{1}{2}$
+	- E.g. $9(y+1x)=5-8x$
+		- Distribute 9 on left and re-arrange right 
+			$9y+9x=-8x+5$
+		- Move y-affecting variables to right 
+			$y+9x=\frac{1}{9}(-8x)+\frac{5}{9}$
+		- Move x-affecting variables to right 
+			$y=\frac{1}{9}(-8x-9x)+\frac{5}{9}$
+			$y=\frac{1}{9}(-17x)+\frac{5}{9}$
+		- Slope is $m=-\frac{17}{9}$
 
 ### Derivatives
-- Taking slope between 2 points (instantaneous)
-- 
-- The instantaneous slope/rate of change of f(x) which we find using the secant line with 2 points, to get us the tangent line, which is equal to the slope of f(x) 
-	- As we decrease distance between 2 points (x-axis), slope generated is closer and closer to tangent 
-	- Eventually get close enough that slope of secant line is slope of tangent line 
-- Not a good idea to factor 
-- Derivative of a function denoted by $f'(x)$
-	- Equal to the slope of the tangent line if a limit exists at a given x-value 
-	- $f'(x)= \lim_{ h \to 0 }\frac{f(x+h)-f(x)}{h}$
-	- Slope of the tangent drawn to that curve at a given point
-- Tangent: 
-	- Curve at a point in a line that intersects the curve at that point and whose slope captures the instantaneous rate of change 
-	- Pick point on line for continuous function, will look like a line
-- Slope of secant line 
-	- $m= \frac{f(x+h)-f(x)}{h}$
-### Tangent Lines
-- Curve at a point in a line that intersects the curve at that point and whose slope captures the instantaneous rate of change 
-- Pick point on line for continuous function, will look like a line
-- Same slope
-- E.g. $x^2$ and $2x-1$
-- ![[Pasted image 20240920120924.png]]
-- Can have multiple tangent lines 
-- ![[Pasted image 20240920121119.png]]
-	- Draw line touching curve, with same slope at same point, but doesn't intersect curve 
-- Need to find slope of tangent line to calculate tangent line (instantaneous rate of change of f(x)) of f(x)
-- Secant line: straight line connecting 2 points on graph of function
-- If given 2 points (x, y), how would we find slope of secant line passing through 2 points?
-	- $slope= \frac{y_{1}-y_{0}}{x_{1}-x_{0}}$
-- ![[Pasted image 20240920123744.png]]
+- If y-intercept of f(x) is unknown, we can draw a line which intersects 2 points on the curve, this gives us our secant line 
+- Derivative is a visual line of instantaneous slope at given x-value of f(x)
+- Curve at a point in a line that intersects the curve at that point and whose slope captures the instantaneous rate of change
+	- Formula for secant line: $f'(x)= \frac{f(x+h)-f(x)}{h}$
+		- Where $f(x+h)$ gives us the secant offset
+		- Subtracting $f(x)$ removes the original function 
+		- Dividing by $h$ cancels out the change 
+	- Taking the limit at the secant line gives us the tangent line 
+		- Represents our instantaneous rate of change of f(x)
+		- Formula for tangent line: $f'(x)= \lim_{ h \to 0 }\frac{f(x+h)-f(x)}{h}$
+- From this, we can find: 
+	- At $m=0$ --> $x=0$
+	- When slope of f(x) is negative, then tangent line is negative 
+	- When slope of f(x) is positive, then tangent line is positive 
+- E.g. $f(x)= 4x^{2}+ 3x + 11$
+$$\begin{align}
+\text{Setting up to find secant line} \\
+f'(x)= \frac{(4(x+h)^{2}+3(x+h)+11)-(4x^{2}+3x+11)}{h} \\
+f'(x)= \frac{4(x+h)(x+h)+3x+3h+11-(4x^{2}+3x+11)}{h} \\
+f'(x)= \frac{4(x^{2}+ 2xh + h^{2}+3x+3h+11)-(4x^{2}+3x+11)}{h} \\
+f'(x)= \frac{4x^{2}+ 8xh + 4h^{2}+3x+3h+11-4x^{2}+3x+11}{h} \\
+f'(x)= \frac{4x^{2}+ 4h^{2}+ 8xh + 3h}{h} \\
+f'(x)=4h+8x+3 \\
+\text{Finding tangent line by subbing h=0} \\\
+\lim_{ h \to 0 } f'(x) = 4(0)+8+3 \\
+\lim_{ h \to 0 } f'(x) = 8x+3  \\ \\
+
+\text{Now is we take any x-value, we can find our y-value} \\
+\text{(e.g. x=4 so y=35)}
+\end{align}$$
+- E.g. Find the derivative at $f(x)=\frac{4}{x}$ using complex fraction rules
+$$\begin{align}
+\text{Finding slope of the tangent line} \\
+\lim_{ h \to 0 }= \frac{\frac{4}{x+h}-\frac{4}{x}}{h} \\
+\text{Get a common base} \\
+\lim_{ h \to 0 }= \frac{\frac{4(x)}{x(x+h)}-\frac{4(x+h)}{x(x+h)}}{h} \\
+\text{Combine fractions} \\
+\lim_{ h \to 0 }= \frac{\frac{4x-4(x+h)}{x(x+h)}}{h}  \\
+\text{Expand} \\
+\lim_{ h \to 0 }= \frac{\frac{4x-4x-4h}{x(x+h)}}{h} \\
+\text{Simplify} \\
+\lim_{ h \to 0 }= \frac{\frac{-4h}{x(x+h)}}{h}  \\
+\text{Apply fraction rule} \frac{\frac{a}{b}}{c}=\frac{a}{b*c} \\
+\lim_{ h \to 0 }= \frac{-4h}{(x(x+h))(h)} \\
+\text{Simplify} \\
+\lim_{ h \to 0 }= \frac{-4}{x(x+h)}  \\
+\text{Take lim h approaching 0 to get tangent line} slope\\
+\lim_{ h \to 0 }= \frac{-4}{x(x+0)} \\
+\lim_{ h \to 0 }= \frac{-4}{x(x)} \\
+\lim_{ h \to 0 }= \frac{-4}{x^2} \\
+\text{Slope of tangent line (derivative) is} f'(x)=\frac{-4}{x^{2}}  \\
+ \\
+\text{Finding output of tangent line at } x=6 \\
+f'(6)= \frac{-4}{36} \to \frac{-2}{18} \to \frac{-1}{9}  \\
+\text{Now have a point at } (6, \frac{-1}{9}) \\
+ \\
+\text{Equation of tangent line at x=6} \\
+\text{Using point-slope formula} y-y_{1}=m(x-x_{1}) \\
+y-\frac{-1}{9}=\frac{-4}{x^{2}}(x-6) \\
+\text{Simplify} \\
+y- 
+\end{align}$$
+!!!
+- Function is differentiable at $x=a$ if $f'(a)$ exists
+	- Functions can be defined but not differentiable at a given x-value
+- When $f'(x)$ cannot be found (differentiable):
+	- Won't be differentiable approaching a vertical asymptote 
+	- Can't take tangent line (slope) of vertical line 
+		- $f'(x) \to \infty$ so DNE
+	- If point is sharp, we can't take slope there (slope of function on one side differs from slope on other side)
+		- $f'(x) DNE$
+	- If point is at a discontinuations (e.g. jump where limit doesn't exist), we can't take slope there ![[Pasted image 20240920135101.png|100]]
+
+- E.g. ![[Pasted image 20240920123744.png]]
 	- h= distance between 2 points on secant line 
-	- Basically bring h closer and closer to x=0 so that slope of secant line equals slope of tangent line (only goes through 1 point)
-	- We can do that by evaluating f(x) at x=1 here
-	- Derivative is the slope of the tangent line 
-	- f(1)^1 is derivative of f(x) at x=1
-	- ![[Pasted image 20240920124343.png]]
+	- Basically bring h closer and closer to x=0 so that slope of secant line equals slope of tangent line 
+	- We can do that by evaluating f(x) at x=1 ![[Pasted image 20240920124343.png]]
 	- Can't use y=mx+b because we don't know y-intercept
 		- But point-slope form is more useful in most cases because we don't always know this
-- ![[Pasted image 20240920125126.png]]
-- ![[Pasted image 20240920125417.png]]
-- E.g. find linear approximation 
-	- Slope of tangent line should be same as slope of function at given x-value
-	- equation of tangent line is $f^{1}(0)=1$
-	- L(x) is linear appoximation (good guess but not perfect)
-		- Taking this near x=0
-	- $L(x)=f(0)+f^{1}(0)(x-0)$
-	- $L(x)=e^{0}+ (1)(x)$
-	- $L(x)=1+x$ so very close to x=0, y-value here should be y-value of tangent line 
-![[Pasted image 20240920132045.png]]
-Function is differentiable at x=a if f'(a) exists
-- Functions can be defined but not differentiable at a given x-value
-- Won't be differentiable approaching a vertical asymptote 
-- Can't take tangent line (slope) of vertical line 
-	- $f'(x) \to \infty$ so DNE
-- If point is sharp, we can't take slope there (slope of function on one side differs from slope on other side)
-	- $f'(x) DNE$
-- If point is at a discontinuations (e.g. jump where limit doesn't exist), we can't take slope there
-	- ![[Pasted image 20240920135101.png]]
-	- E.g. $2^{x}$ is larger than $1.5^{x}$ in positive x-axis and smaller in the negative x-axis 
+		  $slope= \frac{y_{1}-y_{0}}{x_{1}-x_{0}}$
 
-- Exponent rules:
-	- $(a^{b})(a^{c)}= a^{b+c}$
+### Approximating derivative
+- E.g. 
+	- Find the derivative of $\sin(x)$ when $x=0$
+		- Given: tangent line to $y=\sin(x)$ at origin is $y=x$, is: $x=0$ and $y=0$
+			$y=f(a) + f'(a)(x-a)$
+			$y=f(0) + f'(0)(x-0)$
+			$y=f'(0)x$
+		- Therefore tangent line is $y=x$, then $f'(0)=1$
+	- Find linear approximation of $\sin(0.001)$
+		- Near $x=0$, $\sin(x)= x$ (close enough)
+			- $\sin(0.001)$ approximately $\sin(0.00)$
+
+### Easier ways to find slope
+- Power rule:
+	- If $f(x)= ax^b$ then $f'(x)=abx^{b-1}$
+	- E.g. $f(x)= 4x^{2}+ 3x + 11$ 
+	$$\begin{align} 
+\text{First term} \\
+&=(4)(x)^2 \\
+&=(4)(2)(x)^{2-1} &\\
+&=8x \\
+\text{Second term} \\
+&=(3)(1)(x)^1 \\
+&=(3)(1)(x)^{1-1} \\
+&=3 \\
+\text{Third term, a constant, cancelled out}  \\
+\text{as vertical displacement doesn't matter to find slope} \\
+&=(11)(0)(x)^{0-1} \\
+&=0 \\ \\
+\text{Therefore} f'(x)=8x+3
+\end{align}$$
+- Product rule:
+	- If $(f(x))(g(x))$ --> $(f)(g')+(f')(g)$
+- Quotient rule:
+	- If $\frac{f(x)}{g(x)}$ --> $\frac{(g(x))(f'(x))-(f(x))(g(x))}{g(x)^{2}}$
+	- E.g. 
+	   ![[Pasted image 20240925183006.png|400]]
+- Chain rule:
+	- To reduce taking derivative of parentheses contents
+	- If $f(x)=(a)(f(x))^b$ --> $f'(x)=(a)(b)(f(x))^{b-1}(f'(x))$
+	- E.g. $f(x)=\frac{(x^{2}+12x-5)^2}{3x^{2}-6x+2}$
+	$$\begin{align} \\
+\text{Finding f'(x) inner parentheses using } f'=(a)(b)(x)^{b-1} \\
+f'&= (1)(2)(x)^{2-1} \\
+&=2x \\ \\
+f'&=(12)(1)(x)^{1-1} \\
+f'&=12 \\
+\text{Therefore} f'=2x+12 \\ \\
+\text{Finding f'(x) in its entirity} \\
+f'(x)&=(a)(f(x))^{b-1}(f'(x)) \\
+&=(1)(2)(x^{2}+12x-5)^{2-1}(2x+12) \\
+&=(2x^2+24x-10)(2x+12) \\
+&=4x^{3}+24x^2+48x^2+288x-20x-120 \\
+&=4x^3+72x^2+268x-120
+\end{align}$$
+
+
+### Exponent rules
+- Power of a power property
+	-  $(a^{b})(a^{c)}= a^{b+c}$
+	- This property states that when multiplying two powers with the same base, we add the exponents
+	- Can raise any element in an expression to the power of 1 and not change the expression
+	- E.g. $(49^{x-1})(7^{2x-3})$
+		 $= ([7^2]^{x-1})(7^{2x-3})$  
+		 $= (7^{2x-2})(7^{2x-3})$  
+		 $= 7^{4x-5}$
+- Quotient of powers property
 	- $\frac{a^{b}}{(a^{c)}}= a^{b-c}$
+	- This property states that when dividing two powers with the same base, we subtract the exponents.
+	- E.g. $5^6 / 5^2 = 54$
+- Rational exponent property 
+	- E.g. $5^{\frac{6}{2}} = (^2\sqrt{ 5 })^6$
+- Negative exponent property
+	- A number with a negative exponent should be put to the denominator, and vice versa
+	- Taking the reciprocal of the equation 
+		- E.g. $P(t) = Po(7)^{\frac{t}{5}}$
+						  $= Po(5\sqrt{7})^t$
+						  $= Po(7^{\frac{1}{5}})^t$   
+						  $= Po(1.48)$
 - No rule for $a^{b}+a^c$
-- $b^{x\lim_{h\to 0 }}= b^x+h = (b^x)(b^h)$
-- $b^{x\lim_{h\to 0 }}= b^x+h = b^x(\frac{b^h-1}{h})$
-- Simplify to 
-- $b^x\lim_{h\to 0 }= \frac{b^{h}-1}{h}$
-- Let 
-- Differential equation:
-	- E.g. $y-e^x=0$
-			$y=e^x$
-	E.g. $(\frac{y}{e^{x}})=1$
-	$y=e^x$
+- E.g. ${\lim_{h\to 0 }}= b^x+h$ 
+	${\lim_{h\to 0 }}= (b^x)(b^h)$
+	${\lim_{h\to 0 }}= b^x(\frac{b^h-1}{h})$
+	- Simplify to $b^{x}\lim_{h\to 0 }= \frac{b^{h}-1}{h}$
 
-Differential equation: given derivative equation f'(x) and asked to solve for f(x)
+Differential equation: 
+- Given derivative equation f'(x) and asked to solve for f(x)
 - Derivative function should be the same as f(x)
 - E.g. $y'(x)=y(x)$ --> $(e^{x})'=e^x$
-	- Rate of change people getting sick (f'(x)) depends on how many people are sick (f(x))
-- Give another 
-- E.g. 
-	- ${\lim_{h\to 0 }}= e^x+h = (e^x)(e^h)$
-- ${\lim_{h\to 0 }}= e^x+h = 5e^x(\frac{e^h-1}{h})$
-- Simplify to 
-- $5e^x\lim_{h\to 0 }= \frac{e^{h}-1}{h}$
+	- Rate of change people getting sick $f'(x)$ depends on how many people are sick $f(x)$
+- E.g. $y-e^x=0$
+		$y=e^x$
 
-
-
-$\frac{c}{x^{n}=0}$
+### Relationship between function and derivative graphs
+- If the slope of f(x) is negative, then the graph of f’(x) will be below the x-axis
+- If the slope of f(x) is positive, then the graph of f’(x) will be above the x-axis
+- All extremes of f(x) will become x-intercepts of f’(x) ![[Pasted image 20240926092639.png]]

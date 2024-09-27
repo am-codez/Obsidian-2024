@@ -891,3 +891,8 @@
 		- Prints `(cons "Flames" empty)`
 - Predicate: `(empty? <list name>)`
 	- Returns true or false
+
+Error because check-expect is (10, 10)
+
+Reference rule:
+- Any time one data type refers to non-primitive type, wrap it in a call to that data type's template function

@@ -334,3 +334,41 @@ Look at minds of other species - rodents, birds, etc
 		- E.g. Dichotic listening/shadowing task: information on the unattended channel seems to not be processed but intrusions can occur suggesting they do 
 	- There are many models on how the flow of information through the cognitive system affects the relationships between different cognitive  processes  
 		- Attention research is concerned with the relationship between the capacity limitations and the selective processes used to deal with those limitations 
+
+Cogs group project:
+- Test a hypothesis related to cognitive science, and fill gap in knowledge about language, behaviour, or experience
+- Literature is where we can find interesting questions (i.e. discussion section)
+- Connection between 2 cogs disciplines should be obvious
+- Disciplines besides philosophy requires expectations of results
+- Structure similar to a journal article 
+- Important dates:
+	- Sept 26: contract (1 pg)
+	- Oct 29: initial pitch and paragraph
+	- Oct 31: proposal outline and annotated bibliography
+	- Nov 28: practice presentation 
+	- Dec 9: due date
+		- Write-up (5 pgs) 
+		- Appendix (2 pgs) - tables, figures, references
+		- Statement - contribution of each group member
+		- Video abstract (5 min) - slides, animation, live TED talk, etc
+- Structure 
+	- Table of contents 
+	- Intro 
+		- Importance of subject matter 
+		- Include real-life example
+	- Background research 
+		- Link to cogs disciplines e.g. biases, fairness, AI
+		- Current technology and its limitations
+	- Methods
+		- Study specifics on investigating subject matter 
+	- Conclusion 
+	- Discussion 
+	Examples: 
+	- E.g. how human minds process programming code, based on level of experience 
+	- E.g. feasibility of employing AI referees 
+	- E.g. social robots (e.g. Bella Bot) - training staff on
+	- E.g. automated gas station attendant - Consumer reception? Do people buy more or less gas? Drive more? Does this remove autonomy? 
+- E.g. timing of certain events to determine freedom of will exists 
+	- Interest in freedom of will and action
+	- By time make conscious decision to move, brain has been working on it 
+	- Suggested freedom of will doesn't exist because brain activated a few seconds before wrist movement 
