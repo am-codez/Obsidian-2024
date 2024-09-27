@@ -797,3 +797,6 @@ Differential equation:
 - If the slope of f(x) is negative, then the graph of f’(x) will be below the x-axis
 - If the slope of f(x) is positive, then the graph of f’(x) will be above the x-axis
 - All extremes of f(x) will become x-intercepts of f’(x) ![[Pasted image 20240926092639.png]]
+
+![[Pasted image 20240927121530.png]]
+![[Pasted image 20240927122414.png]]- Can be replace to derivative of f and g
