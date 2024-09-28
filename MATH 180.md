@@ -808,8 +808,7 @@ Differential equation:
 - All extremes of f(x) will become x-intercepts of f’(x) ![[Pasted image 20240926092639.png]]
 
 ![[Pasted image 20240927121530.png]]
-![[Pasted image 20240927122414.png]]- Can be replace to derivative of f and g
-
-
+- Can be replace to derivative of f and g
+![[Pasted image 20240927122414.png|414]]
 
 
