@@ -612,76 +612,50 @@
 		- Slope is $m=-\frac{17}{9}$
 
 ### Derivatives
-- Secant Line
-	- If y-intercept of f(x) is unknown, we draw a line which intersects 2 points f(x)'s curve
-	- Formula for secant line: 
-		$f'(x)= \frac{f(x+h)-f(x)}{h}$
-		- Where $f(x+h)$ gives us the secant offset
-		- Subtracting $f(x)$ removes the original function 
-		- Dividing by $h$ cancels out the change 
 
-- Tangent Line Slope
-	- Taking the limit at the secant line gives us the slope of the tangent line 
-		- Tangent line: line drawn that touches the graph of f(x) at a given x-value
-	- This is a derivative of $f(x)$
-		- Denoted as $f'(x)$ or $\frac{d}{dx}[f(x)]$
-	- Represents our instantaneous rate of change of f(x) at a given x-value
-	- Formula for tangent line slope: 
-		$f'(x)= \lim_{ h \to 0 }\frac{f(x+h)-f(x)}{h}$
-	- Formula for tangent line equation:
-		$y-f(a)=f'(a)(x-a)$
-		- At point $x=a$, so that $(a, f(a))$
+Secant Line
+- If y-intercept of f(x) is unknown, we draw a line which intersects 2 points f(x)'s curve
+- Formula for secant line: 
+	$f'(x)= \frac{f(x+h)-f(x)}{h}$
+	- Where $f(x+h)$ gives us the secant offset
+	- Subtracting $f(x)$ removes the original function 
+	- Dividing by $h$ cancels out the change 
 
-- Tangent line slope $f'(x)$ visualisation: 
+### Tangent Line Slope
+- Taking the limit at the secant line gives us the slope of the tangent line 
+	- Tangent line: line drawn that touches the graph of f(x) at a given x-value
+- This is a derivative of $f(x)$
+	- Denoted as $f'(x)$ or $\frac{d}{dx}[f(x)]$
+- Represents our instantaneous rate of change of f(x) at a given x-value
+- Formula for tangent line slope: 
+	$f'(x)= \lim_{ h \to 0 }\frac{f(x+h)-f(x)}{h}$
+	- E.g. if $f(x)= 4x^{2}+ 3x + 11$ 
+		  $f'(x)= \lim_{  h \to 0 }\frac{(4(x+h)^{2}+3(x+h)+11)-(4x^{2}+3x+11)}{h}$ 
+		  $f'(x)= \lim_{ h \to 0 }\frac{4(x+h)(x+h)+3x+3h+11-(4x^{2}+3x+11)}{h}$
+		  
+ - Tangent line slope $f'(x)$ visualisation: 
 	- At $m=0$ --> $x=0$
 	- When slope of f(x) is negative, then tangent line is negative 
-	- When slope of f(x) is positive, then tangent line is positive 
-
-- Real example: Imagine you want to build a rectangular chicken coop. You have 10 meters of fencing and want to ensure you have the largest area for the chickens to roam inside, limited by 10 meters of circumference. 
-	- Coop circumference $C = 10 m$
-	- Max area = ?
-		- Area formula for a rectangle is $A=l*w$
-		- We can say Area is a function of 2 variables, $l$ and $w$ -> $A(l,w)$
-			- If we change $l$, we change $w$ and vise versa
-	- At maximum of the graph, this represents $\frac{df}{dx}=0$ where slope is 0
-	- Wouldn't help us to just account for 1 variable, so we need to transform to function of $A(l,w)$ to function of 1 variable $A(w)$ or $A(l)$.
-- To eliminate $w$ to get $A(l)$:
-	- Using the formula to get the length of a rectangle
-			$C=2l+2w$
-	- Rewrite 1 variable, $w$, to be a function of another variable, $l$
-			$2w=C-2l$
-			$w=\frac{C}{2}-l$
-	- $A(l,w) =l*w$ can be re-written as $A(l,w)=l(\frac{C}{2}-l)$ 
-		- Simplify to $A(l,w)=\frac{(l)(C)}{2}-l^{2}$
-		- Now Area is a function of only 1 variable, $l$ --> $A(l)$
-	- To find the maximum of the graph $\frac{dA}{dl}=0$ 
-			$\frac{dC}{dl}(\frac{(l)(C)}{2}-l^2)=0$
-			$\frac{C}{2}-2l=0$
-			$l=\frac{C}{4}$ at point where Area is maximum 
-	- We can now use $w=\frac{C}{2}-l$ to find point where Area is maximum for $w$
-			$w=\frac{C}{2}-l$
-			$w=\frac{C}{2}-\frac{C}{4}$
-			$w=\frac{2C-C}{4}$
-			$w=\frac{C}{4}$
-- From this, we can see that at Area maximum, $w$ and $l$ are same, making it a square
-
-- E.g. $f(x)= 4x^{2}+ 3x + 11$
-$$\begin{align}
-\text{Setting up to find secant line} \\
-f'(x)= \frac{(4(x+h)^{2}+3(x+h)+11)-(4x^{2}+3x+11)}{h} \\
-f'(x)= \frac{4(x+h)(x+h)+3x+3h+11-(4x^{2}+3x+11)}{h} \\
-f'(x)= \frac{4(x^{2}+ 2xh + h^{2}+3x+3h+11)-(4x^{2}+3x+11)}{h} \\
-f'(x)= \frac{4x^{2}+ 8xh + 4h^{2}+3x+3h+11-4x^{2}+3x+11}{h} \\
-f'(x)= \frac{4x^{2}+ 4h^{2}+ 8xh + 3h}{h} \\
-f'(x)=4h+8x+3 \\
-\text{Finding tangent line by subbing h=0} \\\
-\lim_{ h \to 0 } f'(x) = 4(0)+8+3 \\
-\lim_{ h \to 0 } f'(x) = 8x+3  \\ \\
-
-\text{Now is we take any x-value, we can find our y-value} \\
-\text{(e.g. x=4 so y=35)}
-\end{align}$$
-- E.g. Find the derivative at $f(x)=\frac{4}{x}$ using complex fraction rules
+	- When slope of f(x) is positive, then tangent line is positive
+### Tangent Line Equation
+- Formula for tangent line equation
+	$y-f(a)=f'(a)(x-a)$
+	- At point $x=a$, so that $(a, f(a))$
+- E.g. Find the equation of the tangent line for $\lim_{ h \to 0 }\frac{f(5+h)-3}{h}=-5$
+	- From this, we can see:
+		- $a=5$
+		- $f'(5)=-5$
+		- $m=-5$
+		- $f(5)=3$
+	- Plugging in our values and slope $f'(x)$ $y-f(a)=f'(a)(x-a)$
+		- Therefore $y=-5(x-5)+3$
+- We can use these equations to approximate derivatives 
+	- E.g. If $f(x)$ passes through point $(-4,-6)$ and it's tangent line equation is $y=-6-2(x+4)$, use linear approximate to estimate value of $f(-2)$
+		$f(-2)=-6-2(-2+4)$
+		$f(-2)=-6-2(2)$
+		$f(-2)=-10$
+ 
+- E.g. Find the tangent line equation $f(x)=\frac{4}{x}$
 $$\begin{align}
 \text{Finding slope of the tangent line} \\
 \lim_{ h \to 0 }&= \frac{\frac{4}{x+h}-\frac{4}{x}}{h} \\
@@ -721,6 +695,7 @@ y&=\frac{-1}{9}x+ \frac{2}{3} + \frac{2}{3}  \\
 y&=\frac{-1}{9}x + \frac{4}{3} 
 \end{align}$$
 
+### $f(x)$ and $f'(x)$ differentiation 
 - Function is differentiable at $x=a$ if $f'(a)$ exists
 	- Functions can be defined but not differentiable at a given x-value
 - When $f'(x)$ cannot be found (differentiable):
@@ -729,27 +704,8 @@ y&=\frac{-1}{9}x + \frac{4}{3}
 		- $f'(x) \to \infty$ so DNE
 	- If point is sharp, we can't take slope there (slope of function on one side differs from slope on other side)
 		- $f'(x) DNE$
-	- If point is at a discontinuations (e.g. jump where limit doesn't exist), we can't take slope there ![[Pasted image 20240920135101.png|100]]
-
-- E.g. ![[Pasted image 20240920123744.png]]
-	- h= distance between 2 points on secant line 
-	- Basically bring h closer and closer to x=0 so that slope of secant line equals slope of tangent line 
-	- We can do that by evaluating f(x) at x=1 ![[Pasted image 20240920124343.png]]
-	- Can't use y=mx+b because we don't know y-intercept
-		- But point-slope form is more useful in most cases because we don't always know this
-		  $slope= \frac{y_{1}-y_{0}}{x_{1}-x_{0}}$
-
-### Approximating derivative
-- E.g. 
-	- Find the derivative of $\sin(x)$ when $x=0$
-		- Given: tangent line to $y=\sin(x)$ at origin is $y=x$, is: $x=0$ and $y=0$
-			$y=f(a) + f'(a)(x-a)$
-			$y=f(0) + f'(0)(x-0)$
-			$y=f'(0)x$
-		- Therefore tangent line is $y=x$, then $f'(0)=1$
-	- Find linear approximation of $\sin(0.001)$
-		- Near $x=0$, $\sin(x)= x$ (close enough)
-			- $\sin(0.001)$ approximately $\sin(0.00)$
+	- If point is at a discontinuations (e.g. jump where limit doesn't exist), we can't take slope there
+	   ![[Pasted image 20240920135101.png|266]]
 
 ### Easier ways to find slope
 - Power rule:
