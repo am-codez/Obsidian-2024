@@ -649,11 +649,13 @@ Secant Line
 		- $f(5)=3$
 	- Plugging in our values and slope $f'(x)$ $y-f(a)=f'(a)(x-a)$
 		- Therefore $y=-5(x-5)+3$
+
 - We can use these equations to approximate derivatives 
 	- E.g. If $f(x)$ passes through point $(-4,-6)$ and it's tangent line equation is $y=-6-2(x+4)$, use linear approximate to estimate value of $f(-2)$
 		$f(-2)=-6-2(-2+4)$
 		$f(-2)=-6-2(2)$
 		$f(-2)=-10$
+	- E.g. ![](MATH%20180-20240928211330960.webp)
  
 - E.g. Find the tangent line equation $f(x)=\frac{4}{x}$
 $$\begin{align}
