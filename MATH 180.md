@@ -627,6 +627,24 @@
 	- At $m=0$ --> $x=0$
 	- When slope of f(x) is negative, then tangent line is negative 
 	- When slope of f(x) is positive, then tangent line is positive 
+- Real example: Imagine you want to build a rectangular chicken coop. You have 10 meters of fencing and want to ensure you have the largest area for the chickens to roam inside, limited by 10 meters of circumference. 
+	- Coop circumference $L = 10 m$
+	- Max area = ?
+		- Area formula for a rectangle is $A=l*w$
+		- We can say Area is a function of 2 variables, $l$ and $w$ -> $A(l,w)$
+			- If we change $l$, we change $w$ and vise versa
+	- At maximum of the graph, this represents $\frac{df}{dx}=0$ where slope is 0
+	- Wouldn't help us to just account for 1 variable, so we need to transform to function of $A(l,w)$ to function of 1 variable $A(w)$ or $A(l)$.
+- To eliminate $w$ to get $A(l)$:
+	- Using the formula to get the length of a rectangle
+			$L=2l+2w$
+	- Rewrite 1 variable, $w$, to be a function of another variable, $l$
+		- 
+			$2w=L-2l$
+			$w=\frac{L}{2}-l$
+	- $A(l,w) =l*w$ can be re-written as $A(l,w)=l(\frac{L}{2}-l)$
+		- Now Area is a function of only 1 variable, $l$ --> $A(l)$
+	- 
 - E.g. $f(x)= 4x^{2}+ 3x + 11$
 $$\begin{align}
 \text{Setting up to find secant line} \\
