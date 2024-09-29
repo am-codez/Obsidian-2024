@@ -867,6 +867,18 @@
 
 ### List 
 - Arbitrary sized data for case where we don't know the pool size (e.g. number of students in a class)
+- When creating a data definition using a list:
+	- E.g. 
+			`;; Mystery is one of:
+			`;;   -(cons 1 empty)`
+			`;;   -(cons Natural Mystery)`
+		- Meaning to be of type Mystery, a list must have either:
+			- 1 and empty
+				- E.g. `(cons 1 empty)`
+			- Natural and Mystery
+				- E.g. `(cons 5 (cons 4 (cons 1 empty)))` 
+					- `(cons 5` is Natural and `(cons 4 (cons 1 empty)` is Mystery
+					- `(cons 4` is Natural and `(cons 1 empty)` is Mystery
 - Empty list expressed as `empty`
 	- Not necessary to include on separate line if list has existing item
 - Constructor:

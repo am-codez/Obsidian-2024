@@ -75,7 +75,7 @@
 				- $\frac{1}{1+e^{10000}}$ for example, will mean we have a large denominator, so our y-value will be very small, approaching 0 (horizontal asymptote)
 			- Using an arbitrarily small x-value:
 				- $\frac{1}{1+e^{0000.1}}$ for example, will mean we have a small denominator, so our y-value will approach 1 (horizontal asymptote)
-		- If we use a large a value, our curve will just be steeper ![[Pasted image 20240919191408.png]]
+		- If we use a large a value, our curve will just be steeper ![[Pasted image 20240919191408.png|561]]
 - E.g. Solve for a and c if x-intercepts = -2, 3 and y-intercept = 12
 	- Finding c using known knowledge that there's a point at (0, 12)
 		$12= a(0)^{2}+ 2(0) + c$
