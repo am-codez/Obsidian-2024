@@ -612,23 +612,33 @@
 		- Slope is $m=-\frac{17}{9}$
 
 ### Derivatives
-- denoted as $f'(x)$ or $\frac{d}{dx}[f(x)]$
-- If y-intercept of f(x) is unknown, we can draw a line which intersects 2 points on the curve, this gives us our secant line 
-- Derivative is a visual line of instantaneous slope at given x-value of f(x)
-- Curve at a point in a line that intersects the curve at that point and whose slope captures the instantaneous rate of change
-	- Formula for secant line: $f'(x)= \frac{f(x+h)-f(x)}{h}$
+- Secant Line
+	- If y-intercept of f(x) is unknown, we draw a line which intersects 2 points f(x)'s curve
+	- Formula for secant line: 
+		$f'(x)= \frac{f(x+h)-f(x)}{h}$
 		- Where $f(x+h)$ gives us the secant offset
 		- Subtracting $f(x)$ removes the original function 
 		- Dividing by $h$ cancels out the change 
-	- Taking the limit at the secant line gives us the tangent line 
-		- Represents our instantaneous rate of change of f(x)
-		- Formula for tangent line: $f'(x)= \lim_{ h \to 0 }\frac{f(x+h)-f(x)}{h}$
-- From this, we can find: 
+
+- Tangent Line Slope
+	- Taking the limit at the secant line gives us the slope of the tangent line 
+		- Tangent line: line drawn that touches the graph of f(x) at a given x-value
+	- This is a derivative of $f(x)$
+		- Denoted as $f'(x)$ or $\frac{d}{dx}[f(x)]$
+	- Represents our instantaneous rate of change of f(x) at a given x-value
+	- Formula for tangent line slope: 
+		$f'(x)= \lim_{ h \to 0 }\frac{f(x+h)-f(x)}{h}$
+	- Formula for tangent line equation:
+		$y-f(a)=f'(a)(x-a)$
+		- At point $x=a$, so that $(a, f(a))$
+
+- Tangent line slope $f'(x)$ visualisation: 
 	- At $m=0$ --> $x=0$
 	- When slope of f(x) is negative, then tangent line is negative 
 	- When slope of f(x) is positive, then tangent line is positive 
+
 - Real example: Imagine you want to build a rectangular chicken coop. You have 10 meters of fencing and want to ensure you have the largest area for the chickens to roam inside, limited by 10 meters of circumference. 
-	- Coop circumference $L = 10 m$
+	- Coop circumference $C = 10 m$
 	- Max area = ?
 		- Area formula for a rectangle is $A=l*w$
 		- We can say Area is a function of 2 variables, $l$ and $w$ -> $A(l,w)$
@@ -637,14 +647,24 @@
 	- Wouldn't help us to just account for 1 variable, so we need to transform to function of $A(l,w)$ to function of 1 variable $A(w)$ or $A(l)$.
 - To eliminate $w$ to get $A(l)$:
 	- Using the formula to get the length of a rectangle
-			$L=2l+2w$
+			$C=2l+2w$
 	- Rewrite 1 variable, $w$, to be a function of another variable, $l$
-		- 
-			$2w=L-2l$
-			$w=\frac{L}{2}-l$
-	- $A(l,w) =l*w$ can be re-written as $A(l,w)=l(\frac{L}{2}-l)$
+			$2w=C-2l$
+			$w=\frac{C}{2}-l$
+	- $A(l,w) =l*w$ can be re-written as $A(l,w)=l(\frac{C}{2}-l)$ 
+		- Simplify to $A(l,w)=\frac{(l)(C)}{2}-l^{2}$
 		- Now Area is a function of only 1 variable, $l$ --> $A(l)$
-	- 
+	- To find the maximum of the graph $\frac{dA}{dl}=0$ 
+			$\frac{dC}{dl}(\frac{(l)(C)}{2}-l^2)=0$
+			$\frac{C}{2}-2l=0$
+			$l=\frac{C}{4}$ at point where Area is maximum 
+	- We can now use $w=\frac{C}{2}-l$ to find point where Area is maximum for $w$
+			$w=\frac{C}{2}-l$
+			$w=\frac{C}{2}-\frac{C}{4}$
+			$w=\frac{2C-C}{4}$
+			$w=\frac{C}{4}$
+- From this, we can see that at Area maximum, $w$ and $l$ are same, making it a square
+
 - E.g. $f(x)= 4x^{2}+ 3x + 11$
 $$\begin{align}
 \text{Setting up to find secant line} \\
