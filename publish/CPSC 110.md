@@ -1014,3 +1014,9 @@
 ```
 
 
+### Naturals
+- `(add1 )` 
+	- Produces a natural 1 bigger 
+	- E.g. `(add 1 0)` returns 1       while      `(add 1 (add1 0))` returns 2
+- `(sub1 )` 
+	- Produces a natural 1 smaller 
