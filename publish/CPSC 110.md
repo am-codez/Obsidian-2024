@@ -223,6 +223,53 @@
 			`(if false "tall" "wide")`
 		5. Returns `wide`
 
+### Local Functions
+- The function definition can call one or more built-in abstract functions or helper functions under its single top-level function 
+- Can be used as a failure handle 
+	  `(@template-origin X try-catch)`
+	  `(@template`   
+		 `(define (fn-for-x x)`
+			 `(local [(define try (fn-that-might-fail <args>))]`
+			     `(if (not (false? try))`
+			         `try`
+			         `<some alternative result>))))`
+- E.g. 
+```
+(@htdd Song)
+(define-struct song (title artist length))
+;; Song is (make-song String String Natural)
+;; interp. a song with a title, artist, and length in seconds
+(define S1 (make-song "Dreaming" "Blondie" 188))
+(define S2 (make-song "I Walk The Line" "Johnny Cash" 165))
+(define S3 (make-song "Wannabe" "Spice Girls" 174))
+
+(@dd-template-rules compound)
+(define (fn-for-song s)
+  (... (song-title s)
+       (song-artist s)
+       (song-length s)))
+       
+
+(@htdf get-songs-longer-than-n)
+(@signature (listof Song) Natural -> (listof Song))
+;; produce all songs in list with length > given length
+
+(check-expect (get-songs-longer-than-n empty 120) empty)
+(check-expect (get-songs-longer-than-n (list S1 S2 S3) 189) empty)
+(check-expect (get-songs-longer-than-n (list S1 S2 S3) 188) empty)
+(check-expect (get-songs-longer-than-n (list S1 S2 S3) 187) (list S1))
+(check-expect (get-songs-longer-than-n (list S1 S2 S3) 173) (list S1 S3))
+
+;(define (get-songs-longer-than-n los length) empty) ;stub
+
+(@template-origin use-abstract-fn)
+(define (get-songs-longer-than-n los length)
+  (local [(@template-origin Song)
+          (define (longer? s)
+            (> (song-length s) length))]
+    (filter longer? los)))
+```
+    
 ![[Pasted image 20240912125458.png]]
 ![[Pasted image 20240912125537.png]]
 ### **HtDF Recipe**
