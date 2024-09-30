@@ -927,7 +927,8 @@
 
 (@dd-template-rules one-of ;data types
                     atomic-distinct  ;empty
-                    compound) ;(cons String ListOfString)
+                    compound ;(cons String ListOfString)
+                    self-ref) ;(fn-for-los (rest los))
 
 (define LOS1 empty) ;empty does match ListOfString
 (define LOS2 (cons "McGill" empty)) ;"McGill" does match ListOfString
