@@ -551,6 +551,7 @@
 
 ### Big Bang Mechanism
 - Primitive that complex structure by integrating and coordinating many functionalities together 
+- Polymorphic: works for any type of world state but all x have to be the same type
 - E.g. 
 	`(@htdf main)`
 	`(@signature WS -> WS)`
@@ -562,7 +563,7 @@
 		`(to-draw   render) ; WS -> Image`
 		`(on-mouse  ...)    ; WS Integer MouseEvent -> WS`
 		`(on-key    ...)))  ; WS KeyEvent -> WS`
-- Polymorphic: works for any type of world state but all x have to be the same type
+
 - Interactive programs:
 	- `on-tick`
 		- Progresses and saves world state
@@ -579,71 +580,21 @@
 		- ![[Pasted image 20240921121319.png]]
 	- `stop-when`
 		- Stop automatically
-- Template
-```
-(require spd/tags)
-(require 2htdp/image)
-(require 2htdp/universe)
-
-;; My world program  (make this more specific)
-
-(@htdw WS) ;(give WS a better name)
-
-;; =================
-;; Constants:
-
-
-;; =================
-;; Data definitions:
-
-(@htdd WS)
-;; WS is ... 
-
-
-
-;; =================
-;; Functions:
-
-(@htdf main)
-(@signature WS -> WS)
-;; start the world with ...
-;; 
-
-(@template-origin htdw-main)
-
-(define (main ws)
-  (big-bang ws           ; WS
-    (on-tick   tock)     ; WS -> WS
-    (to-draw   render)   ; WS -> Image
-    (on-mouse  ...)      ; WS Integer Integer MouseEvent -> WS
-    (on-key    ...)))    ; WS KeyEvent -> WS
-
-
-(@htdf tock)
-(@signature WS -> WS)
-;; produce the next ...
-;; !!!
-(define (tock ws) ws)
-
-(@htdf render)
-(@signature WS -> Image)
-;; render ... 
-;; !!!
-(define (render ws) empty-image)
-```
+		
 - Framework
 	- Includes:
 		- Drawing of behaviour
 		- Constants (unchanging)
 		- Variables (changing)
 		- Primitives to use
-	- E.g. ![[Pasted image 20240920145114.png]]
-		- ![[Pasted image 20240920100245.png|300]]
+
+- E.g. 
 ```
 (require spd/tags)
 (require 2htdp/image)
 (require 2htdp/universe)
 
+![[Pasted image 20240920145114.png|300]]
 
 ;; =================
 ;; Constants:
@@ -655,7 +606,6 @@
 (define RCOW .)
 (define LCOW .)
 (define CTR-Y (/ HEIGHT 2)) ;center position 
-
 
 ;; =================
 ;; Data definitions:
@@ -678,8 +628,6 @@
 (@template (define (fn-for-cow c)
              (... (cow-x c) ;Natural [0, WIDTH]
                   (cow-dx c)))) ;Integer
-
-
 
 ;; =================
 ;; Functions:
@@ -734,7 +682,6 @@
                     (make-cow (+ (cow-x c)(cow-dx c)) (cow-dx c))]))
 
 
-
 (@htdf render-cow)
 (@signature Cow -> Image)
 ;; Place appropriate cow image on MTS at (cow-x c) and CTR-Y
@@ -755,7 +702,6 @@
 
 (define (render-cow c) ;fx using choose-image fx
    (place-image (choose-image c) (cow-x c) CTR-Y MTS)) 
-
 
 
 (@htdf choose-image)
@@ -805,65 +751,48 @@
 
 ### Compound Data
 -  $\geq2$ items of information that naturally belong together
-	- E.g. first and last name, x-coor and y-coor, 
+	- E.g. first and last name, x-coor and y-coor
+	- E.g.    `;; Player is (make-player String String)
+			`;; Interp. (make-player fn ln) is a hockey player
+			`;;     fn is first name`
+			`;;     ln is last name``
+			
+			`(@dd-template-rules compound) ;data types`
+			`(define (fn-for-player p) ;dd template`
+			  `(... (player-fn p) ;string`
+			       `(player-ln p))) ;string`
+			       
 - Define-struc expression: `(define-<struct> (x y))`
-	- `<struct>`: define-struct name 
-	- `x`: x-field
-	- `y`: y-field
-	- Declares definition
+		- `<struct>`: define-struct name 
+		- `x`: x-field
+		- `y`: y-field
+		- Declares definition
+	- E.g. `(define-struct player (fn ln))`
 	
 - Constructor: `(define <constr> (make-<struct> x y))` 
-	- `<constr>`: constructor name
-	- `<struct>`: define-struct name
-	- `x`: x-field
-	- `y`: y-field
-	- Declares definition
+		- `<constr>`: constructor name
+		- `<struct>`: define-struct name
+		- `x`: x-field
+		- `y`: y-field
+		- Declares definition
+	- E.g.  `(define P1 (make-player "Bobby" "Orr"))` 
+	      `(define P2 (make-player "Wayne" "Gretzky"))`
 	
 - Selectors: `(<struct>-x <constr>)` and `(<struct>-y <constr>)`
-	-  `<struct>`: define-struct name
-	- `<constr>`: constructor name
-	- Calls x-field or y-field 
+		-  `<struct>`: define-struct name
+		- `<constr>`: constructor name
+		- Calls x-field or y-field 
+	- E.g. `(player-fn P1) ;returns Bobby`
+		 `(player-ln P2) ;returns Gretzky`
 
 - Predicate: `(<struct>? ...)`
-	- `<struct>`: define-struct name
-	- ...: argument (e.g. "hello")
-	- Compares define-structure definition to argument given  
+		- `<struct>`: define-struct name
+		- ...: argument (e.g. "hello")
+		- Compares define-structure definition to argument given  
+	- E.g. `(player? P1) ;returns true`
+		 `(player? "Dough") ;returns false`
 
-- E.g. 
-```
-(require spd/tags)
-(@htdd Player) ;htdd tag
- 
-(define-struct player (fn ln)) ;make-struc
-
-;; Player is (make-player String String)
-;; Interp. (make-player fn ln) is a hockey player
-;;     fn is first name
-;;     ln is last name
-
-(@dd-template-rules compound) ;data types
-
-(define (fn-for-player p) ;dd template
-  (... (player-fn p) ;string
-       (player-ln p))) ;string
-
-
-;;Operators:
-
-;Constructors
-(define P1 (make-player "Bobby" "Orr")) 
-(define P2 (make-player "Wayne" "Gretzky"))
-
-;Predicate
-(player? P1) ;returns true
-(player? "Dough") ;returns false
-
-;Selector
-(player-fn P1) ;returns Bobby
-(player-ln P2) ;returns Gretzky
-```
-
-### Recursion and Lists
+### Lists
 - Constructor:
 	- `(define <list name> (cons <element> empty))`
 		- `<element>`: string, number, expression (e.g. string-append), etc
@@ -891,7 +820,7 @@
 
 ![](Pasted%20image%2020240929200731.png)
 
-### Recursion 
+### Self-Reference and Natural Recursion 
 - Self-reference calls used to address lists/data of arbitrary (unknown) size  (e.g. number of students in a class)
 - When creating a data definition using a list:
 	- E.g. `;; Mystery is one of:
@@ -906,101 +835,182 @@
 					- `(cons 5` is Natural and `(cons 4 (cons 1 empty)` is Mystery
 					- `(cons 4` is Natural and `(cons 1 empty)` is Mystery
 
-- Well-formed Self-references contain:
+- Well-formed Self-references requirements
 	- At least one base case 
 		- Contains no self-reference
 		- One example needed only, list first
-	
     - At least one self-reference case
 	    - One example needed for each
-	    
 	- Type comment example of a well-formed self-reference:
 		`NonEmptyListOfNumber is one of:`
 		  `(cons Number empty)`
 		  `(cons Number NonEmptyListOfNumber)`
-- E.g. 
+
+### Reference and Helper Functions 
+- Reference rule:
+	- Any time one data type refers to non-primitive type, wrap it in a call to that data type's template function
+- If we need to do something complicated with the referred to type
+	- E.g. if a function needs to call back to a data definition several times (e.g. retrieving student name and id 4 times) 
+- Therefore we need to use another helper function (so made make-bar)
+
+
+- E.g. Using compound, references, self-references data types
 ```
+;; Program that will help visualize costs at differen schools
+;;    -Names of schools
+;;    -International student tuition costs
+
+;; dd that represents name of schools and international tuition costs
+;; fx that consumes dd and produces bar chart
+;; fx that consumes dd and produces lowest cost option
+
 (require spd/tags)
+(require 2htdp/image)
 
-;; Data definitions:
+;; ============================================
+;; Constants
 
-(@htdd ListOfNumber)
-;; Don't know how many owls (arbitrary) so need well-formed self-ref
-;; ListOfNumber is one of:
-;;    - empty
-;;    - (cons Number ListOfNumber)
-;; Interp. each number in the list is an owl weight in ounces
+(define TEXT-COLOUR "black")
+(define TEXT-SIZE 24)
 
-(define LON1 empty) ;base case
-(define LON2 (cons 60 (cons 45 empty))) ;self-ref (cons Number ListOfNumber)
+(define Y-SCALE 1/200)
+(define BAR-WIDTH 30)
+(define BAR-COLOUR "lightblue")
+
+;; ============================================
+;; Data Definitions
+
+(@htdd School)
+;; School is (make-school String Natural)
+;; Interp. string is name of school and natural is tuition cost in $USD
+(define-struct school (name tuition))
+
+(define S1 (make-school "School1" 25533))
+(define S2 (make-school "School2" 31363))
+(define S3 (make-school "School3" 54233))
+
+(@dd-template-rules compound) ;name and tuition
+
+(define (fn-for-school s) ;data template
+  (... (school-name s)
+       (school-tuition s)))
+
+
+(@htdd ListOfSchools)
+;; ListOfSchools is one of:
+;;   -Empty
+;;   -(cons School ListOfSchools) where School is a ref
+;; Interp. list of schools and their tuition cost
+
+(define LOS1 empty) ;base
+(define LOS2 (cons S1 (cons S2 empty))) ;ref and self-ref
 
 (@dd-template-rules one-of
-              atomic-distinct     ;empty
-              compound            ;(cons Number ListOfNumber)
-              self-ref)           ;(ListOfNumber (rest lon))
+                    atomic-distinct ;empty
+                    compound        ;(cons School ListOfSchools)
+                    ref             ;(fn-for-school (first los)) ;natural helper
+                    self-ref)       ;(fn-for-los (rest los)) ;natural recursion
 
-(define (fn-for-lon lon) ;dd template
-  (cond [(empty? lon) (...)] ;base case 
-        [else ;true/false actions 
-         (... (first lon) ;number
-              (fn-for-lon (rest lon)))])) ;self-ref wrapped in natural recursion
-           
-
-;; Functions:
-
-(@htdf TotalWeight)
-(@signature ListOfNumber -> Number)
-;; Consumes weights of owls and produces total weight of owls
-; (define (TotalWeight lon) 100) ;stub
-
-(check-expect (TotalWeight empty)                     ;empty
-              0)
-(check-expect (TotalWeight (cons 60 empty))           ;1 owl in list
-              (+ 60 0)) 
-(check-expect (TotalWeight (cons 60 (cons 45 empty))) ;2 owls in list
-                                 (+ 60 (+ 45 0))) 
-
-(@template-origin ListOfNumber) ;template
-(@template (define (TotalWeight lon)
-  (cond [(empty? lon) (...)]
+(define (fn-for-los los)
+  (cond [(empty? los) (...)];base case
         [else
-         (... (first lon)
-              (TotalWeight (rest lon)))]))) 
+         (... (fn-for-school (first los)) ;ref
+              (fn-for-los (rest los)))])) ;self-ref
 
-(define (TotalWeight lon)
-  (cond [(empty? lon) 0]                               ;empty
+;; ============================================
+;; Functions
+
+(@htdf chart)
+(@signature ListOfSchools -> Image)
+;; Consumes schools and their tuitions (ListOfSchools) and produces bar chart
+; (define (chart los) (square 0 "solid" "white")) ;stub
+
+;; To get:
+;;   -a bar with a black outline and light blue interior
+;;      --> (rectangle width height mode colour)
+;;      --> (rectangle width height mode colour)
+;;   -vertical text with school name overlaying the text
+;;      --> (rotate 90 (text "school" size colour)) 
+;;   -all components oriented to the bottom center so that they overlap
+;;      --> (overlay/align "center" "bottom"
+;;               (rotated text)
+;;               (rectangle outline)
+;;               (rectangle interior)
+;;   -because list, we have to also include empty
+;;      --> (beside/align "bottom"
+;;                (overlayed text, bar outline, and bar interior)
+;;                (square 0 "solid" "white") from stub
+
+(check-expect (chart empty) (square 0 "solid" "white"))    ;base case
+(check-expect (chart (cons (make-school "S1" 8000) ;1 school
+                           empty))  
+              (beside/align
+               "bottom"
+               (overlay/align ;S1
+                "center" "bottom"
+                (rotate 90 (text "S1" TEXT-SIZE TEXT-COLOUR))
+                (rectangle BAR-WIDTH (* 8000 Y-SCALE) "outline" "black")
+                (rectangle BAR-WIDTH (* 8000 Y-SCALE) "solid" BAR-COLOUR))
+               (square 0 "solid" "white"))) ;empty
+(check-expect (chart (cons (make-school "S1" 8000) ;2 schools
+                           (cons (make-school "S2" 12000) empty)))  
+              (beside/align
+               "bottom"
+               (overlay/align ;S1
+                "center" "bottom"
+                (rotate 90 (text "S1" TEXT-SIZE TEXT-COLOUR))
+                (rectangle BAR-WIDTH (* 8000 Y-SCALE) "outline" "black")
+                (rectangle BAR-WIDTH (* 8000 Y-SCALE) "solid" BAR-COLOUR))
+               (overlay/align ;S2
+                "center" "bottom"
+                (rotate 90 (text "S2" TEXT-SIZE TEXT-COLOUR))
+                (rectangle BAR-WIDTH (* 12000 Y-SCALE) "outline" "black")
+                (rectangle BAR-WIDTH (* 12000 Y-SCALE) "solid" BAR-COLOUR))
+               (square 0 "solid" "white"))) ;empty
+ 
+(@template-origin ListOfSchools) ;template
+(@template (define (chart los)
+             (cond [(empty? los) (...)]
+                   [else
+                    (... (fn-for-school (first los))
+                         (fn-for-los (rest los)))])))
+
+;; Since we need to do something complicated with the referred to type..
+;; i.e. because LOS refers to School (reference) and chart refers to School)
+;; Therefore we need to use another helper function (so made make-bar)
+
+(define (chart los)
+  (cond [(empty? los) (square 0 "solid" "white")]
         [else
-         (+ (first lon)                                ;add first lon to rest
-              (TotalWeight (rest lon)))]))             ;natural recursion
+         (beside/align "bottom"
+                       (make-bar (first los))
+                       (chart (rest los)))]))
 
 
-(@htdf NumberOfOwls)
-(@signature ListOfNumber -> Number)
-;; Consumes the weight of owls and produces total number of owls
+(@htdf make-bar)
+(@signature School -> Image)
+;; Hands school and produce bar image for a single school in the chart
+; (define (make-bar s) (square 0 "solid" "white")) ;stub
 
-(check-expect (NumberOfOwls empty)                     ;empty
-              0) 
-(check-expect (NumberOfOwls (cons 15 empty))           ;1 owl in list
-              (+ 1 0)) 
-(check-expect (NumberOfOwls (cons 30 (cons 47 empty))) ;2 owls in list
-                            (+ 1 (+ 1 0))) 
+(check-expect (make-bar (make-school "S1" 8000))
+              (overlay/align 
+               "center" "bottom"
+               (rotate 90 (text "S1" TEXT-SIZE TEXT-COLOUR))
+               (rectangle BAR-WIDTH (* 8000 Y-SCALE) "outline" "black")
+               (rectangle BAR-WIDTH (* 8000 Y-SCALE) "solid" BAR-COLOUR)))
 
-;(define (NumberOfOwls lon) 3) ;stub
+(@template-origin School) ;template
+(@template (define (make-bar s)
+             (... (school-name s)
+                  (school-tuition s))))
 
-(@template-origin ListOfNumber) ;template
-(@template (define (NumberOfOwls lon)
-  (cond [(empty? lon) (...)]
-        [else
-         (... (first lon)
-              (NumberOfOwls (rest lon)))])))
-
-(define (NumberOfOwls lon)
-  (cond [(empty? lon) 0]                                 ;empty 
-        [else
-         (+ 1 ;add 1 to whatever natural recursion of NumberOfOwls produces
-              (NumberOfOwls (rest lon)))]))
+(define (make-bar s)
+  (overlay/align "center" "bottom"
+                 (rotate 90 (text (school-name s) TEXT-SIZE TEXT-COLOUR))
+                 (rectangle BAR-WIDTH (* (school-tuition s) Y-SCALE)
+                            "outline" "black")
+                 (rectangle BAR-WIDTH (* (school-tuition s) Y-SCALE)
+                            "solid" BAR-COLOUR)))
 ```
 
 
-Reference rule:
-- Any time one data type refers to non-primitive type, wrap it in a call to that data type's template function
