@@ -919,56 +919,84 @@
 - E.g. 
 ```
 (require spd/tags)
-(@htdd ListOfString)
-;; ListOfString is one of:
-;;      -empty
-;;      -(cons String ListOfString) - "UBC", "McGill", "Menono"
-;; Interp a list of strings
 
-(@dd-template-rules one-of ;data types
-                    atomic-distinct  ;empty
-                    compound ;(cons String ListOfString)
-                    self-ref) ;(fn-for-los (rest los))
+;; Data definitions:
 
-(define LOS1 empty) ;empty does match ListOfString
-(define LOS2 (cons "McGill" empty)) ;"McGill" does match ListOfString
-(define LOS3 (cons "UBC" (cons "McGill" empty))) ;"UBC" does match ListOfString
+(@htdd ListOfNumber)
+;; Don't know how many owls (arbitrary) so need well-formed self-ref
+;; ListOfNumber is one of:
+;;    - empty
+;;    - (cons Number ListOfNumber)
+;; Interp. each number in the list is an owl weight in ounces
 
-(define (fn-for-los los) ;dd
-         (cond [(empty? los) (...)]
-               [else
-                (... (first los) ;string (primitive type)
-                     (fn-for-los (rest los)))])) ;ListOfString (self-reference)
+(define LON1 empty) ;base case
+(define LON2 (cons 60 (cons 45 empty))) ;self-ref (cons Number ListOfNumber)
+
+(@dd-template-rules one-of
+              atomic-distinct     ;empty
+              compound            ;(cons Number ListOfNumber)
+              self-ref)           ;(ListOfNumber (rest lon))
+
+(define (fn-for-lon lon) ;dd template
+  (cond [(empty? lon) (...)] ;base case 
+        [else ;true/false actions 
+         (... (first lon) ;number
+              (fn-for-lon (rest lon)))])) ;self-ref wrapped in natural recursion
+           
+
+;; Functions:
+
+(@htdf TotalWeight)
+(@signature ListOfNumber -> Number)
+;; Consumes weights of owls and produces total weight of owls
+; (define (TotalWeight lon) 100) ;stub
+
+(check-expect (TotalWeight empty)                     ;empty
+              0)
+(check-expect (TotalWeight (cons 60 empty))           ;1 owl in list
+              (+ 60 0)) 
+(check-expect (TotalWeight (cons 60 (cons 45 empty))) ;2 owls in list
+                                 (+ 60 (+ 45 0))) 
+
+(@template-origin ListOfNumber) ;template
+(@template (define (TotalWeight lon)
+  (cond [(empty? lon) (...)]
+        [else
+         (... (first lon)
+              (TotalWeight (rest lon)))]))) 
+
+(define (TotalWeight lon)
+  (cond [(empty? lon) 0]                               ;empty
+        [else
+         (+ (first lon)                                ;add first lon to rest
+              (TotalWeight (rest lon)))]))             ;natural recursion
 
 
-(@htdf contains-UBC?)
-;; Produce true is LOS includes "UBC"
-; (define (UBC? los) false) ;stub
+(@htdf NumberOfOwls)
+(@signature ListOfNumber -> Number)
+;; Consumes the weight of owls and produces total number of owls
 
-(check-expect (contains-UBC? empty) false)
-;(check-expect (contains-UBC? (cons "McGill" empty)) false)
-(check-expect (contains-UBC? (cons "UBC" empty)) true)
-;(check-expect (contains-UBC? (cons "McGill" (cons "UBC" empty))) true)
+(check-expect (NumberOfOwls empty)                     ;empty
+              0) 
+(check-expect (NumberOfOwls (cons 15 empty))           ;1 owl in list
+              (+ 1 0)) 
+(check-expect (NumberOfOwls (cons 30 (cons 47 empty))) ;2 owls in list
+                            (+ 1 (+ 1 0))) 
 
-(@template-origin ListOfString) ;template
-(@template (define (contains-UBC? los) 
-         (cond [(empty? los) (...)]
-               [else
-                (... (first los)
-                     (contains-UBC? (rest los)))]))) ;natural recursion
+;(define (NumberOfOwls lon) 3) ;stub
 
-;; If empty, return false
-;; Else:
-;;    - If first item in ListOfString list is "UBC", return true
-;;    - Search rest of ListOfString list for "UBC"
-;;      by referring back to fx (recursion) for each element of list
+(@template-origin ListOfNumber) ;template
+(@template (define (NumberOfOwls lon)
+  (cond [(empty? lon) (...)]
+        [else
+         (... (first lon)
+              (NumberOfOwls (rest lon)))])))
 
-(define (contains-UBC? los)
-  (cond [(empty? los) false]
-               [else
-                (if (string=? (first los) "UBC") ;base case
-                    true
-                     (contains-UBC? (rest los)))])) ;self-reference case
+(define (NumberOfOwls lon)
+  (cond [(empty? lon) 0]                                 ;empty 
+        [else
+         (+ 1 ;add 1 to whatever natural recursion of NumberOfOwls produces
+              (NumberOfOwls (rest lon)))]))
 ```
 
 
