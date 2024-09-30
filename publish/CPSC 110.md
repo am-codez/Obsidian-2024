@@ -811,20 +811,24 @@
 	- `x`: x-field
 	- `y`: y-field
 	- Declares definition
+	
 - Constructor: `(define <constr> (make-<struct> x y))` 
 	- `<constr>`: constructor name
 	- `<struct>`: define-struct name
 	- `x`: x-field
 	- `y`: y-field
 	- Declares definition
+	
 - Selectors: `(<struct>-x <constr>)` and `(<struct>-y <constr>)`
 	-  `<struct>`: define-struct name
 	- `<constr>`: constructor name
 	- Calls x-field or y-field 
+
 - Predicate: `(<struct>? ...)`
 	- `<struct>`: define-struct name
 	- ...: argument (e.g. "hello")
 	- Compares define-structure definition to argument given  
+
 - E.g. 
 ```
 (require spd/tags)
@@ -859,28 +863,7 @@
 (player-ln P2) ;returns Gretzky
 ```
 
-- ![[Pasted image 20240917125232.png|150]]
-	- x-value increases rightwards
-	- y-value increases downwards
-
-
-
-### List 
-- Arbitrary sized data for case where we don't know the pool size (e.g. number of students in a class)
-- When creating a data definition using a list:
-	- E.g. 
-			`;; Mystery is one of:
-			`;;   -(cons 1 empty)`
-			`;;   -(cons Natural Mystery)`
-		- Meaning to be of type Mystery, a list must have either:
-			- 1 and empty
-				- E.g. `(cons 1 empty)`
-			- Natural and Mystery
-				- E.g. `(cons 5 (cons 4 (cons 1 empty)))` 
-					- `(cons 5` is Natural and `(cons 4 (cons 1 empty)` is Mystery
-					- `(cons 4` is Natural and `(cons 1 empty)` is Mystery
-- Empty list expressed as `empty`
-	- Not necessary to include on separate line if list has existing item
+### Recursion and Lists
 - Constructor:
 	- `(define <list name> (cons <element> empty))`
 		- `<element>`: string, number, expression (e.g. string-append), etc
@@ -892,7 +875,8 @@
 		- E.g. `(define L1 (cons "apple" empty))`
 			- Running `(cons "orange" L1)` 
 				- Returns `(cons "orange" (cons "apple" empty))`
--  Selectors: `(first <list name>)` and `(rest <list name>)`
+ 
+- Selectors: `(first <list name>)` and `(rest <list name>)`
 	- First: returns first element in the list as a string
 	- Rest: returns all other elements in the list after first, as a list 
 	- E.g. to get second element
@@ -901,10 +885,91 @@
 	- E.g. `(cons "Flames" empty)`
 		- List with 1 element 
 		- Prints `(cons "Flames" empty)`
+
 - Predicate: `(empty? <list name>)`
 	- Returns true or false
 
-Error because check-expect is (10, 10)
+### Recursion 
+- Self-reference calls used to address lists/data of arbitrary (unknown) size  (e.g. number of students in a class)
+- When creating a data definition using a list:
+	- E.g. `;; Mystery is one of:
+		 `;;   -(cons 1 empty)`
+		 `;;   -(cons Natural Mystery)`
+			- Type comment contains a recursion
+		- Meaning to be of type Mystery, a list must have either:
+			- 1 and empty
+				- E.g. `(cons 1 empty)`
+			- Natural and Mystery
+				- E.g. `(cons 5 (cons 4 (cons 1 empty)))` 
+					- `(cons 5` is Natural and `(cons 4 (cons 1 empty)` is Mystery
+					- `(cons 4` is Natural and `(cons 1 empty)` is Mystery
+
+- Well-formed Self-references contain:
+	- At least one base case 
+		- Contains no self-reference
+		- One example needed only, list first
+	
+    - At least one self-reference case
+	    - One example needed for each
+	    
+	- Type comment example of a well-formed self-reference:
+		`NonEmptyListOfNumber is one of:`
+		  `(cons Number empty)`
+		  `(cons Number NonEmptyListOfNumber)`
+- E.g. 
+```
+(require spd/tags)
+(@htdd ListOfString)
+;; ListOfString is one of:
+;;      -empty
+;;      -(cons String ListOfString) - "UBC", "McGill", "Menono"
+;; Interp a list of strings
+
+(@dd-template-rules one-of ;data types
+                    atomic-distinct  ;empty
+                    compound) ;(cons String ListOfString)
+
+(define LOS1 empty) ;empty does match ListOfString
+(define LOS2 (cons "McGill" empty)) ;"McGill" does match ListOfString
+(define LOS3 (cons "UBC" (cons "McGill" empty))) ;"UBC" does match ListOfString
+
+(define (fn-for-los los) ;dd
+         (cond [(empty? los) (...)]
+               [else
+                (... (first los) ;string (primitive type)
+                     (fn-for-los (rest los)))])) ;ListOfString (self-reference)
+
+
+(@htdf contains-UBC?)
+;; Produce true is LOS includes "UBC"
+; (define (UBC? los) false) ;stub
+
+(check-expect (contains-UBC? empty) false)
+;(check-expect (contains-UBC? (cons "McGill" empty)) false)
+(check-expect (contains-UBC? (cons "UBC" empty)) true)
+;(check-expect (contains-UBC? (cons "McGill" (cons "UBC" empty))) true)
+
+(@template-origin ListOfString) ;template
+(@template (define (contains-UBC? los) 
+         (cond [(empty? los) (...)]
+               [else
+                (... (first los)
+                     (contains-UBC? (rest los)))]))) ;natural recursion
+
+;; If empty, return false
+;; Else:
+;;    - If first item in ListOfString list is "UBC", return true
+;;    - Search rest of ListOfString list for "UBC"
+;;      by referring back to fx (recursion) for each element of list
+
+(define (contains-UBC? los)
+  (cond [(empty? los) false]
+               [else
+                (if (string=? (first los) "UBC") ;base case
+                    true
+                     (contains-UBC? (rest los)))])) ;self-reference case
+```
+
 
 Reference rule:
 - Any time one data type refers to non-primitive type, wrap it in a call to that data type's template function
