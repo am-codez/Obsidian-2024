@@ -889,6 +889,8 @@
 - Predicate: `(empty? <list name>)`
 	- Returns true or false
 
+![](Pasted%20image%2020240929200731.png)
+
 ### Recursion 
 - Self-reference calls used to address lists/data of arbitrary (unknown) size  (e.g. number of students in a class)
 - When creating a data definition using a list:
