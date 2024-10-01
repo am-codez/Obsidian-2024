@@ -599,6 +599,7 @@
 ### Big Bang Mechanism
 - Primitive that complex structure by integrating and coordinating many functionalities together 
 - Polymorphic: works for any type of world state but all x have to be the same type
+- State true shows you data computation in real time 
 - E.g. 
 	`(@htdf main)`
 	`(@signature WS -> WS)`
@@ -868,6 +869,7 @@
 ![](Pasted%20image%2020240929200731.png)
 
 ### Self-Reference and Natural Recursion 
+- Isn't exclusive to lists, can also include other data definition types, e.g. naturals
 - Self-reference calls used to address lists/data of arbitrary (unknown) size  (e.g. number of students in a class)
 - When creating a data definition using a list:
 	- E.g. `;; Mystery is one of:
