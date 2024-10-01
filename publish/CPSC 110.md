@@ -881,7 +881,7 @@
 				- E.g. `(cons 5 (cons 4 (cons 1 empty)))` 
 					- `(cons 5` is Natural and `(cons 4 (cons 1 empty)` is Mystery
 					- `(cons 4` is Natural and `(cons 1 empty)` is Mystery
-
+- 
 - Well-formed Self-references requirements
 	- At least one base case 
 		- Contains no self-reference
