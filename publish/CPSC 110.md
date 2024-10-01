@@ -1,3 +1,4 @@
+https://cs110.students.cs.ubc.ca/bank/tile.png
 ### **Racket** 
 - Divided into 2 regions ![[Pasted image 20240905205151.png]]
 - Commenting out done via ;; or #;
