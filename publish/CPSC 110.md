@@ -999,6 +999,280 @@
 
 - E.g. Using compound, references, self-references data types
 ```
+(require 2htdp/image)
+(require 2htdp/universe)
+(require spd/tags)
+;Each egg has own constant of x-coordinate so we treat x as changing 
+
+(@htdw ListOfEgg)
+;List of non-primitive type (vs ListOfNumber for example)
+
+;; Constants:
+(@problem 1)
+(define WIDTH 400)
+(define HEIGHT 600)
+
+(define MARIO
+  (bitmap/url "https://cs110.students.cs.ubc.ca/lectures/m04-mario.png"))
+
+(define MTS
+  (place-image MARIO
+               (/ WIDTH 2)
+               (- HEIGHT (/ (image-height MARIO) 2) 5)
+               (empty-scene WIDTH HEIGHT)))
+
+(define YOSHI-EGG 
+  (bitmap/url "https://cs110.students.cs.ubc.ca/lectures/m04-egg.png"))
+
+(define FALL-SPEED 5) ;pixels  per tick
+(define SPIN-SPEED 5) ;degrees per tick
+
+;;===================================================
+;; Data Definitions:
+
+(@htdd Egg)
+; set egg as compound data as we have x-coor, y-coor, and rot changing for egg
+
+(define-struct egg (x y r))
+;; Egg is (make-egg Number Number Number)
+;; interp. the x, y position of an egg in screen coordinates (pixels),
+;;         and rotation angle in degrees
+
+(define E1 (make-egg 100 50 23))
+(define E2 (make-egg 20 30 50))
+
+(@dd-template-rules compound) ;3 fields
+
+
+(define (fn-for-egg e)
+  (... (egg-x e)    ;Number (need to allow for decimals)
+       (egg-y e)    ;Number
+       (egg-r e)))  ;Number
+
+
+(@htdd ListOfEgg)
+;creaing because we have an arb. list of eggs
+
+;; ListOfEgg is one of:
+;; - empty
+;; - (cons Egg ListOfEgg)
+;       -where Egg is a non-primitive type
+;       -refers to another function besides itself
+;; interp. a list of eggs
+
+(define LOE1 empty)
+(define LOE2 (cons E1 empty))
+(define LOE3 (cons E1 (cons E2 empty)))
+
+(@dd-template-rules one-of           ;2 cases
+                    atomic-distinct  ;empty
+                    compound         ;cons
+                    ref              ;(first loe) is Egg
+                    self-ref)        ;(rest loe) is ListOfEgg
+
+(define (fn-for-loe loe)
+  (cond [(empty? loe) (...)]
+        [else
+         (... (fn-for-egg (first loe)) ;ref (natural helper)
+              (fn-for-loe (rest loe)))])) ;self-ref (natural recursion)
+;natural helper implies we need to create a separate function
+
+
+;;===================================================
+;; Functions:
+
+(@htdf main)
+(@signature ListOfEgg -> ListOfEgg)
+;; start the world with (main empty)
+
+(@template-origin htdw-main)
+
+(define (main loe)
+  (big-bang loe             ;ListOfEgg
+    ;(state    true)
+    (on-tick  next-eggs)    ;ListOfEgg -> ListOfEgg
+    (to-draw  render-eggs)  ;ListOfEgg -> Image
+    (on-mouse handle-mouse) ;ListOfEgg Integer Integer MouseEvent -> ListOfEgg
+    (on-key   handle-key))) ;ListOfEgg KeyEvent -> ListOfEgg
+
+;;=====================
+(@htdf next-eggs)
+(@signature ListOfEgg -> ListOfEgg)
+;; produce the next eggs at appropriate locations and angles
+(check-expect (next-eggs empty) empty) ;empty case
+(check-expect (next-eggs (cons (make-egg 10 20 30)  ;1 item case, x y r
+                               empty))
+              (cons (make-egg 10 (+ 20 FALL-SPEED) (+ 30 SPIN-SPEED)) empty))
+(check-expect (next-eggs (cons (make-egg 2 60 20) ;2 item case
+                               (cons (make-egg 10 20 30)
+                                     empty))) 
+              (cons (make-egg 2 (+ 60 FALL-SPEED) (+ 20 SPIN-SPEED))
+                    (cons (make-egg 10 (+ 20 FALL-SPEED) (+ 30 SPIN-SPEED))
+                          empty)))
+;we're not actually doing the additions to fall & spin speed in this function
+;produce list so we use (cons for our result
+;   -carries over into our function
+
+;(define (next-eggs loe) empty) ;stub
+
+(@template-origin ListOfEgg)
+
+(@template (define (next-eggs loe)
+             (cond [(empty? loe) (...)]
+                   [else
+                    (... (next-egg (first loe))
+                         (next-eggs (rest loe)))])))
+
+(define (next-eggs loe)
+  (cond [(empty? loe) empty] ;get back an empty list
+        [else
+         (cons (next-egg (first loe)) ;ref, going to make new egg
+               (next-eggs (rest loe)))])) ;self-ref
+
+;since (first loe) refers to the new (first) egg's x,y-coor, fall & spin speed
+;   -we need to make a helper function
+;   -not as easy as assessing just string or number
+;   -can't call multiple selectors here
+;   -need single helper function that consumes egg
+
+
+;;=====================
+(@htdf next-egg)
+(@signature Egg -> Egg)
+;; produces new egg by adding FALL-SPEED to y and SPIN-SPEED to r
+
+;(define (next-egg e) e) ;stub
+
+(check-expect (next-egg (make-egg 2 60 20)) ;first egg (from next-eggs)
+              (make-egg 2 (+ 60 FALL-SPEED) (+ 20 SPIN-SPEED)))
+(check-expect (next-egg (make-egg 10 20 30)) ;second egg (from next-eggs)
+              (make-egg 10 (+ 20 FALL-SPEED) (+ 30 SPIN-SPEED)))
+
+(@template-origin Egg)
+
+(@template
+ (define (fn-for-egg e)
+   (... (egg-x e)    
+        (egg-y e)    
+        (egg-r e))))
+
+(define (next-egg e)
+  (make-egg (egg-x e)    
+            (+ (egg-y e) FALL-SPEED)   
+            (+ (egg-r e) SPIN-SPEED)))
+
+
+;;=====================
+(@htdf render-eggs)
+(@signature ListOfEgg -> Image)
+;; Place YOSHI-EGG img at appropriate location/rotation on MTS for each egg
+
+;(define (render-eggs loe) MTS) ;stub
+
+(check-expect (render-eggs empty) MTS) ;MTS because we're producing an image
+(check-expect (render-eggs (cons (make-egg 10 20 30) ;1 item
+                                 empty))
+              (place-image (rotate 30 YOSHI-EGG) 10 20 MTS))  
+(check-expect (render-eggs (cons (make-egg 110 120 130) ;2 items
+                                 (cons (make-egg 10 20 30)
+                                       empty)))
+              (place-image (rotate 130 YOSHI-EGG) 110 120
+                           (place-image (rotate 30 YOSHI-EGG) 10 20 MTS)))
+;places 1 egg in MTS, then places next egg onto that combined image
+;we're not actually placing the egg's x, y-coor, rotation in this function
+
+(@template-origin ListOfEgg)
+
+(@template (define (render-eggs loe)
+             (cond [(empty? loe) (...)]
+                   [else
+                    (... (place-egg (first loe))
+                         (render-eggs (rest loe)))])))
+
+(define (render-eggs loe)
+  (cond [(empty? loe) MTS]
+        [else
+         (place-egg (first loe) ;Egg
+                    (render-eggs (rest loe)))])) ;Image
+;need a helper function because we're calling on more than 1 selector
+
+
+;;=====================
+(@htdf place-egg)
+(@signature Egg Image -> Image)
+;; place YOSHI-EGG on empty-image at Egg's x, y-coor 
+(check-expect (place-egg (make-egg 10 20 30) MTS)
+              (place-image (rotate  30 YOSHI-EGG) 10 20 MTS))
+(check-expect (place-egg (make-egg 110 120 130) empty-image) 
+              (place-image (rotate  130 YOSHI-EGG) 110 120 empty-image))
+
+;(define (place-egg e img) img)
+
+(@template-origin Egg)
+
+(@template
+ (define (place-egg e img)
+   (... (egg-x e)
+        (egg-y e)
+        (egg-r e)
+        img)))
+;for additional parameters with atomic type, add parameter everywhere after ...
+
+(define (place-egg e img)
+  (place-image (rotate  (egg-r e) YOSHI-EGG)
+               (egg-x e)
+               (egg-y e)
+               img))
+
+
+;;=====================
+(@htdf handle-mouse)
+(@signature ListOfEgg Integer Integer MouseEvent -> ListOfEgg)
+;; add and egg at x, y with rotation 0 when the mouse is clicked
+(check-expect (handle-mouse empty 10 40 "button-down")
+              (cons (make-egg 10 40 0) empty))
+(check-expect (handle-mouse (cons (make-egg 3 4 5) empty) 90 100 "drag")
+              (cons (make-egg 3 4 5) empty))
+
+;(define (handle-mouse loe x y me) loe) ;stub
+
+(@template-origin MouseEvent)
+
+(@template
+ (define (handle-mouse loe x y me)
+   (cond [(mouse=? me "button-down") (... loe x y)]
+         [else    
+          (... loe x y)])))
+
+(define (handle-mouse loe x y me)
+  (cond [(mouse=? me "button-down") (cons (make-egg x y 0) loe)] 
+        [else loe]))
+
+
+;;=====================
+(@htdf handle-key)
+(@signature ListOfEgg KeyEvent -> ListOfEgg)
+;; on space reset to zero eggs
+(check-expect (handle-key (cons E1 (cons E2 empty)) " ") empty)
+(check-expect (handle-key (cons E1 empty) "a") (cons E1 empty))
+
+;(define (handle-key loe ke) loe) ;stub
+
+(@template-origin KeyEvent)
+
+(@template   
+ (define (handle-key loe ke)
+   (cond [(key=? ke " ") (... loe)]
+         [else  
+          (... loe)])))
+
+(define (handle-key loe ke)
+  (cond [(key=? ke " ") empty]   
+        [else loe]))
+```
+
+
+```
 ;; Program that will help visualize costs at differen schools
 ;;    -Names of schools
 ;;    -International student tuition costs
