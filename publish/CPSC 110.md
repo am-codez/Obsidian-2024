@@ -1437,3 +1437,15 @@
 	- E.g. `(add 1 0)` returns 1       while      `(add 1 (add1 0))` returns 2
 - `(sub1 )` 
 	- Produces a natural 1 smaller 
+- Factorial 
+	- Computing n* n-1 * n-2 ... 
+	- `(define (fact n)`
+		 `(cond [(zero? n) ((1) 1)]`
+				`[else`
+				`((2) * n (fact (sub1 n)))]))`
+	- When n - a is zero (e.g. `(list-from-to 5 5)`, should return `(cons 5 empty)`
+	- E.g. `(check-expect (fact 0))`
+		- Output is 1
+	- E.g. `(check-expect (fact 3))`
+		- Computation: (* (* 3 2) 1)
+		- Output is 6
