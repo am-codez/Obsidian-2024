@@ -881,7 +881,7 @@
 				- E.g. `(cons 5 (cons 4 (cons 1 empty)))` 
 					- `(cons 5` is Natural and `(cons 4 (cons 1 empty)` is Mystery
 					- `(cons 4` is Natural and `(cons 1 empty)` is Mystery
-- 
+
 - Well-formed Self-references requirements
 	- At least one base case 
 		- Contains no self-reference
@@ -892,6 +892,10 @@
 		`NonEmptyListOfNumber is one of:`
 		  `(cons Number empty)`
 		  `(cons Number NonEmptyListOfNumber)`
+- Helper functions:
+	- When def refers to another non-primitive data def (e.g. Egg)
+	- When sub-task requires operating on arb. sized data
+	- Two or more distinct functions
 	
 ```
 (require spd/tags)
