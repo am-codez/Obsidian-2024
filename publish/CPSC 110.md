@@ -1432,6 +1432,8 @@
 
 
 ### Naturals
+- Naturals are a self-ref data definition because there'a an arbitrary number of natural numbers
+	- We also don't know which numbers users will input
 - `(add1 )` 
 	- Produces a natural 1 bigger 
 	- E.g. `(add 1 0)` returns 1       while      `(add 1 (add1 0))` returns 2
