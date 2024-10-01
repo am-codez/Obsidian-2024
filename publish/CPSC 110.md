@@ -892,6 +892,102 @@
 		`NonEmptyListOfNumber is one of:`
 		  `(cons Number empty)`
 		  `(cons Number NonEmptyListOfNumber)`
+	
+```
+(require spd/tags)
+
+(@htdd ListOfString)
+;; ListOfString is one of:
+;;  - empty
+;;       -ListOfString list with nothing in it
+;;       -need to start with an empty list to have something to build on
+;;  - (cons String ListOfString)
+;;       -where ListOfString references itself (self-ref)
+;;       -list of one longer than empty
+;;       -add one item at a time
+;;       -can be arbitrarily long list 
+;; interp. a list of strings
+
+(define LOS1 empty)
+;   -someone doesn't like hockey
+;   -empty) matches empty
+(define LOS2 (cons "Canucks" empty))
+;   -someone only likes 1 team
+;   -matches (cons String ListOfString)
+;       -(cons "Canucks" matches (cons String
+;       -empty) matches empty
+(define LOS3 (cons "Leafs" (cons "Canucks" empty)))
+;   -someone likes 2 teams
+;   -matches (cons String ListOfString)
+;       -(cons "Leaf" matches (cons String
+;       -(cons "Canucks" matches (cons String
+;       -empty) matches empty
+(define LOS4 (cons "Oilers" LOS3))
+;   -added 1 team to list
+
+(@dd-template-rules one-of             ;2 cases
+                    atomic-distinct    ;empty
+                    compound           ;(cons String ListOfString)
+                    self-ref)          ;(rest los) is ListOfString
+
+;lists are compound data:
+;   -(cons takes (cons "Canucks" empty) list and adds "Leafs"
+;   -can be retrieved later
+
+;using this template because itemization
+;   -(define (fn-for-los los)
+;       (cond [(empty? los) (...)]
+;             [else
+;               (...)]))
+;   -2 or more subclasses.. 1 of which is atomic-non-distinct
+
+(define (fn-for-los los)
+  (cond [(empty? los) (...)] ;empty case - atomic distinct
+        [else 
+         (... (first los) ;compound case (selector 1)
+              (fn-for-los (rest los)))])) ;compound case (selector 2)
+
+;(first los) will be string, e.g. "Leafs"
+;(rest los) will be ListOfString, e.g. (cons "Canucks" empty) 
+
+
+
+;Design a function that determines whether "Canucks" appears in a list.
+
+(@htdf contains-canucks?)
+(@signature ListOfString -> Boolean)
+;; produce true if list contains "Canucks"
+
+;(define (contains-canucks? los) false) ;stub
+
+(check-expect (contains-canucks? empty) false)
+(check-expect (contains-canucks? (cons "Canucks" empty)) true)
+(check-expect (contains-canucks? (cons "Leafs"
+                                       (cons "Canucks"
+                                             empty)))
+              true)
+(check-expect (contains-canucks? (cons "Leafs"
+                                       (cons "Oilers"
+                                             empty)))
+              false)
+
+(@template-origin ListOfString)
+
+(@template (define (contains-canucks? los)
+             (cond [(empty? los) (...)] ;(...) is base case result
+                   [else 
+                    (... (first los) ;... is combination
+                         (contains-canucks? (rest los)))]))) ;natural recursion
+;if (...) and ... are correct, we can always trust the natural recursion 
+           
+(define (contains-canucks? los)
+  (cond [(empty? los) false] 
+        [else 
+         (if (string=? (first los) "Canucks") ;sometimes first in list (first los)
+             true
+             (contains-canucks? (rest los)))])) ;sometimes not first in list
+;natural recursion asks "is Canucks in rest of list?" (rest los)
+```
 
 ### Reference and Helper Functions 
 - Reference rule:
