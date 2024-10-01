@@ -27,6 +27,8 @@ https://cs110.students.cs.ubc.ca/bank/tile.png
 - Examples of values
 	- 1
 	- "#i1.41421"
+- When creating check-expects and output value is an inexact number (e.g. sqrt 2), use `(check-within)`
+	- E.g. `(check-within (distance 3 0 0 4) 1.0 2.0)`
 
 ### **Evaluating simple arrhythmic expressions**
 - Primitives:  
