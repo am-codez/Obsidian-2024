@@ -808,3 +808,6 @@ Differential equation:
 ![[Pasted image 20240927122414.png|414]]
 
 
+![](Pasted%20image%2020241002094427.png)
+![](Pasted%20image%2020241002094512.png)
+![](Pasted%20image%2020241002094635.png)
