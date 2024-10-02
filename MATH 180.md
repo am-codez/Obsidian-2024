@@ -811,3 +811,4 @@ Differential equation:
 ![](Pasted%20image%2020241002094427.png)
 ![](Pasted%20image%2020241002094512.png)
 ![](Pasted%20image%2020241002094635.png)
+![](Pasted%20image%2020241002095223.png)
